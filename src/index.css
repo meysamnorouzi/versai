@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+    font-family: 'IRANYekanX', 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IRANYekanX', 'Inter', system-ui, sans-serif;
+    direction: rtl;
+    background-color: #FFFFFF;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-versai-red-500 text-white rounded-[32px] font-bold font-['IRANYekanX'] text-lg leading-tight hover:bg-versai-red-600 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-versai-red-500 rounded-[32px] font-bold font-['IRANYekanX'] text-lg leading-tight border border-versai-red-500 hover:bg-versai-red-50 transition-colors duration-200;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent text-versai-red-500 rounded-[32px] font-bold font-['IRANYekanX'] text-lg leading-tight border border-versai-red-500 hover:bg-versai-red-500 hover:text-white transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl border border-zinc-100 shadow-sm;
+  }
+  
+  .input-field {
+    @apply w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-right text-sm font-medium font-['IRANYekanX'] leading-tight placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-versai-red-500 focus:border-transparent;
+  }
+  
+  .nav-link {
+    @apply text-cyan-800 text-lg font-semibold font-['IRANYekanX'] leading-relaxed hover:text-versai-red-700 transition-colors duration-200;
+  }
+  
+  .nav-link-active {
+    @apply text-versai-red-700 text-lg font-semibold font-['IRANYekanX'] leading-relaxed;
+  }
+
+  
+  /* Font utility classes */
+  .font-persian {
+    font-family: 'IRANYekanX', sans-serif;
+  }
+  
+  .font-english {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .font-mixed {
+    font-family: 'IRANYekanX', 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Typography utilities */
+  .text-persian {
+    @apply font-persian;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .text-english {
+    @apply font-english;
+    direction: ltr;
+    text-align: left;
+  }
+  
+  .text-mixed {
+    @apply font-mixed;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Heading styles */
+  .heading-primary {
+    @apply font-persian font-bold text-3xl text-gray-900;
+  }
+  
+  .heading-secondary {
+    @apply font-persian font-semibold text-2xl text-gray-800;
+  }
+  
+  .heading-tertiary {
+    @apply font-persian font-medium text-xl text-gray-700;
+  }
+  
+  /* Body text styles */
+  .body-text {
+    @apply font-persian font-normal text-base text-gray-700 leading-relaxed;
+  }
+  
+  .body-text-large {
+    @apply font-persian font-normal text-lg text-gray-700 leading-relaxed;
+  }
+  
+  .body-text-small {
+    @apply font-persian font-normal text-sm text-gray-600 leading-normal;
+  }
+  
+  /* Caption and small text */
+  .caption {
+    @apply font-persian font-normal text-xs text-gray-500;
+  }
+  
+  .label {
+    @apply font-persian font-medium text-sm text-gray-700;
+  }
+
+  /* France Visa Page Specific Styles */
+  .france-visa-bg {
+    background-color: #f2f1f1;
+  }
+
+  .france-visa-header {
+    background-color: #f2f9ff;
+    height: 40px;
+  }
+
+  .france-visa-nav {
+    background-color: #fdfeff;
+    border-bottom: 1px solid #f2f1f1;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .france-visa-title {
+    color: #316086;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.41;
+  }
+
+  .france-visa-subtitle {
+    color: #b23124;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.41;
+  }
+
+  .france-visa-text {
+    color: #6d6e70;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.53;
+  }
+
+  .france-visa-section-title {
+    color: #316086;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .france-visa-card-title {
+    color: #b23124;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .france-visa-card-text {
+    color: #316086;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.61;
+  }
+
+  .france-visa-blue-section {
+    background: linear-gradient(180deg, rgba(30, 57, 80, 0.8) 0%, rgba(30, 57, 80, 0.8) 100%);
+    border-radius: 16px;
+  }
+
+  .france-visa-white-text {
+    color: #fdfeff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.61;
+  }
+
+  .france-visa-red-text {
+    color: #f2c3be;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .france-visa-form-bg {
+    background: rgba(203, 203, 203, 0.25);
+    border: 2px solid #d3e2ef;
+    border-radius: 16px;
+  }
+
+  .france-visa-form-input {
+    background-color: #f2f9ff;
+    border: 1px solid #cbcbcb;
+    border-radius: 16px;
+    color: #9d9e9f;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.48;
+  }
+
+  .france-visa-form-label {
+    color: #f2f9ff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .france-visa-form-required {
+    color: #f2c3be;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .france-visa-button {
+    background-color: #d74a3c;
+    border: 1px solid #e5867d;
+    border-radius: 32px;
+    color: #f2f9ff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .france-visa-faq-item {
+    background-color: #fdfeff;
+    border: 1px solid #cbcbcb;
+    border-radius: 16px;
+  }
+
+  .france-visa-faq-question {
+    color: #9d9e9f;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .france-visa-footer {
+    background: linear-gradient(180deg, #1e3950 0%, #1e3950 100%);
+  }
+
+  .france-visa-footer-title {
+    color: #f2c3be;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .france-visa-footer-text {
+    color: #f2f9ff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.54;
+  }
+
+  .france-visa-footer-phone {
+    color: #fdfeff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .france-visa-footer-address {
+    color: #f2f9ff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.54;
+  }
+
+  .france-visa-copyright {
+    color: #d3e2ef;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.54;
+  }
+
+  .france-visa-copyright-highlight {
+    color: #fdfeff;
+    font-family: 'IRANYekanX', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.54;
+  }
+
+  /* Decorative background elements */
+  .france-visa-bg-element-1 {
+    position: absolute;
+    top: -754px;
+    left: 407.26px;
+    width: 1888.10px;
+    height: 1949.32px;
+    transform-origin: top left;
+    transform: rotate(21.72deg);
+    outline: 0.20px solid rgba(148, 163, 184, 0.5);
+    outline-offset: -0.10px;
+  }
+
+  .france-visa-bg-element-2 {
+    position: absolute;
+    top: 819px;
+    left: 407.26px;
+    width: 1888.10px;
+    height: 1949.32px;
+    transform-origin: top left;
+    transform: rotate(21.72deg);
+    outline: 0.20px solid rgba(148, 163, 184, 0.5);
+    outline-offset: -0.10px;
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
