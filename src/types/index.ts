@@ -44,12 +44,18 @@ export interface WordPressCategory {
 // Component Props Types
 export interface ButtonProps {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
-  size?: 'sm' | 'md' | 'lg'
+  variant?: 'primary' | 'primary-outline' | 'secondary' | 'secondary-outline' | 'ghost' | 'ghost-red' | 'success' | 'error' | 'disabled'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   onClick?: () => void
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
+  loading?: boolean
+  success?: boolean
+  error?: boolean
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
+  fullWidth?: boolean
 }
 
 export interface CardProps {

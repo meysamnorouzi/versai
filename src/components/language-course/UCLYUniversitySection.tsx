@@ -2,7 +2,7 @@ import React from 'react'
 
 const UCLYUniversitySection: React.FC = () => {
   return (
-    <div className="w-full py-20 bg-white">
+    <div className="w-full py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#fdf7f7] rounded-2xl outline outline-1 outline-offset-[-0.50px] outline-[#f2c3be] overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8">

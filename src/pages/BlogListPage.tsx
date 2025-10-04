@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogCard from '../components/blog/BlogCard'
+import Button from '../components/ui/Button'
 import useSEO from '../hooks/useSEO'
 
 const BlogListPage: React.FC = () => {
@@ -147,9 +148,9 @@ const BlogListPage: React.FC = () => {
           
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <button className="bg-cyan-800 hover:bg-cyan-900 text-white px-8 py-3 rounded-2xl font-semibold font-['IRANYekanX'] transition-colors duration-200">
+            <Button variant="secondary" size="lg">
               مشاهده مقالات بیشتر
-            </button>
+            </Button>
           </div>
         </div>
       </div>

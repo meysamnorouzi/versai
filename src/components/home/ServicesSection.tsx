@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../ui/Button'
 
 const ServicesSection: React.FC = () => {
   const services = [
@@ -29,7 +30,7 @@ const ServicesSection: React.FC = () => {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -54,9 +55,13 @@ const ServicesSection: React.FC = () => {
               <div className="self-stretch text-center justify-start text-stone-50 text-xl font-semibold font-['IRANYekanX'] leading-snug opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                 {service.title}
               </div>
-              <button className="self-stretch h-11 px-6 py-3 bg-white rounded-[32px] outline outline-1 outline-offset-[-1px] outline-red-500 inline-flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
-                <div className="justify-start text-red-500 text-lg font-bold font-['IRANYekanX'] leading-tight">اطلاعات بیشتر</div>
-              </button>
+              <Button 
+                variant="primary-outline" 
+                size="md" 
+                className="self-stretch opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200"
+              >
+                اطلاعات بیشتر
+              </Button>
             </div>
           ))}
         </div>
@@ -75,9 +80,13 @@ const ServicesSection: React.FC = () => {
               <div className="self-stretch text-center justify-start text-stone-50 text-xl font-semibold font-['IRANYekanX'] leading-snug opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                 {service.title}
               </div>
-              <button className="self-stretch h-11 px-6 py-3 bg-white rounded-[32px] outline outline-1 outline-offset-[-1px] outline-red-500 inline-flex justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200">
-                <div className="justify-start text-red-500 text-lg font-bold font-['IRANYekanX'] leading-tight">اطلاعات بیشتر</div>
-              </button>
+              <Button 
+                variant="primary-outline" 
+                size="md" 
+                className="self-stretch opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200"
+              >
+                اطلاعات بیشتر
+              </Button>
             </div>
           ))}
         </div>

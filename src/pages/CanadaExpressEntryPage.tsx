@@ -43,7 +43,7 @@ const CanadaExpressEntryPage: React.FC = () => {
     },
     {
       title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "/images/canada-express-entry-page/Rectangle 49 (1).png",
+      image: "https://www.figma.com/api/mcp/asset/0d41dbe2-6de4-4174-8066-0c8e6d6d60a1",
       link: "/articles/spain-digital-nomad-visa"
     },
     {

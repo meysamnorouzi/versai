@@ -1,32 +1,36 @@
 import React from 'react'
 import Icon from '../ui/Icon'
+import Button from '../ui/Button'
 
 const LanguageCourseSection: React.FC = () => {
   const features = [
     {
-      title: 'شهریه مقرون‌به‌صرفه',
-      iconName: 'coins'
+      title: 'پروسه کوتاه',
+      iconName: 'component'
     },
     {
       title: 'امکان رزرو خوابگاه دولتی',
       iconName: 'delivery'
     },
     {
-      title: 'پروسه کوتاه',
+      title: 'شهریه مقرون‌به‌صرفه',
+      iconName: 'coins'
+    },
+ 
+    {
+      title: 'بدون نیاز به مدرک زبان',
+      iconName: 'component'
+    },
+
+    {
+      title: 'امکان کار دانشجویی',
       iconName: 'clock'
     },
     {
       title: 'بیمه پزشکی رایگان',
       iconName: 'medical'
     },
-    {
-      title: 'امکان کار دانشجویی',
-      iconName: 'group'
-    },
-    {
-      title: 'بدون نیاز به مدرک زبان',
-      iconName: 'component'
-    }
+
   ]
 
   return (
@@ -81,9 +85,9 @@ const LanguageCourseSection: React.FC = () => {
 
 
         <div className="text-center">
-          <button className="px-6 py-3 bg-[#f2f9ff] rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#d74a3c] inline-flex justify-center items-center gap-2">
-            <div className="text-[#d74a3c] text-lg font-bold font-['IRANYekanX'] leading-tight">اطلاعات بیشتر</div>
-          </button>
+          <Button variant="primary-outline" size="md">
+            اطلاعات بیشتر
+          </Button>
         </div>
       </div>
     </div>

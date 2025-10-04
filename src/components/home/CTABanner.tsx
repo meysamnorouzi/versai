@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../ui/Button'
 
 const CTABanner: React.FC = () => {
   return (
@@ -20,9 +21,9 @@ const CTABanner: React.FC = () => {
             دوره زبان، سریعترین و راحت ترین روش مهاجرت به فرانسه
           </div>
 
-          <button className="px-6 py-3 bg-white rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#d74a3c] inline-flex justify-center items-center gap-2">
-          <div className="text-[#d74a3c] text-lg font-bold font-['IRANYekanX'] leading-tight">اطلاعات بیشتر</div>
-        </button>
+          <Button variant="secondary" size="md">
+            اطلاعات بیشتر
+          </Button>
         </div>
       
       </div>

@@ -50,7 +50,7 @@ const Header: React.FC = () => {
   
   return (
     <>
-      <div className="w-full bg-white rounded-bl-2xl rounded-br-2xl border-b border-zinc-100" dir="rtl">
+      <div className="w-full bg-white rounded-bl-2xl rounded-br-2xl border-b border-zinc-100 sticky top-0 z-50" dir="rtl">
         <Container className="h-24 py-3 flex justify-between items-center gap-10">
           {/* Logo */}
           <div className="flex-shrink-0">

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../ui/Button'
 
 const HeroSection: React.FC = () => {
   return (
@@ -19,9 +20,9 @@ const HeroSection: React.FC = () => {
                 انتخاب ورسای به‌معنای برخورداری از مشاوره حرفه‌ای، برنامه‌ریزی واقع‌بینانه و پیگیری مستمر تا تحقق هدف مهاجرت شماست.
               </div>
             </div>
-            <button className="px-6 py-3 bg-[#d74a3c] rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#e5867d] inline-flex justify-center items-center gap-2">
-              <div className="text-white text-lg font-bold font-['IRANYekanX'] leading-tight">درخواست مشاوره</div>
-            </button>
+            <Button variant="primary" size="md">
+              درخواست مشاوره
+            </Button>
           </div>
 
 

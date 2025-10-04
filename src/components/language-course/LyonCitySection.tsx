@@ -2,7 +2,7 @@ import React from 'react'
 
 const LyonCitySection: React.FC = () => {
   return (
-    <div className="w-full py-12 lg:py-20 bg-white">
+    <div className="w-full py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left side - Lyon Description */}

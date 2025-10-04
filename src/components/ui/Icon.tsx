@@ -26,6 +26,7 @@ export const ICONS = {
   aboutVersai: {
     target: '/icons/home/about-versai/Target.svg',
     testing: '/icons/home/about-versai/AB testing.svg',
+    speak: '/icons/home/about-versai/legal-friction-talk-users.svg',
     leftArrow: '/icons/home/about-versai/Left, Arrow.svg',
     leftArrow2: '/icons/home/about-versai/Left, Arrow(1).svg',
     checkmark: '/icons/home/about-versai/question-checkmark-circle.svg',

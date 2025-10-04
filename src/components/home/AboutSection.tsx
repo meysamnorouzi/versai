@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../ui/Container'
 import Icon from '../ui/Icon'
 import VideoPlayer from '../ui/VideoPlayer'
 import { getVideoUrl, getPosterUrl, getVideoMetadata } from '../../config/videos'
 
 const AboutSection: React.FC = () => {
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
+  
   const features = [
     {
       title: 'انتخاب بهترین مسیر مهاجرتی',
@@ -12,7 +14,7 @@ const AboutSection: React.FC = () => {
     },
     {
       title: 'مشاوره دقیق و تخصصی',
-      iconName: 'testing'
+      iconName: 'speak'
     },
     {
       title: 'ارزیابی سطح زبان و مدارک',
@@ -20,7 +22,7 @@ const AboutSection: React.FC = () => {
     },
     {
       title: 'پشتیبانی کامل تا اقامت',
-      iconName: ''
+      iconName: 'testing'
     }
   ]
 
@@ -36,8 +38,33 @@ const AboutSection: React.FC = () => {
     {
       text: "اقدام برای دوره زبان فرانسه برای من با همکاری ورسای خیلی راحت تر شد. من پرونده کامپوس فرانس رو ایجاد کرده بودم ولی هیچ ایده ای نداشتم که چطور پرونده رو کامل کنم و باید چه نکاتی رو رعایت کنم. کارشناس های باتجربه ورسای پرونده من رو به طور دقیق و در دقیقه نود کامل کردند.",
       image: "/images/home-page/success-story3.png"
-    }
+    },
+    {
+      text: "من به کمک موسسه ورسای تونستم برای کالج زبان دانشگاه UCLY لیون اقدام کنم. کل پروسه برای من حدود شش ماه طول کشید. به طور مرتب با مشاور مجموعه مراحل رو چک میکردم و کل پروسه ثبت نام و تهیه مدارک و مصاحبه کامپوس و رزرو خوابگاه، بدون استرس پیش رفت. واقعا از همراهی موسسه ممنونم.",
+      image: "/images/home-page/success-story1.png"
+    },
+    {
+      text: "من به دنبال مهاجرت با Express Entry بودم و با چند موسسه مشورت کردم. برخی از آنها تنها به ارائه خدمات پایه بسنده می‌کردند و نتایج مطلوبی نداشتند. وقتی با ورسای کار را آغاز کردم، تیم مهاجرتی‌شان با بررسی دقیق CRS و بررسی استراتژی استانی (PNP) کارمان را به سطح جدیدی برد.",
+      image: "/images/home-page/success-story2.png"
+    },
   ]
+
+  const handlePrevious = () => {
+    setCurrentTestimonialIndex((prev) => 
+      prev === 0 ? testimonials.length - 3 : prev - 1
+    )
+  }
+
+  const handleNext = () => {
+    setCurrentTestimonialIndex((prev) => 
+      prev >= testimonials.length - 3 ? 0 : prev + 1
+    )
+  }
+
+  const visibleTestimonials = testimonials.slice(
+    currentTestimonialIndex, 
+    currentTestimonialIndex + 3
+  )
 
   return (
     <div className="w-full h-[1171px] bg-[#1e3950]/80 relative" style={{ backgroundImage: 'url(/images/home-page/blue-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -123,22 +150,30 @@ const AboutSection: React.FC = () => {
 
           {/* Testimonials carousel */}
           <div className="flex items-center gap-4 relative">
-            <button className="w-14 h-14 bg-[#1e3950] rounded-[32px] border border-[#d3e2ef] flex items-center justify-center hover:bg-[#2a4a60] transition-colors">
+            <button 
+              onClick={handlePrevious}
+              className="w-14 h-14 bg-[#1e3950] rounded-[32px] border border-[#d3e2ef] flex items-center justify-center hover:bg-[#2a4a60] transition-colors cursor-pointer"
+            >
               <div className="text-[#f2f9ff] text-xl">‹</div>
             </button>
 
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-80  bg-[#1e3950] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#316086] overflow-hidden flex flex-col items-start justify-start gap-2 py-4 px-6">
-                <img className="border border-[#d3e2ef]" src={testimonial.image} alt={`Testimonial ${index + 1}`} />
-                <div className=" text-right text-[#d3e2ef] text-sm font-medium font-['IRANYekanX'] leading-tight">
-                  {testimonial.text}
+            <div className="flex gap-4 overflow-hidden">
+              {visibleTestimonials.map((testimonial, index) => (
+                <div key={currentTestimonialIndex + index} className="w-80 bg-[#1e3950] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#316086] overflow-hidden flex flex-col items-start justify-start gap-2 py-4 px-6 flex-shrink-0">
+                  <img className="border border-[#d3e2ef]" src={testimonial.image} alt={`Testimonial ${currentTestimonialIndex + index + 1}`} />
+                  <div className="text-right text-[#d3e2ef] text-sm font-medium font-['IRANYekanX'] leading-6 mt-4">
+                    {testimonial.text}
+                  </div>
                 </div>
-              </div>
-            ))}
-            <button className="w-14 h-14 bg-[#1e3950] rounded-[32px] border border-[#d3e2ef] flex items-center justify-center hover:bg-[#2a4a60] transition-colors">
+              ))}
+            </div>
+
+            <button 
+              onClick={handleNext}
+              className="w-14 h-14 bg-[#1e3950] rounded-[32px] border border-[#d3e2ef] flex items-center justify-center hover:bg-[#2a4a60] transition-colors cursor-pointer"
+            >
               <div className="text-[#f2f9ff] text-xl">›</div>
             </button>
-
           </div>
         </div>
       </Container>

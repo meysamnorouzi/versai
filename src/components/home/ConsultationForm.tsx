@@ -19,7 +19,7 @@ const ConsultationForm: React.FC = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -47,7 +47,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="نام و نام خانوادگی خود را وارد کنید."
                     value={formData.name}
                     onChange={(e) => handleChange('name', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-300 inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-64 p-3 bg-white rounded-2xl   inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
@@ -60,7 +60,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="شماره تماس خود را وارد کنید."
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-300 inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
@@ -76,7 +76,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="آدرس ایمیل خود را وارد کنید."
                     value={formData.email}
                     onChange={(e) => handleChange('email', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-300 inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-64 p-3 bg-white rounded-2xl  inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
@@ -87,7 +87,7 @@ const ConsultationForm: React.FC = () => {
                   <select
                     value={formData.subject}
                     onChange={(e) => handleChange('subject', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-300 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
+                    className="w-64 p-3 bg-white rounded-2xl  text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
                     required
                   >
                     <option value="">موضوع مشاوره را انتخاب کنید.</option>
@@ -107,7 +107,7 @@ const ConsultationForm: React.FC = () => {
                   placeholder="در صورت تمایل، متن پیام خود را بنویسید."
                   value={formData.message}
                   onChange={(e) => handleChange('message', e.target.value)}
-                  className="w-[566px] h-24 p-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-stone-300 inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
+                  className="w-[566px] h-24 p-3 bg-white rounded-2xl  inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
                 />
               </div>
 
@@ -123,15 +123,8 @@ const ConsultationForm: React.FC = () => {
           <div className="relative flex flex-col items-center">
             <div className="relative">
               <img className="w-[474px] max-w-full" src="/images/home-page/consulting-request.png" alt="Consultation" />
-              <div className="absolute -top-4 -right-4 transform rotate-[-12.84deg]">
-                <img className="w-28 h-60" src="/images/home-page/Hero photo.png" alt="Phone" />
-              </div>
             </div>
             
-            <div className="mt-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
-              <div className="text-gray-800 text-2xl">🤔</div>
-              <div className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">کدوم روش برای من مناسبه؟</div>
-            </div>
           </div>
         </div>
       </div>

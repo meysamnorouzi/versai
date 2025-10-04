@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../ui/Button'
 
 const LanguageCourseCTA: React.FC = () => {
   return (
@@ -20,11 +21,9 @@ const LanguageCourseCTA: React.FC = () => {
           با دوره زبان، بی دردسر برو فرانسه!
         </h2>
         
-        <button className="px-4 sm:px-6 py-2 sm:py-3 bg-[#d74a3c] rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#e5867d] inline-flex justify-center items-center gap-2 hover:bg-[#c63d2f] transition-colors duration-200">
-          <div className="text-[#fdfeff] text-base sm:text-lg font-bold font-['IRANYekanX'] leading-tight">
-            درخواست مشاوره
-          </div>
-        </button>
+        <Button variant="primary" size="md">
+          درخواست مشاوره
+        </Button>
       </div>
     </div>
   )
