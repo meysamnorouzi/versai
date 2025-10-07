@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from './Button'
-import { Check, X, Loader2, ArrowRight, Download } from 'lucide-react'
+import { Check, ArrowRight, Download } from 'lucide-react'
 
 const ButtonShowcase: React.FC = () => {
   const [loading, setLoading] = useState(false)
@@ -96,7 +96,7 @@ const ButtonShowcase: React.FC = () => {
             <Button variant="secondary" rightIcon={<ArrowRight className="w-4 h-4" />}>
               With Right Icon
             </Button>
-            <Button variant="outline" leftIcon={<Download className="w-4 h-4" />} rightIcon={<ArrowRight className="w-4 h-4" />}>
+            <Button variant="primary-outline" leftIcon={<Download className="w-4 h-4" />} rightIcon={<ArrowRight className="w-4 h-4" />}>
               Both Icons
             </Button>
           </div>

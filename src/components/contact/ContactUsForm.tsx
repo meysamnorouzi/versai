@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../ui/Button';
+import Container from '../ui/Container';
 
 const ContactUsForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const ContactUsForm: React.FC = () => {
 
   return (
     <section className="py-16 bg-[#f2f1f1] relative">
-      <div className="max-w-7xl mx-auto px-4">
+      <Container>
         <div className="relative w-full h-[624px] rounded-2xl overflow-hidden border-2 border-[#d3e2ef]">
           {/* Background Image */}
           <div className="absolute inset-0">
@@ -40,7 +41,7 @@ const ContactUsForm: React.FC = () => {
           
           {/* Form Content */}
           <div className="relative z-10 h-full flex items-center justify-center">
-            <div className="w-full max-w-4xl px-8">
+            <div className="w-full px-8">
               <h2 className="text-[20px] font-semibold font-['IRANYekanX'] text-[#f2f9ff] text-center mb-8 leading-[1.1]">
                 ثبت درخواست مشاوره با ورسای
               </h2>
@@ -179,7 +180,7 @@ const ContactUsForm: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

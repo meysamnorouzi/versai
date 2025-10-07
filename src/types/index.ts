@@ -121,6 +121,9 @@ export interface RelatedArticle {
   title: string
   image: string
   link: string
+  category?: string
+  date?: string
+  excerpt?: string
 }
 
 export interface FAQSectionProps {

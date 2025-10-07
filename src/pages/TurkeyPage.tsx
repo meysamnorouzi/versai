@@ -42,19 +42,22 @@ const TurkeyPage: React.FC = () => {
 
   const blogArticles = [
     {
-      title: 'راهنمای کامل ویزای کاری ترکیه',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/turkey-work-visa-guide'
+      title: 'مزایای دوره زبان کشور فرانسه',
+      image: '/images/blog-page/Rectangle 41.png',
+      link: '/articles/french-language-course-benefits',
+      excerpt: 'دلایل محبوبیت دوره‌های زبان فرانسه برای مهاجرت.'
     },
     {
-      title: 'تحصیل در دانشگاه‌های معتبر ترکیه',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/study-turkey-universities'
+      title: 'شرایط درخواست ویزای دیجیتال نومد اسپانیا',
+      image: '/images/blog-page/Rectangle 41(1).png',
+      link: '/articles/spain-digital-nomad-visa',
+      excerpt: 'گام‌های کلیدی برای دریافت ویزای نومد اسپانیا.'
     },
     {
-      title: 'خرید ملک و اقامت در ترکیه',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/turkey-property-investment'
+      title: 'معرفی دانشگاه UCLY شهر لیون فرانسه',
+      image: '/images/blog-page/Rectangle 41(2).png',
+      link: '/articles/ucly-university-lyon',
+      excerpt: 'درباره دانشگاه UCLY و مزایای تحصیل در لیون.'
     }
   ]
 

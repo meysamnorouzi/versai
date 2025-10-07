@@ -2,10 +2,9 @@ import React from 'react';
 import SEOHead from '../components/seo/SEOHead';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import Input from '../components/ui/Input';
 import FAQSection from '../components/ui/FAQSection';
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection';
+import ConsultationForm from '../components/ui/ConsultationForm';
 
 const CanadaImmigrationPage: React.FC = () => {
   const faqItems = [
@@ -38,18 +37,21 @@ const CanadaImmigrationPage: React.FC = () => {
   const relatedArticles = [
     {
       title: "مزایای دوره زبان کشور فرانسه",
-      image: "/images/canada-immigration-page/pexels-mikhail-nilov-8430274 1.png",
-      link: "/articles/french-language-course-benefits"
+      image: "/images/blog-page/Rectangle 41.png",
+      link: "/articles/french-language-course-benefits",
+      excerpt: "راهنمای انتخاب دوره زبان و مزایای تحصیل در فرانسه."
     },
     {
       title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "/images/canada-immigration-page/Rectangle 49 (1).png",
-      link: "/articles/spain-digital-nomad-visa"
+      image: "/images/blog-page/Rectangle 41(1).png",
+      link: "/articles/spain-digital-nomad-visa",
+      excerpt: "شرایط، مدارک و نکات مهم برای دریافت ویزای نومد اسپانیا."
     },
     {
       title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-      image: "/images/canada-immigration-page/Rectangle 71.png",
-      link: "/articles/ucly-university-lyon"
+      image: "/images/blog-page/Rectangle 41(2).png",
+      link: "/articles/ucly-university-lyon",
+      excerpt: "با دانشگاه UCLY و فرصت‌های تحصیلی آن در لیون آشنا شوید."
     }
   ];
 
@@ -91,19 +93,13 @@ const CanadaImmigrationPage: React.FC = () => {
         description="راهنمای کامل روش‌های مختلف مهاجرت به کانادا شامل ویزای توریستی، سرمایه‌گذاری، کاری، تحصیلی و حمایتی با مشاوره تخصصی ورسای"
         keywords="مهاجرت کانادا، ویزای کانادا، اقامت کانادا، سرمایه گذاری کانادا، ویزای کاری کانادا، ورسای"
       />
-      
-      <div className="min-h-screen bg-zinc-100 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-1/4 right-0 w-96 h-96 border border-slate-400/50 opacity-20 transform translate-x-1/2 -translate-y-1/2 rotate-[21.72deg]"></div>
-          <div className="absolute bottom-1/4 left-0 w-80 h-80 border border-slate-400/50 opacity-20 transform -translate-x-1/2 translate-y-1/2 rotate-[21.72deg]"></div>
-        </div>
 
+      <div className="min-h-screen bg-zinc-100 relative overflow-hidden">
 
         {/* Hero Section */}
-        <section className="py-16">
+        <section className="pt-16">
           <Container>
-            <div className="text-center mb-16">
+            <div className="text-center">
               <h1 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4 text-cyan-800">
                 مهاجرت به کانادا
               </h1>
@@ -129,23 +125,26 @@ const CanadaImmigrationPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-8">
-                <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right">
-                  با توجه به شرایطی که دارید برای مثال با در نظر گرفتن وضعیت تاهل، میزان بودجه و سرمایه، تخصص و مهارت هایی که دارید و … می توانید یکی از روش های مهاجرت به کانادا را انتخاب و اقدامات لازم را انجام دهید، نقطه بسیار مهم این است که اقدامات و دریافت ویزا برای مهاجرت کار آسانی نیست، اما تمام کسانی که د راه درست تلاش کرده و اقدامات لازم را انجام داده اند موفق به دریافت ویزای مهاجرت به کانادا شده اند.
-                </p>
-              </div>
+
             </div>
           </Container>
         </section>
 
         {/* Banner Section */}
-        <section className="bg-slate-700/80 py-20 mb-16">
+        <section className="relative py-20 mb-16">
+          <div className="absolute inset-0">
+            <img
+              src="/images/canada-immigration-page/Rectangle 66.png"
+              alt="Canada Immigration"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <Container>
-            <div className="text-center text-white">
-              <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
+            <div className="relative text-center text-white">
+              <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
                 برای رویای کانادا، یک قدم بردار.
               </h2>
-              <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
+              <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
                 ارزیابی امتیاز شما با ورسای
               </p>
               <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
@@ -155,104 +154,39 @@ const CanadaImmigrationPage: React.FC = () => {
           </Container>
         </section>
 
+        <div className="mt-8">
+          <Container>
+            <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right">
+              با توجه به شرایطی که دارید برای مثال با در نظر گرفتن وضعیت تاهل، میزان بودجه و سرمایه، تخصص و مهارت هایی که دارید و … می توانید یکی از روش های مهاجرت به کانادا را انتخاب و اقدامات لازم را انجام دهید، نقطه بسیار مهم این است که اقدامات و دریافت ویزا برای مهاجرت کار آسانی نیست، اما تمام کسانی که د راه درست تلاش کرده و اقدامات لازم را انجام داده اند موفق به دریافت ویزای مهاجرت به کانادا شده اند.
+            </p>
+          </Container>
+
+        </div>
+
         {/* Consultation Form Section */}
         <section className="py-16">
           <Container>
-            <Card className="bg-stone-300/25 border-2 border-slate-200 p-8 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-950/20 rounded-2xl"></div>
-              <div className="relative z-10">
-                <h2 className="text-sky-50 text-xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-8">
-                  ثبت درخواست مشاوره با ورسای
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>نام و نام خانوادگی
-                    </label>
-                    <Input 
-                      placeholder="نام و نام خانوادگی خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>شماره تماس
-                    </label>
-                    <Input 
-                      placeholder="شماره تماس خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>موضوع مشاوره
-                    </label>
-                    <select 
-                      className="w-full px-4 py-3 bg-sky-50 border border-stone-300 rounded-lg text-right text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">موضوع مشاوره را انتخاب کنید.</option>
-                      <option value="immigration">مهاجرت به کانادا</option>
-                      <option value="study">تحصیل در کانادا</option>
-                      <option value="work">کار در کانادا</option>
-                      <option value="investment">سرمایه گذاری</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>ایمیل
-                    </label>
-                    <Input 
-                      placeholder="آدرس ایمیل خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right block mb-2">
-                    متن پیام
-                  </label>
-                  <textarea 
-                    placeholder="در صورت تمایل، متن پیام خود را بنویسید."
-                    className="w-full h-24 p-3 bg-sky-50 border border-stone-300 rounded-2xl text-right text-neutral-400 text-sm font-medium font-['IRANYekanX'] resize-none"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Button className="bg-red-500 hover:bg-red-600 text-sky-50 px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
-                    ارسال درخواست
-                  </Button>
-                </div>
-                <div className="mt-8 flex items-center justify-center gap-2">
-                  <div className="w-6 h-6 bg-red-200 rounded"></div>
-                  <span className="text-stone-50 text-xl font-medium font-['IRANYekanX']">۰۲۱۲۸۴۲۱۶۹۰</span>
-                </div>
-                <div className="mt-4 flex justify-center">
-                  <Button className="bg-sky-50 border border-red-500 text-red-500 px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX'] flex items-center gap-2">
-                    <div className="w-6 h-6 bg-red-500 rounded"></div>
-                    ارتباط در واتساپ
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9563.PNG" />
           </Container>
         </section>
 
-        {/* FAQ Section */}
-        <FAQSection 
-          faqItems={faqItems}
-          title="سوالات متداول"
-          className="py-16"
-        />
 
         {/* Related Articles Section */}
-        <RelatedArticlesSection 
+        <RelatedArticlesSection
           articles={relatedArticles}
           title="مقالات مرتبط"
           showViewAll={true}
           viewAllLink="/articles"
           className="py-16"
         />
+
+        {/* FAQ Section */}
+        <FAQSection
+          faqItems={faqItems}
+          title="سوالات متداول"
+          className="py-16"
+        />
+
 
       </div>
     </>

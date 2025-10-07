@@ -3,7 +3,8 @@ import SEOHead from '../components/seo/SEOHead';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import Input from '../components/ui/Input';
+import Icon from '../components/ui/Icon';
+import ConsultationForm from '../components/ui/ConsultationForm';
 import FAQSection from '../components/ui/FAQSection';
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection';
 
@@ -38,18 +39,21 @@ const CanadaExpressEntryPage: React.FC = () => {
   const relatedArticles = [
     {
       title: "مزایای دوره زبان کشور فرانسه",
-      image: "/images/canada-express-entry-page/pexels-mikhail-nilov-8430274 1.png",
-      link: "/articles/french-language-course-benefits"
+      image: "/images/blog-page/Rectangle 41.png",
+      link: "/articles/french-language-course-benefits",
+      excerpt: "اگر به دنبال تقویت زبان فرانسوی هستید، این مقاله راهنمای شماست."
     },
     {
       title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "https://www.figma.com/api/mcp/asset/0d41dbe2-6de4-4174-8066-0c8e6d6d60a1",
-      link: "/articles/spain-digital-nomad-visa"
+      image: "/images/blog-page/Rectangle 41(1).png",
+      link: "/articles/spain-digital-nomad-visa",
+      excerpt: "از مدارک تا زمان‌بندی، هرآنچه برای این ویزا باید بدانید."
     },
     {
       title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-      image: "/images/canada-express-entry-page/Rectangle 71.png",
-      link: "/articles/ucly-university-lyon"
+      image: "/images/blog-page/Rectangle 41(2).png",
+      link: "/articles/ucly-university-lyon",
+      excerpt: "نگاهی به دانشگاه UCLY و فرصت‌های تحصیلی در شهر لیون."
     }
   ];
 
@@ -124,45 +128,68 @@ const CanadaExpressEntryPage: React.FC = () => {
             {/* Target Audience */}
             <div className="text-center mb-16">
               <h2 className="text-red-700 text-xl font-semibold font-['IRANYekanX'] leading-snug mb-4">مخاطبین هدف</h2>
+             
+              <div className="flex justify-center gap-10 mb-8">
+                <Icon 
+                  section="easyImmigration" 
+                  name="component" 
+                  className="w-12 h-12" 
+                  alt="Component" 
+                />
+                <Icon 
+                  section="easyImmigration" 
+                  name="delivery" 
+                  className="w-12 h-12" 
+                  alt="Delivery" 
+                />
+                <Icon 
+                  section="easyImmigration" 
+                  name="coins" 
+                  className="w-12 h-12" 
+                  alt="Coins" 
+                />
+              </div>
               <p className="text-cyan-800 text-sm font-semibold font-['IRANYekanX'] leading-tight mb-8 max-w-2xl mx-auto">
                 متقاضیان دارای تحصیلات دانشگاهی یا کارشناسی، سابقه کار مرتبط، سطح زبان قابل قبول، و سازگاری با نیازهای بازار کار کانادا (مثلاً در زمینه‌های تقاضا محور مانند فناوری، بهداشت، مهندسی، و خدمات)
               </p>
-              <div className="flex justify-center gap-10 mb-8">
-                <div className="w-12 h-12 bg-red-700 rounded"></div>
-                <div className="w-12 h-12 bg-red-700 rounded"></div>
-                <div className="w-12 h-12 bg-red-700 rounded"></div>
-              </div>
-              <div className="w-full h-px bg-white max-w-2xl mx-auto"></div>
             </div>
 
             {/* Benefits Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              <div className="relative">
-                <img 
-                  src="/images/canada-express-entry-page/pexels-mikhail-nilov-8430274 1.png" 
-                  alt="Canada Express Entry" 
-                  className="w-full h-96 object-cover rounded-2xl border border-stone-300"
-                />
-              </div>
-              <div className="space-y-4">
+            <div className="space-y-4">
                 <h2 className="text-red-700 text-2xl font-semibold font-['IRANYekanX'] leading-relaxed text-right">مزایای اکسپرس انتری</h2>
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start gap-2 text-right">
-                      <div className="w-6 h-6 bg-red-700 rounded flex-shrink-0 mt-1"></div>
-                      <p className="text-cyan-800 text-base font-medium font-['IRANYekanX'] leading-relaxed">{benefit}</p>
+                <img src="/icons/france office page/Group.svg" alt="" className="w-6 h-6 flex-shrink-0" />
+                <p className="text-cyan-800 text-base font-medium font-['IRANYekanX'] leading-relaxed">{benefit}</p>
                     </div>
                   ))}
                 </div>
               </div>
+              <div className="relative">
+                <img 
+                  src="/images/canada-express-entry-page/pexels-olly-3777559 1.png" 
+                  alt="Canada Express Entry" 
+                  className="w-full h-96 object-cover rounded-2xl border border-stone-300"
+                />
+              </div>
+              
             </div>
           </Container>
         </section>
 
         {/* Banner Section */}
-        <section className="bg-slate-700/80 py-20 mb-16">
+        <section className="relative py-20 mb-16">
+          <div className="absolute inset-0">
+            <img
+              src="/images/canada-immigration-page/Rectangle 66.png"
+              alt="Canada Immigration"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <Container>
-            <div className="text-center text-white">
+            <div className="relative text-center text-white">
               <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
                 برای رویای کانادا، یک قدم بردار.
               </h2>
@@ -179,15 +206,9 @@ const CanadaExpressEntryPage: React.FC = () => {
         {/* CRS Factors Section */}
         <section className="py-16">
           <Container>
-            <Card className="bg-sky-50 border-red-200 p-8">
+            <Card className="bg-[#F2F9FF] border-red-200 p-8 border">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="relative">
-                  <img 
-                    src="/images/canada-express-entry-page/1743016666528 1.png" 
-                    alt="CRS Factors" 
-                    className="w-full h-80 object-cover rounded-2xl"
-                  />
-                </div>
+
                 <div className="space-y-4">
                   <h2 className="text-red-700 text-xl font-semibold font-['IRANYekanX'] leading-snug text-right">چه عواملی بر روی امتیاز CRS تاثیر می گذارند؟</h2>
                   <div className="space-y-4">
@@ -204,6 +225,13 @@ const CanadaExpressEntryPage: React.FC = () => {
                     </p>
                   </div>
                 </div>
+                <div className="relative">
+                  <img 
+                    src="/images/canada-express-entry-page/2-etoiles-bienvenue-en-france-2_petit 1.png" 
+                    alt="CRS Factors" 
+                    className="w-2/3 object-cover rounded-2xl mx-auto"
+                  />
+                </div>
               </div>
             </Card>
           </Container>
@@ -212,92 +240,10 @@ const CanadaExpressEntryPage: React.FC = () => {
         {/* Consultation Form Section */}
         <section className="py-16">
           <Container>
-            <Card className="bg-stone-300/25 border-2 border-slate-200 p-8 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-950/20 rounded-2xl"></div>
-              <div className="relative z-10">
-                <h2 className="text-sky-50 text-xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-8">
-                  ثبت درخواست مشاوره با ورسای
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>نام و نام خانوادگی
-                    </label>
-                    <Input 
-                      placeholder="نام و نام خانوادگی خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>شماره تماس
-                    </label>
-                    <Input 
-                      placeholder="شماره تماس خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>موضوع مشاوره
-                    </label>
-                    <select 
-                      className="w-full px-4 py-3 bg-sky-50 border border-stone-300 rounded-lg text-right text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">موضوع مشاوره را انتخاب کنید.</option>
-                      <option value="express-entry">اکسپرس انتری کانادا</option>
-                      <option value="study">تحصیل در کانادا</option>
-                      <option value="work">کار در کانادا</option>
-                      <option value="investment">سرمایه گذاری</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right">
-                      <span className="text-red-200">*</span>ایمیل
-                    </label>
-                    <Input 
-                      placeholder="آدرس ایمیل خود را وارد کنید."
-                      className="bg-sky-50 border-stone-300 text-right"
-                    />
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <label className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] text-right block mb-2">
-                    متن پیام
-                  </label>
-                  <textarea 
-                    placeholder="در صورت تمایل، متن پیام خود را بنویسید."
-                    className="w-full h-24 p-3 bg-sky-50 border border-stone-300 rounded-2xl text-right text-neutral-400 text-sm font-medium font-['IRANYekanX'] resize-none"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Button className="bg-red-500 hover:bg-red-600 text-sky-50 px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
-                    ارسال درخواست
-                  </Button>
-                </div>
-                <div className="mt-8 flex items-center justify-center gap-2">
-                  <div className="w-6 h-6 bg-red-200 rounded"></div>
-                  <span className="text-stone-50 text-xl font-medium font-['IRANYekanX']">۰۲۱۲۸۴۲۱۶۹۰</span>
-                </div>
-                <div className="mt-4 flex justify-center">
-                  <Button className="bg-sky-50 border border-red-500 text-red-500 px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX'] flex items-center gap-2">
-                    <div className="w-6 h-6 bg-red-500 rounded"></div>
-                    ارتباط در واتساپ
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9564.PNG" />
           </Container>
         </section>
 
-        {/* FAQ Section */}
-        <FAQSection 
-          faqItems={faqItems}
-          title="سوالات متداول"
-          className="py-16"
-        />
 
         {/* Related Articles Section */}
         <RelatedArticlesSection 
@@ -308,78 +254,14 @@ const CanadaExpressEntryPage: React.FC = () => {
           className="py-16"
         />
 
-        {/* Footer */}
-        <footer className="bg-gradient-to-b from-blue-950 py-16">
-          <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-white">
-              <div className="space-y-4">
-                <h3 className="text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">پیوند های مفید</h3>
-                <div className="space-y-3">
-                  <p className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight">سایت سفارت فرانسه</p>
-                  <p className="text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight">سایت مترجم معتمد سفارت فرانسه</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">دسترسی سریع</h3>
-                <div className="space-y-3">
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دوره زبان</p>
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">اکسپرس انتری کانادا</p>
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">اقامت فرانسه</p>
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">تماس با ما</p>
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">مقالات</p>
-                  <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">ثبت شرکت در فرانسه</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">تماس با ما</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-red-200 rounded"></div>
-                    <p className="text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">
-                      +۹۸۲۱۲۸۴۲۱۶۹۰ / +۹۸۹۳۵۴۲۴۲۷۱۵
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-red-200 rounded"></div>
-                    <p className="text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">
-                      +33679949935
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-2">
-                    <div className="w-6 h-6 bg-red-200 rounded"></div>
-                    <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal text-right">
-                      دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای
-                    </p>
-                  </div>
-                  <div className="flex items-end gap-2">
-                    <div className="w-6 h-6 bg-red-200 rounded"></div>
-                    <p className="text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal text-right">
-                      دفتر فرانسه: 29A Route de Woippy, Metz 57050, France
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 pt-8 border-t border-blue-950">
-              <div className="flex flex-col items-center space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 bg-sky-50 rounded"></div>
-                  <div className="w-6 h-6 bg-sky-50 rounded"></div>
-                  <div className="w-6 h-6 bg-sky-50 rounded"></div>
-                  <div className="w-6 h-6 bg-sky-50 rounded"></div>
-                </div>
-                <div className="w-full h-px bg-blue-950"></div>
-                <p className="text-slate-200 text-base font-semibold font-['IRANYekanX'] leading-normal text-center">
-                  تمام حقوق این وبسایت متعلق به موسسه مهاجرتی <span className="text-white">ورسای</span> است.
-                </p>
-              </div>
-            </div>
-          </Container>
-        </footer>
+        {/* FAQ Section */}
+        <FAQSection 
+          faqItems={faqItems}
+          title="سوالات متداول"
+          className="py-16"
+        />
+
+
       </div>
     </>
   );

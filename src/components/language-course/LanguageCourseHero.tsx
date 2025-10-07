@@ -25,8 +25,32 @@ const LanguageCourseHero: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Right side - Video Player */}
-          <div className="order-2 lg:order-1">
+        
+
+          {/* Left side - Content */}
+          <div>
+            <div className="text-right">
+              <h1 className="text-2xl sm:text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-6">
+                <span className="text-[#316086]">مهاجرت آسان با </span>
+                <span className="text-[#d74a3c]">دوره زبان</span>
+              </h1>
+              
+              <div className="w-full text-[#6d6e70] text-base sm:text-lg font-medium font-['IRANYekanX'] leading-7 space-y-4">
+                <p>
+                  اگر میخواهید در کشور فرانسه قبل از ورود به دانشگاه، زبان فرانسوی را به خوبی فرا بگیرید، شرکت در دوره زبان یا اصطلاحا کالج زبان این کشور مخصوص شماست.
+                </p>
+                <p>
+                  طول مدت این دوره های دانشگاهی بین ۳ ماه تا یک سال است. در این دوره ها چهار مهارت زبانی شما به خوبی تقویت می شود و مدرک سطح زبانی دانشگاه را دریافت میکنید. بعد از آن می توانید با خیال راحت وارد دانشگاه و رشته تخصصی خود شوید چون این مدرک معتبر است.
+                </p>
+                <p>
+                  موسسه ورسای نماینده رسمی دانشگاه UCLY لیون در ایران است. این دانشگاه با کادری مجرب به برگزاری دوره های گوناگون مثل دوره زبان می پردازد. دوره زبان در حال حاضر سریعترین و راحت ترین روش مهاجرت تحصیلی به فرانسه است. در این صفحه به معرفی این دوره ها و شرایط آن می پردازیم.
+                </p>
+              </div>
+            </div>
+          </div>
+
+            {/* Right side - Video Player */}
+            <div>
             <div className="w-full max-w-[605px] h-64 sm:h-80 lg:h-96 bg-gradient-to-b from-black/0 to-[#1e3950] rounded-2xl relative overflow-hidden mx-auto">
               {/* Video thumbnail */}
               <div className="absolute inset-0 bg-cover bg-center" style={{
@@ -49,27 +73,6 @@ const LanguageCourseHero: React.FC = () => {
             </div>
           </div>
 
-          {/* Left side - Content */}
-          <div className="order-1 lg:order-2">
-            <div className="text-right">
-              <h1 className="text-2xl sm:text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-6">
-                <span className="text-[#316086]">مهاجرت آسان با </span>
-                <span className="text-[#d74a3c]">دوره زبان</span>
-              </h1>
-              
-              <div className="w-full text-[#6d6e70] text-base sm:text-lg font-medium font-['IRANYekanX'] leading-7 space-y-4">
-                <p>
-                  اگر میخواهید در کشور فرانسه قبل از ورود به دانشگاه، زبان فرانسوی را به خوبی فرا بگیرید، شرکت در دوره زبان یا اصطلاحا کالج زبان این کشور مخصوص شماست.
-                </p>
-                <p>
-                  طول مدت این دوره های دانشگاهی بین ۳ ماه تا یک سال است. در این دوره ها چهار مهارت زبانی شما به خوبی تقویت می شود و مدرک سطح زبانی دانشگاه را دریافت میکنید. بعد از آن می توانید با خیال راحت وارد دانشگاه و رشته تخصصی خود شوید چون این مدرک معتبر است.
-                </p>
-                <p>
-                  موسسه ورسای نماینده رسمی دانشگاه UCLY لیون در ایران است. این دانشگاه با کادری مجرب به برگزاری دوره های گوناگون مثل دوره زبان می پردازد. دوره زبان در حال حاضر سریعترین و راحت ترین روش مهاجرت تحصیلی به فرانسه است. در این صفحه به معرفی این دوره ها و شرایط آن می پردازیم.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

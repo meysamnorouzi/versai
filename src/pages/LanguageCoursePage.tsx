@@ -3,8 +3,7 @@ import LanguageCourseHero from '../components/language-course/LanguageCourseHero
 import LanguageCourseBenefits from '../components/language-course/LanguageCourseBenefits'
 import LanguageCourseCTA from '../components/language-course/LanguageCourseCTA'
 import UCLYUniversitySection from '../components/language-course/UCLYUniversitySection'
-import LyonCitySection from '../components/language-course/LyonCitySection'
-import LanguageCourseConsultationForm from '../components/language-course/LanguageCourseConsultationForm'
+import ConsultationForm from '../components/ui/ConsultationForm'
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
 import FAQSection from '../components/ui/FAQSection'
 import useSEO from '../hooks/useSEO'
@@ -25,8 +24,7 @@ const LanguageCoursePage: React.FC = () => {
       <LanguageCourseBenefits />
       <LanguageCourseCTA />
       <UCLYUniversitySection />
-      <LyonCitySection />
-      <LanguageCourseConsultationForm />
+      <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9567.PNG" />
       <RelatedArticlesSection 
         articles={[
           {

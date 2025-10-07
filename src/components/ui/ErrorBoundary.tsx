@@ -53,7 +53,7 @@ class ErrorBoundary extends Component<Props, State> {
                 تلاش مجدد
               </Button>
               <Button 
-                variant="outline" 
+                variant="primary-outline" 
                 onClick={() => window.location.reload()} 
                 className="w-full"
               >

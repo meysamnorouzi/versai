@@ -1,9 +1,12 @@
 import React from 'react'
-import { Phone, MessageCircle, Star, Users, Building, Coins, FileText, User, FolderOpen, Pen, File } from 'lucide-react'
+import {  Users, Building, Coins, FileText, User, FolderOpen, Pen, File } from 'lucide-react'
+import Container from '../components/ui/Container'
 import Button from '../components/ui/Button'
+import ConsultationForm from '../components/ui/ConsultationForm'
 import FAQSection from '../components/ui/FAQSection'
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
 import useSEO from '../hooks/useSEO'
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 const FranceOfficePage: React.FC = () => {
 
@@ -175,103 +178,118 @@ const FranceOfficePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f2f1f1] font-['IRANYekanX'] relative">
-      
-      {/* Background Vectors */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 right-0 w-96 h-96 opacity-30 transform translate-x-1/2 -translate-y-1/2">
-          <div className="w-full h-full bg-gradient-to-br from-[#4686bb] to-[#316086] rounded-full transform rotate-[21.716deg]"></div>
-        </div>
-        <div className="absolute bottom-1/4 left-0 w-80 h-80 opacity-20 transform -translate-x-1/2 translate-y-1/2">
-          <div className="w-full h-full bg-gradient-to-br from-[#4686bb] to-[#316086] rounded-full transform rotate-[21.716deg]"></div>
-        </div>
-      </div>
+
+
 
       {/* Hero Section */}
-      <section className="relative py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-[32px] font-extrabold text-[#316086] mb-8 leading-[1.41]">
+      <section className="relative py-16 ">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-[32px] font-extrabold text-[#316086] mb-8 leading-[1.41]  max-w-2xl mx-auto">
               <span className="text-[#b23124]">ثبت شرکت</span> در فرانسه، راه‌اندازی{' '}
               <span className="text-[#b23124]">کسب‌وکار</span> در فرانسه بدون دردسر
             </h1>
-            <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] text-right max-w-3xl mx-auto">
+            <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] text-right">
               در این مقاله قصد داریم در مورد ثبت شرکت در فرانسه و ثبت شرکت تجاری در فرانسه به عنوان یکی از راه های مهاجرت به فرانسه و مراحل دریافت اقامت برای ثبت شرکت درفرانسه و صفر تا صد قوانین آن صحبت کنیم پس تا انتهای مقاله مارا همراهی کنید.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Company Requirements Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
+      <section className="relative">
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-[24px] font-bold text-[#b23124] text-right">
               شرایط عمومی ثبت شرکت در فرانسه
             </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {companyRequirements.map((requirement, index) => {
-                const IconComponent = requirement.icon
-                return (
-                  <div key={index} className="text-right">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="w-12 h-12 flex items-center justify-center">
-                        <IconComponent className="w-12 h-12 text-[#316086]" />
+          </div>
+
+          <div className="flex justify-between items-start gap-12">
+            {/* Right side - Requirements grid */}
+            <div className="flex-1">
+              <div className="grid grid-cols-2 gap-0 rounded-lg overflow-hidden">
+                {/* Grid cells with red borders */}
+                {companyRequirements.map((requirement, index) => {
+                  const IconComponent = requirement.icon
+                  return (
+                    <div
+                      key={index}
+                      className="py-2 px-6   relative"
+                      style={{
+                        borderRightWidth: index % 2 === 1 ? '0' : '1px',
+                        borderBottomWidth: index >= 4 ? '0' : '1px'
+                      }}
+                    >
+                      <div className="flex flex-col gap-3 ">
+                        <div className="flex justify-center">
+                          <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                            <IconComponent className="w-8 h-8 text-[#b23124]" />
+                          </div>
+                        </div>
+                        <div className="flex-1 text-right">
+
+                          <p className="text-[14px] font-medium text-[#316086] leading-[1.48] text-justify">
+                            <span className='text-[#b23124] font-bold'>{requirement.title} :</span> {requirement.description}
+                          </p>
+                        </div>
                       </div>
-                      <h3 className="text-[14px] font-medium text-[#316086] leading-[1.48]">
-                        <span className="text-[#b23124]">{requirement.title}:</span> {requirement.description}
-                      </h3>
                     </div>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
+            </div>
+            {/* Left side - Handshake image */}
+            <div className="flex-shrink-0">
+              <img
+                src="/images/france-office-page/Rectangle 67.png"
+                alt="Handshake business meeting"
+                className="object-cover rounded-lg"
+              />
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
-              مزایای ثبت شرکت در کشور فرانسه
-            </h2>
-            
-            <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-2 justify-end">
-                  <p className="text-[16px] font-medium text-[#316086] leading-[1.61] text-right max-w-[1069px]">
-                    {benefit}
-                  </p>
-                  <Star className="w-6 h-6 text-[#316086] flex-shrink-0" />
-                </div>
-              ))}
-            </div>
+      <section className="py-16 ">
+        <Container>
+          <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
+            مزایای ثبت شرکت در کشور فرانسه
+          </h2>
+
+          <div className="space-y-4">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-2 justify-start">
+                <img src="/icons/france office page/Group.svg" alt="" className="w-6 h-6 flex-shrink-0" />
+
+                <p className="text-[16px] font-medium text-[#316086] leading-[1.61] text-right max-w-[1069px]">
+                  {benefit}
+                </p>
+              </div>
+            ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA Banner */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-[#fdfeff] border border-[#d74a3c] rounded-[32px] p-6 flex items-center justify-between">
-              <div className="flex-1 text-right">
-                <p className="text-[18px] font-semibold text-[#b23124] leading-[1.4]">
-                  گروه مهاجرتی ورسای با تجربه خود در این فرآیند، به شما در ثبت شرکت خود در فرانسه کمک می کند.
-                </p>
-              </div>
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="bg-[#d74a3c] border-[#e5867d] text-[#fdfeff] hover:bg-[#c73e30] px-6 py-3 rounded-[32px] text-[18px] font-bold ml-6"
-              >
-                درخواست مشاوره
-              </Button>
+      <section className="py-8 ">
+        <Container>
+          <div className="bg-[#fdfeff] border border-[#d74a3c] rounded-[62px] py-4 px-12 flex items-center justify-between">
+            <div className="flex-1 text-right">
+              <p className="text-[18px] font-semibold text-[#b23124] leading-[1.4]">
+                گروه مهاجرتی ورسای با تجربه خود در این فرآیند، به شما در ثبت شرکت خود در فرانسه کمک می کند.
+              </p>
             </div>
+            <Button
+              variant="primary"
+              size="sm"
+              className="bg-[#d74a3c] border-[#e5867d] text-[#fdfeff] hover:bg-[#c73e30] px-6 py-3 rounded-[32px] text-[18px] font-bold ml-6"
+            >
+              درخواست مشاوره
+            </Button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Registration Process Section */}
@@ -281,212 +299,112 @@ const FranceOfficePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#1e3950] to-[#1e3950] opacity-85"></div>
           <div className="absolute inset-0 bg-[url('/images/france-office-page/blue-bg.png')] bg-cover bg-center"></div>
         </div>
-        
+
         <div className="relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-[32px] font-extrabold text-[#fdfeff] text-right mb-12">
-                مراحل ثبت شرکت تجاری در فرانسه
-              </h2>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {registrationSteps.map((step, index) => {
-                  const IconComponent = step.icon
-                  return (
-                    <div key={index} className={`${step.position === 'right' ? 'lg:ml-auto' : ''} max-w-[538px]`}>
-                      <div className="bg-[#1e3950] border border-[#316086] rounded-2xl p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="w-9 h-9 flex items-center justify-center">
-                            <IconComponent className="w-9 h-9 text-[#f2f9ff]" />
-                          </div>
-                          <h3 className="text-[18px] font-semibold text-[#f2f9ff] leading-[1.4]">
-                            {step.title}
-                          </h3>
+          <Container>
+            <h2 className="text-[32px] font-extrabold text-[#fdfeff] text-right mb-12">
+              مراحل ثبت شرکت تجاری در فرانسه
+            </h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {registrationSteps.map((step, index) => {
+                const IconComponent = step.icon
+                return (
+                  <div key={index} className={`${step.position === 'right' ? 'lg:ml-auto' : ''} max-w-[538px]`}>
+                    <div className="bg-[#1e3950] border border-[#316086] rounded-2xl p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <div className="w-9 h-9 flex items-center justify-center">
+                          <IconComponent className="w-9 h-9 text-[#f2f9ff]" />
                         </div>
-                        <p className="text-[16px] font-medium text-[#d3e2ef] leading-[1.61] text-right">
-                          {step.description}
-                        </p>
+                        <h3 className="text-[18px] font-semibold text-[#f2f9ff] leading-[1.4]">
+                          {step.title}
+                        </h3>
                       </div>
+                      <p className="text-[16px] font-medium text-[#d3e2ef] leading-[1.61] text-right">
+                        {step.description}
+                      </p>
                     </div>
-                  )
-                })}
-              </div>
+                  </div>
+                )
+              })}
             </div>
-          </div>
+          </Container>
         </div>
       </section>
 
       {/* Residence and Company Registration Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
-              اقامت فرانسه و ثبت شرکت
-            </h2>
-            <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right space-y-4">
-              <p>
-                برای ثبت شرکت در فرانسه به عنوان یک خارجی، شما نیاز به برای{' '}
-                <span className="font-medium">اقامت در فرانسه</span>{' '}
-                دارید. اقامت می‌تواند شامل اقامت موقت یا اقامت دائم باشد، و به شما اجازه می‌دهد که به عنوان یک مقیم فرانسه فعالیت کسب و کاری داشته باشید و شرکت خود را در این کشور تاسیس و ثبت کنید. مهم است که مدت اقامت و نوع اقامتی که دارید (موقت یا دائم)، میزان مسئولیت‌های مالی و مالیاتی شما را تحت تأثیر قرار دهد. همچنین، بسته به نوع فعالیت شرکتی که می‌خواهید تاسیس کنید، ممکن است برخی از نیازها و مقررات اختصاصی برای شما اعمال شود.
-              </p>
-              <p>
-                قبل از آغاز فرآیند ثبت شرکت، بهتر است با مشاوران حقوقی و مالی متخصص در فرانسه مشورت کنید تا اطلاعات دقیق‌تری در مورد نیازها و مقررات اقامت و ثبت شرکت در فرانسه دریافت کنید. آن‌ها می‌توانند به شما راهنمایی کنند و با شما مراحل لازم برای اقامت و ثبت شرکت را انجام دهند.
-              </p>
-            </div>
+      <section className="py-16 ">
+        <Container>
+          <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
+            اقامت فرانسه و ثبت شرکت
+          </h2>
+          <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right space-y-4">
+            <p>
+              برای ثبت شرکت در فرانسه به عنوان یک خارجی، شما نیاز به برای{' '}
+              <span className="font-medium">اقامت در فرانسه</span>{' '}
+              دارید. اقامت می‌تواند شامل اقامت موقت یا اقامت دائم باشد، و به شما اجازه می‌دهد که به عنوان یک مقیم فرانسه فعالیت کسب و کاری داشته باشید و شرکت خود را در این کشور تاسیس و ثبت کنید. مهم است که مدت اقامت و نوع اقامتی که دارید (موقت یا دائم)، میزان مسئولیت‌های مالی و مالیاتی شما را تحت تأثیر قرار دهد. همچنین، بسته به نوع فعالیت شرکتی که می‌خواهید تاسیس کنید، ممکن است برخی از نیازها و مقررات اختصاصی برای شما اعمال شود.
+            </p>
+            <p>
+              قبل از آغاز فرآیند ثبت شرکت، بهتر است با مشاوران حقوقی و مالی متخصص در فرانسه مشورت کنید تا اطلاعات دقیق‌تری در مورد نیازها و مقررات اقامت و ثبت شرکت در فرانسه دریافت کنید. آن‌ها می‌توانند به شما راهنمایی کنند و با شما مراحل لازم برای اقامت و ثبت شرکت را انجام دهند.
+            </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Company Types Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-2 justify-end mb-8">
-              <h2 className="text-[24px] font-bold text-[#b23124] leading-[1.1]">
-                چه نوع شرکتی راه اندازی کنیم؟
-              </h2>
-              <div className="w-8 h-8 flex items-center justify-center">
-                <Star className="w-8 h-8 text-[#b23124]" />
-              </div>
+      <section className="py-16 ">
+        <Container>
+          <div className="flex items-center gap-2 justify-start mb-8">
+            <div className="w-8 h-8 flex items-center justify-center">
+              <QuestionMarkCircleIcon className="w-8 h-8 text-[#b23124]" />
             </div>
-            
-            <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right mb-8">
-              <p className="mb-4">
-                یک تصمیم مهم که باید قبل از اقدام به ثبت و شروع معامله بگیرید، این می باشد که ساختار و نوع بیزنس شما چگونه باشد، در این جاست که به کمک یک مشاور حرفه ای که با قوانین و نحوه کسب و کار در این کشور اروپایی آشنا می باشد نیاز دارید.
-              </p>
-              <p className="font-semibold text-[#316086]">
-                حدود ۱۳ نوع شرکت برای کسب و کار در فرانسه وجود دارد که در زیر به برخی از مهمترین آنها می پردازیم:
-              </p>
-            </div>
+            <h2 className="text-[24px] font-bold text-[#b23124] leading-[1.1]">
+              چه نوع شرکتی راه اندازی کنیم؟
+            </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          </div>
+
+          <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right mb-8">
+            <p className="mb-4">
+              یک تصمیم مهم که باید قبل از اقدام به ثبت و شروع معامله بگیرید، این می باشد که ساختار و نوع بیزنس شما چگونه باشد، در این جاست که به کمک یک مشاور حرفه ای که با قوانین و نحوه کسب و کار در این کشور اروپایی آشنا می باشد نیاز دارید.
+            </p>
+            <p className="font-semibold text-[#316086]">
+              حدود ۱۳ نوع شرکت برای کسب و کار در فرانسه وجود دارد که در زیر به برخی از مهمترین آنها می پردازیم:
+            </p>
+          </div>
+          <div className="flex justify-between">
+            <div className="grid grid-cols-1 gap-8 flex-1 pl-16">
               <div className="space-y-6">
                 {companyTypes.map((type, index) => (
                   <div key={index} className="text-right">
-                    <h3 className="text-[14px] font-medium text-[#316086] leading-[1.48] mb-2">
-                      <span className="text-[#b23124]">{type.title}:</span>
-                    </h3>
+              
                     <p className="text-[14px] font-medium text-[#316086] leading-[1.48]">
-                      {type.description}
+                    <span className="text-[#b23124] font-bold">{type.title}:</span> {type.description}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
+            <div className="flex-shrink-1">
+              <img
+                src="/images/france-office-page/Rectangle 68.png"
+                alt="Handshake business meeting"
+                className="object-cover rounded-lg"
+              />
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Consultation Form Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative bg-gradient-to-br from-[#1e3950] to-[#316086] rounded-2xl p-8 overflow-hidden">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-25">
-                <div className="absolute inset-0 bg-[url('/images/france-office-page/bg-lines.png')] bg-cover bg-center"></div>
-              </div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-12">
-                  <h2 className="text-[20px] font-bold text-[#f2f9ff] mb-8">ثبت درخواست مشاوره با ورسای</h2>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Form */}
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-[14px] font-semibold text-[#f2f9ff] mb-2 text-right">
-                          <span className="text-[#f2c3be]">*</span>نام و نام خانوادگی
-                        </label>
-                        <input 
-                          type="text" 
-                          className="w-full px-3 py-3 rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] text-[#9d9e9f] placeholder-[#9d9e9f] focus:outline-none focus:ring-2 focus:ring-[#4686bb] text-right"
-                          placeholder="نام و نام خانوادگی خود را وارد کنید"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[14px] font-semibold text-[#f2f9ff] mb-2 text-right">
-                          <span className="text-[#f2c3be]">*</span>شماره تماس
-                        </label>
-                        <input 
-                          type="tel" 
-                          className="w-full px-3 py-3 rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] text-[#9d9e9f] placeholder-[#9d9e9f] focus:outline-none focus:ring-2 focus:ring-[#4686bb] text-right"
-                          placeholder="شماره تماس خود را وارد کنید"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-[14px] font-semibold text-[#f2f9ff] mb-2 text-right">
-                          <span className="text-[#f2c3be]">*</span>ایمیل
-                        </label>
-                        <input 
-                          type="email" 
-                          className="w-full px-3 py-3 rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] text-[#9d9e9f] placeholder-[#9d9e9f] focus:outline-none focus:ring-2 focus:ring-[#4686bb] text-right"
-                          placeholder="آدرس ایمیل خود را وارد کنید"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[14px] font-semibold text-[#f2f9ff] mb-2 text-right">
-                          <span className="text-[#f2c3be]">*</span>موضوع مشاوره
-                        </label>
-                        <select className="w-full px-3 py-3 rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] text-[#9d9e9f] focus:outline-none focus:ring-2 focus:ring-[#4686bb] text-right">
-                          <option value="">موضوع مشاوره را انتخاب کنید</option>
-                          <option value="company-registration">ثبت شرکت</option>
-                          <option value="immigration">مهاجرت</option>
-                          <option value="study">تحصیل</option>
-                          <option value="work">کار</option>
-                          <option value="investment">سرمایه گذاری</option>
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-[14px] font-semibold text-[#f2f9ff] mb-2 text-right">متن پیام</label>
-                      <textarea 
-                        rows={4}
-                        className="w-full px-3 py-3 rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] text-[#9d9e9f] placeholder-[#9d9e9f] focus:outline-none focus:ring-2 focus:ring-[#4686bb] text-right"
-                        placeholder="در صورت تمایل، متن پیام خود را بنویسید"
-                      ></textarea>
-                    </div>
-                    
-                    <div>
-                      <Button 
-                        variant="secondary" 
-                        size="lg" 
-                        className="bg-[#d74a3c] border-[#e5867d] text-[#fdfeff] hover:bg-[#c73e30] px-6 py-3 rounded-[32px] text-[18px] font-bold"
-                      >
-                        ارسال درخواست
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  {/* Contact Info */}
-                  <div className="flex flex-col justify-center items-center space-y-6">
-                    <div className="flex items-center gap-2">
-                      <Phone className="w-6 h-6 text-[#f2c3be]" />
-                      <span className="text-[20px] font-medium text-[#fdf7f7]">۰۲۱۲۸۴۲۱۶۹۰</span>
-                    </div>
-                    <Button 
-                      variant="outline" 
-                      className="bg-[#f2f9ff] border-[#d74a3c] text-[#d74a3c] hover:bg-[#e8f4fd] px-6 py-3 rounded-[32px] text-[18px] font-bold"
-                    >
-                      <MessageCircle className="w-6 h-6 ml-2" />
-                      ارتباط در واتساپ
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="py-16 ">
+        <Container>
+          <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9561.PNG" />
+        </Container>
       </section>
 
       {/* Related Articles Section */}
-      <RelatedArticlesSection 
+      <RelatedArticlesSection
         articles={relatedArticles}
         title="مقالات مرتبط"
         showViewAll={true}
@@ -495,7 +413,7 @@ const FranceOfficePage: React.FC = () => {
       />
 
       {/* FAQ Section */}
-      <FAQSection 
+      <FAQSection
         faqItems={faqData}
         title="سوالات متداول"
         className="py-16 bg-white"

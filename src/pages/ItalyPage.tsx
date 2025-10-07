@@ -42,19 +42,22 @@ const ItalyPage: React.FC = () => {
 
   const blogArticles = [
     {
-      title: 'راهنمای کامل ویزای کاری ایتالیا',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/italy-work-visa-guide'
+      title: 'مزایای دوره زبان کشور فرانسه',
+      image: '/images/blog-page/Rectangle 41.png',
+      link: '/articles/french-language-course-benefits',
+      excerpt: 'چرا دوره‌های زبان فرانسه برای شروع مسیر مهاجرت مفیدند؟'
     },
     {
-      title: 'تحصیل در دانشگاه‌های معتبر ایتالیا',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/study-italy-universities'
+      title: 'شرایط درخواست ویزای دیجیتال نومد اسپانیا',
+      image: '/images/blog-page/Rectangle 41(1).png',
+      link: '/articles/spain-digital-nomad-visa',
+      excerpt: 'پیش‌نیازها و مراحل دریافت ویزای نومد اسپانیا.'
     },
     {
-      title: 'ویزای دیجیتال نومد ایتالیا',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/italy-digital-nomad-visa'
+      title: 'معرفی دانشگاه UCLY شهر لیون فرانسه',
+      image: '/images/blog-page/Rectangle 41(2).png',
+      link: '/articles/ucly-university-lyon',
+      excerpt: 'مروری کوتاه بر دانشگاه UCLY و رشته‌های محبوب.'
     }
   ]
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowLeft, ChevronLeft } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { RelatedArticlesSectionProps } from '../../types'
 
 const RelatedArticlesSection: React.FC<RelatedArticlesSectionProps> = ({
@@ -36,25 +36,60 @@ const RelatedArticlesSection: React.FC<RelatedArticlesSectionProps> = ({
               className="relative group cursor-pointer block"
             >
               <div className="relative h-[388px] rounded-2xl border border-stone-300 overflow-hidden">
+                {/* Background image */}
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                
-                {/* Linear gradient overlay from bottom #1E3950 to 20% from top transparent */}
+
+                {/* Default gradient overlay (visible when not hovered) */}
                 <div 
-                  className="absolute inset-0 rounded-2xl"
+                  className="absolute inset-0 rounded-2xl transition-opacity duration-500 group-hover:opacity-0"
                   style={{
                     background: 'linear-gradient(to top, #1E3950 0%, rgba(30, 57, 80, 0.8) 15%, transparent 30%, transparent 100%)'
                   }}
                 />
-                
-                {/* Title overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-white text-lg font-medium font-['IRANYekanX'] leading-[1.4]">
-                    {article.title}
+
+                {/* Rising blue overlay (covers full height on hover) */}
+                <div
+                  className="absolute inset-0 bg-[#1E3950] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out opacity-90"
+                />
+
+                {/* Bottom content visible by default: category, title, date */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end group-hover:opacity-0 transition-opacity duration-500">
+                  {/* Category badge */}
+                  {article.category && (
+                    <div className="mb-3">
+                      <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full">
+                        {article.category}
+                      </span>
+                    </div>
+                  )}
+                  {/* Title */}
+                  <div className="text-right">
+                    <div className="text-white text-lg font-semibold font-['IRANYekanX'] leading-[1.4] line-clamp-2">
+                      {article.title}
+                    </div>
                   </div>
+                  {/* Date */}
+                  {article.date && (
+                    <div className="mt-2 text-right">
+                      <span className="text-white/85 text-sm font-medium">{article.date}</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Hover content: title and description that rise from bottom */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-center items-start text-right pointer-events-none">
+                  <h3 className="text-white text-[20px] leading-[140%] font-['IRANYekanX'] font-extrabold max-w-[287px] translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                    {article.title}
+                  </h3>
+                  {article.excerpt && (
+                    <p className="mt-3 text-white/85 text-sm leading-[148%] font-medium max-w-[287px] translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out delay-100">
+                      {article.excerpt}
+                    </p>
+                  )}
                 </div>
               </div>
             </a>

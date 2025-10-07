@@ -1,8 +1,9 @@
 import React from 'react'
-import { ChevronDown, Phone, MessageCircle, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import Button from '../components/ui/Button'
 import FAQSection from '../components/ui/FAQSection'
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
+import ConsultationForm from '../components/ui/ConsultationForm'
 import useSEO from '../hooks/useSEO'
 
 const FranceStudyPage: React.FC = () => {
@@ -43,18 +44,21 @@ const FranceStudyPage: React.FC = () => {
   const blogArticles = [
     {
       title: 'مزایای دوره زبان کشور فرانسه',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/french-language-course-benefits'
+      image: '/images/blog-page/Rectangle 41.png',
+      link: '/articles/french-language-course-benefits',
+      excerpt: 'اگر دنبال تقویت زبان فرانسه هستید، این مقاله راهنمای شماست.'
     },
     {
       title: 'شرایط درخواست ویزای دیجیتال نومد اسپانیا',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/spain-digital-nomad-visa'
+      image: '/images/blog-page/Rectangle 41(1).png',
+      link: '/articles/spain-digital-nomad-visa',
+      excerpt: 'مدارک و شرایط لازم برای دریافت ویزای نومد اسپانیا.'
     },
     {
       title: 'معرفی دانشگاه UCLY شهر لیون فرانسه',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/ucly-university-lyon'
+      image: '/images/blog-page/Rectangle 41(2).png',
+      link: '/articles/ucly-university-lyon',
+      excerpt: 'با دانشگاه UCLY و امکانات آموزشی آن آشنا شوید.'
     }
   ]
 
@@ -209,101 +213,7 @@ const FranceStudyPage: React.FC = () => {
       {/* Consultation Form Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-stone-300/25 rounded-2xl border-2 border-slate-200 p-8 relative overflow-hidden">
-            <div className="absolute inset-0">
-              <img 
-                src="https://placehold.co/1107x624" 
-                alt="Background"
-                className="w-full h-full object-cover rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-stone-300/25 rounded-2xl"></div>
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-[20px] font-semibold text-sky-50 mb-8 text-center">
-                ثبت درخواست مشاوره با ورسای
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-[14px] font-semibold text-sky-50 mb-2">
-                        <span className="text-red-200">*</span>نام و نام خانوادگی
-                      </label>
-                      <input 
-                        type="text" 
-                        placeholder="نام و نام خانوادگی خود را وارد کنید."
-                        className="w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-[14px] font-medium text-neutral-400"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[14px] font-semibold text-sky-50 mb-2">
-                        <span className="text-red-200">*</span>شماره تماس
-                      </label>
-                      <input 
-                        type="tel" 
-                        placeholder="شماره تماس خود را وارد کنید."
-                        className="w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-[14px] font-medium text-neutral-400"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-[14px] font-semibold text-sky-50 mb-2">
-                        <span className="text-red-200">*</span>موضوع مشاوره
-                      </label>
-                      <div className="relative">
-                        <select className="w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-[14px] font-medium text-neutral-400 appearance-none">
-                          <option>موضوع مشاوره را انتخاب کنید.</option>
-                        </select>
-                        <ChevronDown className="absolute left-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-neutral-400" />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-[14px] font-semibold text-sky-50 mb-2">
-                        <span className="text-red-200">*</span>ایمیل
-                      </label>
-                      <input 
-                        type="email" 
-                        placeholder="آدرس ایمیل خود را وارد کنید."
-                        className="w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-[14px] font-medium text-neutral-400"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-[14px] font-semibold text-sky-50 mb-2">
-                      متن پیام
-                    </label>
-                    <textarea 
-                      placeholder="در صورت تمایل، متن پیام خود را بنویسید."
-                      rows={4}
-                      className="w-full p-3 bg-sky-50 rounded-2xl border border-stone-300 text-[14px] font-medium text-neutral-400 resize-none"
-                    />
-                  </div>
-                  <Button 
-                    variant="primary" 
-                    size="md"
-                    className="bg-red-500 hover:bg-red-600 border border-red-400"
-                  >
-                    ارسال درخواست
-                  </Button>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-6 h-6 text-red-200" />
-                    <span className="text-[20px] font-medium text-stone-50">۰۲۱۲۸۴۲۱۶۹۰</span>
-                  </div>
-                  <Button 
-                    variant="secondary" 
-                    size="md"
-                    className="bg-sky-50 text-red-500 border border-red-500 hover:bg-red-50"
-                  >
-                    <MessageCircle className="w-6 h-6 ml-2" />
-                    ارتباط در واتساپ
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9562.PNG" />
         </div>
       </section>
 

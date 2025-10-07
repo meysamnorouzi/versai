@@ -35,7 +35,7 @@ const ConsultationForm: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* Form */}
-          <div className="bg-white rounded-2xl p-8 pt-0">
+          <div className="p-8 pt-0">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -107,7 +107,7 @@ const ConsultationForm: React.FC = () => {
                   placeholder="در صورت تمایل، متن پیام خود را بنویسید."
                   value={formData.message}
                   onChange={(e) => handleChange('message', e.target.value)}
-                  className="w-[566px] h-24 p-3 bg-white rounded-2xl  inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
+                  className="w-full h-24 p-3 bg-white rounded-2xl  inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
                 />
               </div>
 

@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                        alt="Phone"
                      />
                    </div>
-                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">+۹۸۲۱۲۸۴۲۱۶۹۰ / +۹۸۹۳۵۴۲۴۲۷۱۵</div>
+                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">۹۸۲۱۲۸۴۲۱۶۹۰+ / ۹۸۹۳۵۴۲۴۲۷۱۵+</div>
 
                  </div>
                  <div className="flex justify-start items-start gap-2">
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                        alt="Phone"
                      />
                    </div>
-                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">+33679949935</div>
+                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">33679949935+</div>
 
                  </div>
                </div>

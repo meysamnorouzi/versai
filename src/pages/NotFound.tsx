@@ -30,7 +30,7 @@ const NotFound: React.FC = () => {
             بازگشت به صفحه اصلی
           </Button>
           
-          <Button variant="outline" onClick={() => window.history.back()} className="w-full">
+          <Button variant="primary-outline" onClick={() => window.history.back()} className="w-full">
             <ArrowRight className="w-5 h-5 ml-2" />
             بازگشت به صفحه قبل
           </Button>

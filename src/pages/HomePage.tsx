@@ -4,7 +4,7 @@ import ServicesSection from '../components/home/ServicesSection'
 import AboutSection from '../components/home/AboutSection'
 import LanguageCourseSection from '../components/home/LanguageCourseSection'
 import CTABanner from '../components/home/CTABanner'
-import ConsultationForm from '../components/home/ConsultationForm'
+import ConsultationForm from '../components/ui/ConsultationForm'
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
 import FAQSection from '../components/ui/FAQSection'
 import useSEO from '../hooks/useSEO'
@@ -54,23 +54,26 @@ const HomePage: React.FC = () => {
       <AboutSection />
       <LanguageCourseSection />
       <CTABanner />
-      <ConsultationForm />
+      <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9566.PNG" />
       <RelatedArticlesSection 
         articles={[
           {
             title: "مزایای دوره زبان کشور فرانسه",
-            image: "/images/france-pr-page/success-story1.png",
-            link: "/france-study"
+            image: "/images/blog-page/Rectangle 41.png",
+            link: "/france-study",
+            excerpt: "اگر دنبال تقویت زبان فرانسه هستید، این مطلب را بخوانید."
           },
           {
             title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-            image: "/images/france-pr-page/success-story2.png",
-            link: "/france-visa"
+            image: "/images/blog-page/Rectangle 41(1).png",
+            link: "/france-visa",
+            excerpt: "راهنمای مختصر دریافت ویزای دیجیتال نومد اسپانیا."
           },
           {
             title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-            image: "/images/france-pr-page/success-story3.png",
-            link: "/france-study"
+            image: "/images/blog-page/Rectangle 41(2).png",
+            link: "/france-study",
+            excerpt: "آشنایی کوتاه با دانشگاه UCLY و شهر لیون."
           }
         ]}
         title="مقالات مرتبط"

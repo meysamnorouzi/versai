@@ -42,19 +42,22 @@ const SwedenPage: React.FC = () => {
 
   const blogArticles = [
     {
-      title: 'راهنمای کامل ویزای کاری سوئد',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/sweden-work-visa-guide'
+      title: 'مزایای دوره زبان کشور فرانسه',
+      image: '/images/blog-page/Rectangle 41.png',
+      link: '/articles/french-language-course-benefits',
+      excerpt: 'نگاهی کوتاه به مزایای دوره‌های زبان فرانسه.'
     },
     {
-      title: 'تحصیل رایگان در دانشگاه‌های سوئد',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/free-education-sweden'
+      title: 'شرایط درخواست ویزای دیجیتال نومد اسپانیا',
+      image: '/images/blog-page/Rectangle 41(1).png',
+      link: '/articles/spain-digital-nomad-visa',
+      excerpt: 'راهنمای فشرده برای ویزای نومد اسپانیا.'
     },
     {
-      title: 'نحوه دریافت اقامت دائم سوئد',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/sweden-permanent-residency'
+      title: 'معرفی دانشگاه UCLY شهر لیون فرانسه',
+      image: '/images/blog-page/Rectangle 41(2).png',
+      link: '/articles/ucly-university-lyon',
+      excerpt: 'معرفی اجمالی دانشگاه UCLY در لیون.'
     }
   ]
 

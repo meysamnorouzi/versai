@@ -2,6 +2,9 @@ import React from 'react'
 import FAQSection from '../components/ui/FAQSection'
 import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
 import { FAQItem, RelatedArticle } from '../types'
+import ConsultationForm from '../components/ui/ConsultationForm'
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import Icon from '../components/ui/Icon'
 
 const PRFrancePage: React.FC = () => {
 
@@ -37,40 +40,26 @@ const PRFrancePage: React.FC = () => {
   const relatedArticles: RelatedArticle[] = [
     {
       title: "مزایای دوره زبان کشور فرانسه",
-      image: "https://www.figma.com/api/mcp/asset/d5ffaa7c-b8ed-4b0d-88da-88d6c42b3ada",
-      link: "/articles/french-language-course-benefits"
+      image: "/images/blog-page/Rectangle 41.png",
+      link: "/articles/french-language-course-benefits",
+      excerpt: "مروری بر مزایای دوره‌های زبان فرانسه و مسیرهای پذیرش."
     },
     {
       title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "https://www.figma.com/api/mcp/asset/0d41dbe2-6de4-4174-8066-0c8e6d6d60a1",
-      link: "/articles/spain-digital-nomad-visa"
+      image: "/images/blog-page/Rectangle 41(1).png",
+      link: "/articles/spain-digital-nomad-visa",
+      excerpt: "راهنمای سریع درخواست ویزای دیجیتال نومد اسپانیا."
     },
     {
       title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-      image: "https://www.figma.com/api/mcp/asset/b7e7b437-d958-4bdf-853b-f31f8fcfebf6",
-      link: "/articles/ucly-university-lyon-france"
+      image: "/images/blog-page/Rectangle 41(2).png",
+      link: "/articles/ucly-university-lyon-france",
+      excerpt: "آشنایی با دانشگاه UCLY لیون و امکانات آموزشی آن."
     }
   ]
 
   return (
     <div className="w-full bg-[#f2f1f1] text-lg text-[#6d6e70] font-['IRANYekanX']">
-      {/* Background decorative elements */}
-      <div className="absolute h-[65.92%] w-[171.9%] top-[-19.81%] right-[-50.1%] bottom-[53.88%] left-[-21.81%] max-w-full overflow-hidden max-h-full object-contain">
-        <img 
-          src="https://www.figma.com/api/mcp/asset/08f154d3-ab9a-4e22-9eb3-10ea960712e6" 
-          alt="" 
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <div className="absolute h-[65.92%] w-[171.9%] top-[21.51%] right-[-50.1%] bottom-[12.57%] left-[-21.81%] max-w-full overflow-hidden max-h-full object-contain">
-        <img 
-          src="https://www.figma.com/api/mcp/asset/08f154d3-ab9a-4e22-9eb3-10ea960712e6" 
-          alt="" 
-          className="w-full h-full object-contain"
-        />
-      </div>
-
-
 
       {/* Hero Section */}
       <section className="py-16 px-4">
@@ -94,27 +83,57 @@ const PRFrancePage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-16 text-center text-[#316086]">
             <div className="flex flex-col items-center gap-1 min-w-[52px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/d7dfabc3-b50b-46f6-b8a6-4e34aa280da2" alt="تولد" />
+              <Icon
+                section="easyImmigration"
+                name="group"
+                className="w-10 h-10"
+                alt="تولد"
+              />
               <div className="text-center">تولد</div>
             </div>
             <div className="flex flex-col items-center gap-1 min-w-[52px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/38c67111-d863-488a-9134-6bd2685f8a8f" alt="ازدواج" />
+              <Icon
+                section="easyImmigration"
+                name="component"
+                className="w-10 h-10"
+                alt="ازدواج"
+              />
               <div className="text-center">ازدواج</div>
             </div>
             <div className="flex flex-col items-center gap-1 min-w-[83px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/717e3575-75cf-4ec6-906d-84bd58d1d015" alt="پناهندگی" />
+              <Icon
+                section="easyImmigration"
+                name="delivery"
+                className="w-10 h-10"
+                alt="پناهندگی"
+              />
               <div className="text-center">پناهندگی</div>
             </div>
             <div className="flex flex-col items-center gap-1 min-w-[116px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/cb157c25-33e1-4b95-9818-ae929217cb0d" alt="سرمایه گذاری" />
+              <Icon
+                section="easyImmigration"
+                name="coins"
+                className="w-10 h-10"
+                alt="سرمایه گذاری"
+              />
               <div className="text-center">سرمایه گذاری</div>
             </div>
             <div className="flex flex-col items-center gap-1 min-w-[55px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/9a837890-e17c-4024-945e-28798bb1da21" alt="کاری" />
+              <Icon
+                section="easyImmigration"
+                name="clock"
+                className="w-10 h-10"
+                alt="کاری"
+              />
               <div className="text-center">کاری</div>
             </div>
             <div className="flex flex-col items-center gap-1 min-w-[86px]">
-              <img className="w-12 h-12" src="https://www.figma.com/api/mcp/asset/5a8dacd3-b0c1-4a64-8c40-1ed8eb007a19" alt="تحصیلی" />
+              <Icon
+                section="easyImmigration"
+                name="medical"
+                className="w-10 h-10"
+                alt="تحصیلی"
+              />
               <div className="text-center">تحصیلی</div>
             </div>
           </div>
@@ -124,9 +143,9 @@ const PRFrancePage: React.FC = () => {
       {/* Banner Section */}
       <section className="relative h-[399px] text-center text-[32px] text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img className="absolute top-[58px] left-0 w-full h-[294px] object-cover" src="https://www.figma.com/api/mcp/asset/cd18f91d-c272-424e-8fd0-a2fb76f32c4e" alt="" />
+          <img className="absolute top-[58px] left-0 w-full h-[294px] object-cover" src="images/france-pr-page/blue-img.png" alt="" />
           <div className="absolute top-0 left-[146px] w-[490px] h-full">
-            <img className="absolute top-0 left-0 w-full h-full object-cover" src="https://www.figma.com/api/mcp/asset/d59f4b12-83bc-4109-875d-087bb570463d" alt="" />
+            <img className="absolute top-0 left-0 w-full h-full object-cover" src="images/france-pr-page/france-map.svg" alt="" />
           </div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
@@ -144,12 +163,12 @@ const PRFrancePage: React.FC = () => {
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-end gap-6 text-right text-[24px] text-[#b23124]">
-            <div className="w-full flex flex-col items-end gap-3">
-              <div className="flex items-start justify-end gap-2">
+            <div className="w-full flex flex-col items-start gap-3">
+              <div className="flex items-start justify-start gap-2">
+                <QuestionMarkCircleIcon className="w-8 h-8 flex-shrink-0" />
                 <div className="max-w-[746px]">
                   <h2 className="leading-[1.1] text-[24px] font-bold">چگونه می توانیم بعد از مهاجرت به فرانسه، اقامت دائم فرانسه را بگیریم؟</h2>
                 </div>
-                <img className="w-8 h-8 flex-shrink-0" src="https://www.figma.com/api/mcp/asset/288ea5dc-3207-4e5c-88b0-fd3b3d64aa6d" alt="" />
               </div>
               <div className="w-full text-lg leading-[1.53] font-medium text-[#6d6e70]">
                 <p className="mb-4">
@@ -158,30 +177,30 @@ const PRFrancePage: React.FC = () => {
                 <p>در موارد زیر چهار روش ذکر شده است که می توان به وسیله آن اقامت کشور فرانسه را دریافت کرد.</p>
               </div>
             </div>
-            <div className="w-full flex flex-col items-end gap-4 text-base text-[#316086]">
+            <div className="w-full flex flex-col items-start gap-4 text-base text-[#316086] text-right">
               <div className="flex items-center gap-2">
+                <Icon section="easyImmigration" name="group" className="w-6 h-6 flex-shrink-0" />
                 <div className="max-w-[614px] font-medium leading-[1.61]">
                   تولد در فرانسه: افرادی که در فرانسه متولد می شوند، در ۱۸ سالگی ملیت فرانسوی می گیرند.
                 </div>
-                <img className="w-6 h-6 flex-shrink-0" src="https://www.figma.com/api/mcp/asset/2b7d9432-307f-4b52-8975-b941c6421a1a" alt="" />
               </div>
               <div className="flex items-center gap-2">
+                <Icon section="easyImmigration" name="group" className="w-6 h-6 flex-shrink-0" />
                 <div className="max-w-[614px] font-medium leading-[1.61]">
                   داشتن پدر یا مادر فرانسوی: افرادی که والدین آن ها (پدر یا مادر) فرانسوی است.
                 </div>
-                <img className="w-6 h-6 flex-shrink-0" src="https://www.figma.com/api/mcp/asset/2b7d9432-307f-4b52-8975-b941c6421a1a" alt="" />
               </div>
-              <div className="w-full flex items-center justify-end gap-2">
+              <div className="w-full flex items-center justify-start gap-2">
+                <Icon section="easyImmigration" name="group" className="w-6 h-6 flex-shrink-0" />
                 <div className="max-w-[907px] font-medium leading-[1.61]">
                   اقامت در فرانسه بیش از ۵ سال: افرادی که بیشتر از پنج سال در فرانسه اقامت داشته باشند می توانند برای اقامت فرانسه اقدام کنند.
                 </div>
-                <img className="w-6 h-6 flex-shrink-0" src="https://www.figma.com/api/mcp/asset/2b7d9432-307f-4b52-8975-b941c6421a1a" alt="" />
               </div>
               <div className="flex items-center gap-2">
+                <Icon section="easyImmigration" name="group" className="w-6 h-6 flex-shrink-0" />
                 <div className="max-w-[735px] font-medium leading-[1.61]">
                   ازدواج با فرد فرانسوی: از طریق ازدواج با یک فرانسوی بعد از ۴ سال می توان تقاضای ملیت فرانسوی کرد.
                 </div>
-                <img className="w-6 h-6 flex-shrink-0" src="https://www.figma.com/api/mcp/asset/2b7d9432-307f-4b52-8975-b941c6421a1a" alt="" />
               </div>
             </div>
           </div>
@@ -189,86 +208,14 @@ const PRFrancePage: React.FC = () => {
       </section>
 
       {/* Consultation Form Section */}
-      <section className="relative py-16 px-4 text-right text-sm text-[#f2f9ff]">
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden h-[624px]">
-            <img className="absolute inset-0 w-full h-full object-cover" src="https://www.figma.com/api/mcp/asset/15f8d84a-2eaf-46e7-99da-a49a81d87804" alt="" />
-            <div className="relative z-10 p-8 h-full flex flex-col justify-center">
-              <h3 className="text-[20px] leading-[1.1] text-left mb-8">ثبت درخواست مشاوره با ورسای</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="flex flex-col items-end gap-2">
-                  <div className="w-full">
-                    <span className="text-[#f2c3be]">*</span>
-                    <span className="text-[#f2f9ff]">نام و نام خانوادگی</span>
-                  </div>
-                  <div className="w-full rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] flex items-center justify-end p-3 text-[#6d6e70]">
-                    <div className="font-medium">نام و نام خانوادگی خود را وارد کنید.</div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-end gap-2">
-                  <div className="w-full">
-                    <span className="text-[#f2c3be]">*</span>
-                    <span className="text-[#f2f9ff]">شماره تماس</span>
-                  </div>
-                  <div className="w-full rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] flex items-center justify-end p-3 text-[#6d6e70]">
-                    <div className="font-medium">شماره تماس خود را وارد کنید.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="flex flex-col items-end gap-2">
-                  <div className="w-full">
-                    <span className="text-[#f2c3be]">*</span>
-                    <span className="text-[#f2f9ff]">موضوع مشاوره</span>
-                  </div>
-                  <div className="w-full rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] h-[45px] flex items-center justify-between py-2 px-3 text-[#6d6e70]">
-                    <img className="w-6 h-6" src="https://www.figma.com/api/mcp/asset/4371ddbb-0b47-4ddf-9edc-b2d7c707be12" alt="" />
-                    <div className="font-medium">موضوع مشاوره را انتخاب کنید.</div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-end gap-2">
-                  <div className="w-full">
-                    <span className="text-[#f2c3be]">*</span>
-                    <span className="text-[#f2f9ff]">ایمیل</span>
-                  </div>
-                  <div className="w-full rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] flex items-center justify-end p-3 text-[#6d6e70]">
-                    <div className="font-medium">آدرس ایمیل خود را وارد کنید.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <div className="mb-2">متن پیام</div>
-                <div className="rounded-2xl bg-[#f2f9ff] border border-[#cbcbcb] h-[92px] flex items-start justify-end p-3 text-[#6d6e70]">
-                  <div className="font-medium">در صورت تمایل، متن پیام خود را بنویسید.</div>
-                </div>
-              </div>
-
-              <div className="flex justify-center mb-8">
-                <div className="rounded-[32px] bg-[#d74a3c] border border-[#e5867d] flex items-center justify-center py-3 px-6 text-left text-lg">
-                  <b className="leading-[1.1]">ارسال درخواست</b>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center gap-4 text-center text-[20px] text-white">
-                <div className="flex items-center gap-2">
-                  <img className="w-6 h-6" src="https://www.figma.com/api/mcp/asset/442b3b5f-d359-4c26-b723-e653ba4c7d55" alt="" />
-                  <div className="font-medium">۰۲۱۲۸۴۲۱۶۹۰</div>
-                </div>
-                <div className="rounded-[32px] bg-[#f2f9ff] border border-[#d74a3c] h-11 flex items-center justify-center py-3 px-6 gap-2 text-left text-lg text-[#d74a3c]">
-                  <img className="w-6 h-6" src="https://www.figma.com/api/mcp/asset/e6241416-3500-4b55-a174-73ae2aa73395" alt="" />
-                  <b className="leading-[1.1]">ارتباط در واتساپ</b>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9565.PNG" />
         </div>
       </section>
 
       {/* Related Articles Section */}
-      <RelatedArticlesSection 
+      <RelatedArticlesSection
         articles={relatedArticles}
         title="مقالات مرتبط"
         showViewAll={true}
@@ -277,7 +224,7 @@ const PRFrancePage: React.FC = () => {
       />
 
       {/* FAQ Section */}
-      <FAQSection 
+      <FAQSection
         faqItems={faqItems}
         title="سوالات متداول"
         className="py-16"

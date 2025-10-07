@@ -85,7 +85,7 @@ class WordPressErrorBoundary extends Component<Props, State> {
               </Button>
 
               <Button
-                variant="outline"
+                variant="primary-outline"
                 onClick={() => window.location.reload()}
                 className="w-full"
               >
