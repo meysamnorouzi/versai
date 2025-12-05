@@ -183,14 +183,14 @@ const FranceOfficePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f2f1f1] font-['IRANYekanX'] relative">
       {/* Hero Section */}
-      <section className="relative py-16 ">
+      <section className="relative py-8 sm:py-12 md:py-16">
         <Container>
           <div className="text-center">
-            <h1 className="text-[32px] font-extrabold text-[#316086] mb-8 leading-[1.41]  max-w-2xl mx-auto">
+            <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-extrabold text-[#316086] mb-4 sm:mb-6 md:mb-8 leading-[1.41] max-w-2xl mx-auto px-4 sm:px-0">
               <span className="text-[#b23124]">ثبت شرکت</span> در فرانسه، راه‌اندازی{' '}
               <span className="text-[#b23124]">کسب‌وکار</span> در فرانسه بدون دردسر
             </h1>
-            <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] text-right">
+            <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-[#6d6e70] leading-[1.53] text-right px-4 sm:px-0">
               در این مقاله قصد داریم در مورد ثبت شرکت در فرانسه و ثبت شرکت تجاری در فرانسه به عنوان یکی از راه های مهاجرت به فرانسه و مراحل دریافت اقامت برای ثبت شرکت درفرانسه و صفر تا صد قوانین آن صحبت کنیم پس تا انتهای مقاله مارا همراهی کنید.
             </p>
           </div>
@@ -200,37 +200,32 @@ const FranceOfficePage: React.FC = () => {
       {/* Company Requirements Section */}
       <section className="relative">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-[24px] font-bold text-[#b23124] text-right">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#b23124] text-right px-4 sm:px-0">
               شرایط عمومی ثبت شرکت در فرانسه
             </h2>
           </div>
 
-          <div className="flex justify-between items-start gap-12">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-6 sm:gap-8 md:gap-12">
             {/* Right side - Requirements grid */}
-            <div className="flex-1">
-              <div className="grid grid-cols-2 gap-0 rounded-lg overflow-hidden">
+            <div className="flex-1 w-full lg:w-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 rounded-lg overflow-hidden border border-[#b23124]/20 sm:border-0">
                 {/* Grid cells with red borders */}
                 {companyRequirements.map((requirement, index) => {
                   const IconComponent = requirement.icon
                   return (
                     <div
                       key={index}
-                      className="py-2 px-6   relative"
-                      style={{
-                        borderRightWidth: index % 2 === 1 ? '0' : '1px',
-                        borderBottomWidth: index >= 4 ? '0' : '1px'
-                      }}
+                      className={`py-3 sm:py-2 px-4 sm:px-6 relative border-b border-[#b23124]/20 sm:border-b-0 ${index % 2 === 0 ? 'sm:border-r' : ''} border-[#b23124]/20 ${index >= 4 ? 'sm:border-b-0' : ''}`}
                     >
-                      <div className="flex flex-col gap-3 ">
+                      <div className="flex flex-col gap-2 sm:gap-3">
                         <div className="flex justify-center">
-                          <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
-                            <IconComponent className="w-8 h-8 text-[#b23124]" />
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+                            <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-[#b23124]" />
                           </div>
                         </div>
                         <div className="flex-1 text-right">
-
-                          <p className="text-[14px] font-medium text-[#316086] leading-[1.48] text-justify">
+                          <p className="text-[12px] sm:text-[14px] font-medium text-[#316086] leading-[1.48] text-justify">
                             <span className='text-[#b23124] font-bold'>{requirement.title} :</span> {requirement.description}
                           </p>
                         </div>
@@ -241,11 +236,11 @@ const FranceOfficePage: React.FC = () => {
               </div>
             </div>
             {/* Left side - Handshake image */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <img
                 src="/images/france-office-page/Rectangle 67.png"
                 alt="Handshake business meeting"
-                className="object-cover rounded-lg"
+                className="object-cover rounded-lg w-full max-w-[300px] sm:max-w-[400px] lg:max-w-none"
               />
             </div>
           </div>
@@ -294,7 +289,7 @@ const FranceOfficePage: React.FC = () => {
       </section>
 
       {/* Registration Process Section */}
-      <section className="relative py-16 overflow-hidden">
+      <section className="relative py-8 sm:py-12 md:py-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#1e3950] to-[#1e3950] opacity-85"></div>
@@ -303,25 +298,25 @@ const FranceOfficePage: React.FC = () => {
 
         <div className="relative z-10">
           <Container>
-            <h2 className="text-[32px] font-extrabold text-[#fdfeff] text-right mb-12">
+            <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-extrabold text-[#fdfeff] text-right mb-6 sm:mb-8 md:mb-12 px-4 sm:px-0">
               مراحل ثبت شرکت تجاری در فرانسه
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               {registrationSteps.map((step, index) => {
                 const IconComponent = step.icon
                 return (
-                  <div key={index} className={`${step.position === 'right' ? 'lg:ml-auto' : ''} max-w-[538px]`}>
-                    <div className="bg-[#1e3950] border border-[#316086] rounded-2xl p-6">
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className="w-9 h-9 flex items-center justify-center">
-                          <IconComponent className="w-9 h-9 text-[#f2f9ff]" />
+                  <div key={index} className={`${step.position === 'right' ? 'lg:ml-auto' : ''} max-w-[538px] w-full`}>
+                    <div className="bg-[#1e3950] border border-[#316086] rounded-2xl p-4 sm:p-6">
+                      <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                        <div className="w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center">
+                          <IconComponent className="w-7 h-7 sm:w-9 sm:h-9 text-[#f2f9ff]" />
                         </div>
-                        <h3 className="text-[18px] font-semibold text-[#f2f9ff] leading-[1.4]">
+                        <h3 className="text-[16px] sm:text-[18px] font-semibold text-[#f2f9ff] leading-[1.4]">
                           {step.title}
                         </h3>
                       </div>
-                      <p className="text-[16px] font-medium text-[#d3e2ef] leading-[1.61] text-right">
+                      <p className="text-[14px] sm:text-[16px] font-medium text-[#d3e2ef] leading-[1.61] text-right">
                         {step.description}
                       </p>
                     </div>
@@ -334,12 +329,12 @@ const FranceOfficePage: React.FC = () => {
       </section>
 
       {/* Residence and Company Registration Section */}
-      <section className="py-16 ">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
-          <h2 className="text-[24px] font-bold text-[#b23124] text-right mb-8">
+          <h2 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#b23124] text-right mb-4 sm:mb-6 md:mb-8 px-4 sm:px-0">
             اقامت فرانسه و ثبت شرکت
           </h2>
-          <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right space-y-4">
+          <div className="text-[14px] sm:text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right space-y-3 sm:space-y-4 px-4 sm:px-0">
             <p>
               برای ثبت شرکت در فرانسه به عنوان یک خارجی، شما نیاز به برای{' '}
               <span className="font-medium">اقامت در فرانسه</span>{' '}
@@ -353,44 +348,44 @@ const FranceOfficePage: React.FC = () => {
       </section>
 
       {/* Company Types Section */}
-      <section className="py-16 ">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
-          <div className="flex items-center gap-2 justify-start mb-8">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <QuestionMarkCircleIcon className="w-8 h-8 text-[#b23124]" />
+          <div className="flex items-center gap-2 justify-start mb-4 sm:mb-6 md:mb-8 px-4 sm:px-0">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
+              <QuestionMarkCircleIcon className="w-6 h-6 sm:w-8 sm:h-8 text-[#b23124]" />
             </div>
-            <h2 className="text-[24px] font-bold text-[#b23124] leading-[1.1]">
+            <h2 className="text-[18px] sm:text-[20px] md:text-[24px] font-bold text-[#b23124] leading-[1.1]">
               چه نوع شرکتی راه اندازی کنیم؟
             </h2>
 
           </div>
 
-          <div className="text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right mb-8">
-            <p className="mb-4">
+          <div className="text-[14px] sm:text-[16px] font-medium text-[#6d6e70] leading-[1.61] text-right mb-4 sm:mb-6 md:mb-8 px-4 sm:px-0">
+            <p className="mb-3 sm:mb-4">
               یک تصمیم مهم که باید قبل از اقدام به ثبت و شروع معامله بگیرید، این می باشد که ساختار و نوع بیزنس شما چگونه باشد، در این جاست که به کمک یک مشاور حرفه ای که با قوانین و نحوه کسب و کار در این کشور اروپایی آشنا می باشد نیاز دارید.
             </p>
             <p className="font-semibold text-[#316086]">
               حدود ۱۳ نوع شرکت برای کسب و کار در فرانسه وجود دارد که در زیر به برخی از مهمترین آنها می پردازیم:
             </p>
           </div>
-          <div className="flex justify-between">
-            <div className="grid grid-cols-1 gap-8 flex-1 pl-16">
-              <div className="space-y-6">
+          <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 flex-1 lg:pl-0 md:pl-8 pl-0">
+              <div className="space-y-4 sm:space-y-6">
                 {companyTypes.map((type, index) => (
                   <div key={index} className="text-right">
               
-                    <p className="text-[14px] font-medium text-[#316086] leading-[1.48]">
+                    <p className="text-[12px] sm:text-[14px] font-medium text-[#316086] leading-[1.48]">
                     <span className="text-[#b23124] font-bold">{type.title}:</span> {type.description}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex-shrink-1">
+            <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
               <img
                 src="/images/france-office-page/Rectangle 68.png"
                 alt="Handshake business meeting"
-                className="object-cover rounded-lg"
+                className="object-cover rounded-lg w-full max-w-[300px] sm:max-w-[400px] lg:max-w-none"
               />
             </div>
           </div>
@@ -398,7 +393,7 @@ const FranceOfficePage: React.FC = () => {
       </section>
 
       {/* Consultation Form Section */}
-      <section className="py-16 ">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
           <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9561.PNG" />
         </Container>
@@ -410,14 +405,14 @@ const FranceOfficePage: React.FC = () => {
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
-        className="py-16 bg-[#f2f1f1]"
+        className="py-8 sm:py-12 md:py-16 bg-[#f2f1f1]"
       />
 
       {/* FAQ Section */}
       <FAQSection
         faqItems={faqData}
         title="سوالات متداول"
-        className="py-16 bg-white"
+        className="py-8 sm:py-12 md:py-16 bg-white"
       />
     </div>
   )

@@ -81,20 +81,20 @@ const FranceStudyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f2f1f1] relative overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4">
+      <section className="pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12 md:pb-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-[32px] font-extrabold text-[#316086] leading-[1.41] mb-8">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-[24px] sm:text-[28px] md:text-[32px] font-extrabold text-[#316086] leading-[1.41] mb-4 sm:mb-6 md:mb-8">
               تحصیل در فرانسه
             </h1>
             <div className="max-w-4xl mx-auto text-right">
-              <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-6">
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-4 sm:mb-6">
                 برای اینکه بتوانید در فرانسه ادامه تحصیل دهید، اولین قدم این است که از دانشگاه‌ها یا کالج‌های فرانسه پذیرش بگیرید. کشور فرانسه از بهترین مکان ها برای تحصیل می باشد و نظام‌های آموزش عالی جهان را دارد. دانشگاه ها و کالج های معتبری در هر مقطع و رشته ای که قصد ادامه تحصیل داشته باشید، وجود دارد.
               </p>
-              <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-6">
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-4 sm:mb-6">
                 فرانسه رتبه ششم جهان را از نظر تعداد دانشجویان بین‌المللی (بیش از ۳۴۳۰۰۰ دانشجو) دارد که اکثر آنها در مقاطع تحصیلات تکمیلی مشغول به تحصیل هستند. دانشجویانی که در فرانسه تحصیل کرده اند رضایت کامل از دانشگاه های خود داشته و تحصیل در فرانسه را به دوستان خود توصیه می کنند.
               </p>
-              <p className="text-[16px] font-medium text-[#316086] leading-[1.61]">
+              <p className="text-[13px] sm:text-[14px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                 سالانه در ماه سپتامبر، دانشگاه های فرانسه دانشجو می پذیرند.برای متقاضی ویزای همراه تعلق می گیرد، همسر و فرزندان شامل همراهان می باشند، پدر یا مادر بعد از سن قانونی شامل ویزای همراه نمی شوند. در حال حاضر در کشور فرانسه دوره های زبانی فرانسه در دانشگاه ها و کالج ها برگزار می شود که از طریق این دوره ها نیز می توانید اقدام نمایید. ویزای همراه به این دوره ها نیز تعلق می گیرد.
               </p>
             </div>
@@ -103,22 +103,22 @@ const FranceStudyPage: React.FC = () => {
       </section>
 
       {/* University Admission Process Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <img 
                 src="https://placehold.co/446x502" 
                 alt="University admission process"
-                className="w-full h-[502px] object-cover rounded-2xl border border-stone-300"
+                className="w-full h-[300px] sm:h-[400px] md:h-[502px] object-cover rounded-2xl border border-stone-300"
               />
             </div>
-            <div className="order-1 lg:order-2 space-y-8">
+            <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
+                <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-4 sm:mb-6">
                   نحوه پذیرش در دانشگاه های فرانسه
                 </h2>
-                <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
+                <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                   <p>
                     این نکته را باید ذکر کرد که گرفتن اقامت دائم در کشور فرانسه برای دانشجویان از زمانی شروع می شود که متقاضی پس از اتمام تحصیل ۵ سال به صورت تمام وقت کار نموده و اقامت دائم اخذ کنند.
                   </p>
@@ -129,11 +129,11 @@ const FranceStudyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
+                <h3 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-4 sm:mb-6">
                   انواع ویزای تحصیلی فرانسه
                 </h3>
-                <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
-                  <ul className="space-y-3 list-disc list-inside">
+                <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
+                  <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
                     <li>
                       دانشجویانی که از طریق شرکت در کنکور یا امتحان پذیرش می گیرند، برای اقامت های كوتاه مدت-حداكثر ۹۰ روز- صادر می گردد. در صورتی که پذیرش قطعی شود دانشجو بدون اینکه نیاز به برگشتن به کشور مبدا را داشته باشد می تواند ویزای اقامت بلند مدت را دریافت نماید.
                     </li>
@@ -152,7 +152,7 @@ const FranceStudyPage: React.FC = () => {
       </section>
 
       {/* Consultation CTA Banner */}
-      <section className="py-20 px-4 bg-red-900/80 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-red-900/80 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://placehold.co/1440x320" 
@@ -161,8 +161,8 @@ const FranceStudyPage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-red-900/80"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h2 className="text-[32px] font-extrabold text-stone-50 leading-[1.41] mb-8 [text-shadow:0px_0px_6px_rgba(255,255,255,0.71)]">
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-0">
+          <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-extrabold text-stone-50 leading-[1.41] mb-6 sm:mb-8 [text-shadow:0px_0px_6px_rgba(255,255,255,0.71)]">
             برای مشاوره تخصصی پذیرش در فرانسه از کارشناسان موسسه مهاجرتی ورسای کمک بگیرید.
           </h2>
           <Button 
@@ -176,33 +176,33 @@ const FranceStudyPage: React.FC = () => {
       </section>
 
       {/* Versailles Recommendations Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6">
-              <h2 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6 sm:mb-8">
                 توصیه های ورسای به شما
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {recommendations.map((recommendation, index) => (
                   <div key={index} className="flex gap-2 items-start">
-                    <div className="flex-shrink-0 w-6 h-6 mt-1">
-                      <Star className="w-6 h-6 text-[#b23124]" />
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 mt-1">
+                      <Star className="w-5 h-5 sm:w-6 sm:h-6 text-[#b23124]" />
                     </div>
-                    <p className="text-[16px] font-medium text-[#316086] leading-[1.61]">
+                    <p className="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                       {recommendation}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <img 
                 src="https://placehold.co/627x279" 
                 alt="Study in France"
-                className="w-full h-[279px] object-cover rounded-2xl"
+                className="w-full h-[200px] sm:h-[250px] md:h-[279px] object-cover rounded-2xl"
               />
-              <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
+              <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                 <p>
                   <span>شرایط دریافت اقامت در فرانسه چیست؟ </span>
                   <span className="text-[#b23124]">اینجا</span>
@@ -218,7 +218,7 @@ const FranceStudyPage: React.FC = () => {
       </section>
 
       {/* Consultation Form Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9562.PNG" />
         </div>

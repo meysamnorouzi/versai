@@ -119,56 +119,57 @@ const CanadaExpressEntryPage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
-          <div className="text-center mb-16">
-            <h1 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4">
-              <span className="text-red-700">اکسپرس انتری</span>
-              <span className="text-cyan-800"> کانادا، مسیر سریع اقامت با راهنمایی تخصصی</span>
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-7 sm:leading-8 md:leading-10 mb-3 sm:mb-4 px-4 sm:px-0">
+              <span className="text-red-700">اکسپرس انتری (Express Entry) <span className="text-cyan-800">کانادا ،</span></span>
+             <br/>
+              <span className="text-cyan-800">  مسیر سریع اقامت با راهنمایی تخصصی</span>
             </h1>
-            <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-7 max-w-4xl mx-auto text-right">
+            <p className="text-neutral-500 text-sm sm:text-base md:text-lg font-medium font-['IRANYekanX'] leading-6 sm:leading-7 max-w-4xl mx-auto text-right px-4 sm:px-0">
               Express Entry یک سیستم مدیریتیِ سه گروه نیروی کار متخصص است که برای انتخاب متقاضیان واجد شرایط برای اقامت دائم کانادا عمل می‌کند. این سیستم با معیار CRSScore کار می‌کند و از میان پروفایل‌های واجد شرایط، دعوت‌نامه (ITA) برای اقدام به اقامت صادر می‌شود. هر چه CRSScore بالاتر باشد، احتمال دریافت ITA سریع‌تر است. هدف ورسای، کمک به شما در افزایش CRSScore به شکل عملی و قابل دستیابی است.
             </p>
           </div>
 
           {/* Target Audience */}
-          <div className="text-center mb-16">
-            <h2 className="text-red-700 text-xl font-semibold font-['IRANYekanX'] leading-snug mb-4">مخاطبین هدف</h2>
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-red-700 text-lg sm:text-xl font-semibold font-['IRANYekanX'] leading-snug mb-3 sm:mb-4">مخاطبین هدف</h2>
            
-            <div className="flex justify-center gap-10 mb-8">
+            <div className="flex justify-center gap-4 sm:gap-6 md:gap-10 mb-6 sm:mb-8">
               <Icon 
                 section="easyImmigration" 
                 name="component" 
-                className="w-12 h-12" 
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
                 alt="Component" 
               />
               <Icon 
                 section="easyImmigration" 
                 name="delivery" 
-                className="w-12 h-12" 
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
                 alt="Delivery" 
               />
               <Icon 
                 section="easyImmigration" 
                 name="coins" 
-                className="w-12 h-12" 
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" 
                 alt="Coins" 
               />
             </div>
-            <p className="text-cyan-800 text-sm font-semibold font-['IRANYekanX'] leading-tight mb-8 max-w-2xl mx-auto">
+            <p className="text-cyan-800 text-xs sm:text-sm font-semibold font-['IRANYekanX'] mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0">
               متقاضیان دارای تحصیلات دانشگاهی یا کارشناسی، سابقه کار مرتبط، سطح زبان قابل قبول، و سازگاری با نیازهای بازار کار کانادا (مثلاً در زمینه‌های تقاضا محور مانند فناوری، بهداشت، مهندسی، و خدمات)
             </p>
           </div>
 
           {/* Benefits Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <div className="space-y-4">
-              <h2 className="text-red-700 text-2xl font-semibold font-['IRANYekanX'] leading-relaxed text-right">مزایای اکسپرس انتری</h2>
-              <div className="space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
+          <div className="space-y-3 sm:space-y-4">
+              <h2 className="text-red-700 text-lg sm:text-xl md:text-2xl font-semibold font-['IRANYekanX'] leading-relaxed text-right">مزایای اکسپرس انتری (Express Entry)</h2>
+              <div className="space-y-3 sm:space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-2 text-right">
-              <img src="/icons/france office page/Group.svg" alt="" className="w-6 h-6 flex-shrink-0" />
-              <p className="text-cyan-800 text-base font-medium font-['IRANYekanX'] leading-relaxed">{benefit}</p>
+              <img src="/icons/france office page/Group.svg" alt="" className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+              <p className="text-cyan-800 text-sm sm:text-base font-medium font-['IRANYekanX'] leading-relaxed">{benefit}</p>
                   </div>
                 ))}
               </div>
@@ -177,7 +178,7 @@ const CanadaExpressEntryPage: React.FC = () => {
               <img 
                 src="/images/canada-express-entry-page/pexels-olly-3777559 1.png" 
                 alt="Canada Express Entry" 
-                className="w-full h-96 object-cover rounded-2xl border border-stone-300"
+                className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-stone-300"
               />
             </div>
             
@@ -186,7 +187,7 @@ const CanadaExpressEntryPage: React.FC = () => {
       </section>
 
       {/* Banner Section */}
-      <section className="relative py-20 mb-16">
+      <section className="relative py-12 sm:py-16 md:py-20 mb-8 sm:mb-12 md:mb-16">
         <div className="absolute inset-0">
           <img
             src="/images/canada-immigration-page/Rectangle 66.png"
@@ -195,14 +196,14 @@ const CanadaExpressEntryPage: React.FC = () => {
           />
         </div>
         <Container>
-          <div className="relative text-center text-white">
-            <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
+          <div className="relative text-center text-white px-4 sm:px-0">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-7 sm:leading-8 md:leading-10 mb-3 sm:mb-4" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
               برای رویای کانادا، یک قدم بردار.
             </h2>
-            <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
+            <p className="text-base sm:text-lg md:text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-6 sm:mb-8" style={{textShadow: '0px 0px 6px rgba(255,255,255,0.71)'}}>
               ارزیابی امتیاز شما با ورسای
             </p>
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-[32px] text-base sm:text-lg font-bold font-['IRANYekanX']">
               درخواست مشاوره
             </Button>
           </div>
@@ -210,32 +211,32 @@ const CanadaExpressEntryPage: React.FC = () => {
       </section>
 
       {/* CRS Factors Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
-          <Card className="bg-[#F2F9FF] border-red-200 p-8 border">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Card className="bg-[#F2F9FF] border-red-200 p-4 sm:p-6 md:p-8 border">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
 
-              <div className="space-y-4">
-                <h2 className="text-red-700 text-xl font-semibold font-['IRANYekanX'] leading-snug text-right">چه عواملی بر روی امتیاز CRS تاثیر می گذارند؟</h2>
-                <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
+                <h2 className="text-red-700 text-lg sm:text-xl font-semibold font-['IRANYekanX'] leading-snug text-right">چه عواملی بر روی امتیاز CRS تاثیر می گذارند؟</h2>
+                <div className="space-y-3 sm:space-y-4">
                   {crsFactors.map((factor, index) => (
                     <div key={index} className="text-right">
-                      <p className="text-base font-medium font-['IRANYekanX'] leading-relaxed">
+                      <p className="text-sm sm:text-base font-medium font-['IRANYekanX'] leading-relaxed">
                         <span className="text-red-700">{factor.title}</span>
                         <span className="text-cyan-800"> {factor.description}</span>
                       </p>
                     </div>
                   ))}
-                  <p className="text-cyan-800 text-base font-semibold font-['IRANYekanX'] leading-normal text-right">
+                  <p className="text-cyan-800 text-sm sm:text-base font-semibold font-['IRANYekanX'] leading-normal text-right">
                     با دریافت مشاوره از ورسای، می توانید حدود امتیاز فعلی خود را بدانید و سعی در بالاتر بردن آن کنید.
                   </p>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative flex justify-center lg:justify-start">
                 <img 
                   src="/images/canada-express-entry-page/2-etoiles-bienvenue-en-france-2_petit 1.png" 
                   alt="CRS Factors" 
-                  className="w-2/3 object-cover rounded-2xl mx-auto"
+                  className="w-full sm:w-2/3 lg:w-2/3 object-cover rounded-2xl mx-auto"
                 />
               </div>
             </div>
@@ -244,7 +245,7 @@ const CanadaExpressEntryPage: React.FC = () => {
       </section>
 
       {/* Consultation Form Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
           <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9564.PNG" />
         </Container>
@@ -256,14 +257,14 @@ const CanadaExpressEntryPage: React.FC = () => {
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
 
       {/* FAQ Section */}
       <FAQSection 
         faqItems={faqItems}
         title="سوالات متداول"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
     </div>
   )

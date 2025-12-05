@@ -4,7 +4,7 @@ import ServicesSection from '@/src/components/home/ServicesSection'
 import AboutSection from '@/src/components/home/AboutSection'
 import LanguageCourseSection from '@/src/components/home/LanguageCourseSection'
 import CTABanner from '@/src/components/home/CTABanner'
-import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import ConsultationForm from '@/src/components/home/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
 import FAQSection from '@/src/components/ui/FAQSection'
 import { PAGE_SEO } from '@/src/config/seo'
@@ -60,7 +60,7 @@ const HomePage: React.FC = () => {
       <AboutSection />
       <LanguageCourseSection />
       <CTABanner />
-      <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9566.PNG" />
+      <ConsultationForm />
       <RelatedArticlesSection 
         articles={[
           {

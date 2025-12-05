@@ -80,19 +80,19 @@ const FranceVisaPage: React.FC = () => {
       </div>
 
       {/* Header Section */}
-      <div className="relative z-10 pt-12 pb-16">
+      <div className="relative z-10 pt-8 sm:pt-10 md:pt-12 pb-8 sm:pb-12 md:pb-16">
         <Container>
-          <div className="text-center space-y-6">
-            <h1 className="text-3xl font-extrabold text-[#316086] leading-tight">
+          <div className="text-center space-y-4 sm:space-y-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#316086] leading-tight px-4 sm:px-0">
               ویزای کوتاه مدت فرانسه
               <span className="text-[#B23124]"> (Type C)</span>
             </h1>
             
-            <div className="text-right">
-              <p className="text-lg font-medium text-[#6D6E70] leading-relaxed">
+            <div className="text-right px-4 sm:px-0">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-[#6D6E70] leading-relaxed">
                 در راستای برنامه مهاجرت به فرانسه و در سری مقالات انواع ویزای فرانسه به ویزای کوتاه مدت فرانسه رسیدیم. در این مقاله سعی داریم تا به صورت اختصاصی در مورد ویزای کوتاه مدت فرانسه مواردی را با هم بررسی کنیم.
               </p>
-              <p className="text-lg font-medium text-[#6D6E70] leading-relaxed mt-4">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-[#6D6E70] leading-relaxed mt-3 sm:mt-4">
                 بسیاری از افراد به دلایل کاری، خانوادگی، تحصیلی، توریستی و … برای دریافت ویزای کوتاه مدت فرانسه اقدام می‌کنند. با اخذ ویزای کوتاه مدت فرانسه (type C) شما می‌توانید تا حداکثر ۹۰ روز در فرانسه اقامت داشته باشید. اما نکته‌ای که در مورد ویزای کوتاه مدت فرانسه حائز اهمیت است، تعداد دفعاتی است که فرد مجاز است وارد کشور فرانسه شود. بر این اساس ویزای کوتاه مدت فرانسه به ۳ دسته تقسیم می‌شوند:
               </p>
             </div>
@@ -101,45 +101,45 @@ const FranceVisaPage: React.FC = () => {
       </div>
 
       {/* Visa Types Section */}
-      <div className="relative z-10 py-16">
+      <div className="relative z-10 py-8 sm:py-12 md:py-16">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-16">
             {/* Single Entry Visa */}
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-3 sm:space-y-4">
               <div className="flex justify-center">
-                <div className="w-12 h-12  rounded-full flex items-center justify-center">
-                  <img src="/images/france-visa-page/ticks/Done, Check.svg" alt="Single Entry" className="w-10 h-10" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
+                  <img src="/images/france-visa-page/ticks/Done, Check.svg" alt="Single Entry" className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#B23124]">ویزای ۱ بار ورود (Single)</h3>
-              <p className="text-base text-justify font-medium text-[#316086] leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#B23124]">ویزای ۱ بار ورود (Single)</h3>
+              <p className="text-sm sm:text-base text-justify font-medium text-[#316086] leading-relaxed">
                 با این نوع ویزا شما تنها ۱ بار امکان ورود به فرانسه و به طور کلی کشورهای حوزه شنگن را خواهید داشت. بعد از اینکه وارد فرانسه شدید و در مدت زمان تعیین شده ویزا، اقامت در فرانسه را تجربه کردید، با پایان اعتبار ویزا و خروج از کشور فرانسه ویزای شما باطل می‌شود و برای ورود مجدد به فرانسه باید دوباره درخواست ویزا بدهید.
               </p>
             </div>
 
             {/* Double Entry Visa */}
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-3 sm:space-y-4">
               <div className="flex justify-center">
-                <div className="w-12 h-12  rounded-full flex items-center justify-center">
-                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Double Entry" className="w-10 h-10" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
+                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Double Entry" className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#B23124]">ویزای ۲ بار ورود (Double)</h3>
-              <p className="text-base text-justify font-medium text-[#316086] leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#B23124]">ویزای ۲ بار ورود (Double)</h3>
+              <p className="text-sm sm:text-base text-justify font-medium text-[#316086] leading-relaxed">
                 با ویزای ۲ بار ورود، شما حداکثر ۲ بار اجازه ورود به کشورهای حوزه شنگن را خواهید داشت. برای مثال شما بعد از دریافت ویزای شنگن کوتاه مدت وارد فرانسه می‌شوید. سپس، فرانسه را به مقصد یک کشور دیگر ترک می‌کنید. شما بعد از این سفر ۱ بار دیگر می‌توانید وارد حوزه شنگن بشوید. با دومین خروج شما از حوزه شنگن، ویزای شما دیگر اعتبار نخواهد داشت.
               </p>
             </div>
 
             {/* Multiple Entry Visa */}
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-3 sm:space-y-4">
               <div className="flex justify-center">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center gap-1">
-                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Multiple Entry" className="w-10 h-10" />
-                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Multiple Entry" className="w-10 h-10" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center gap-1">
+                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Multiple Entry" className="w-8 h-8 sm:w-10 sm:h-10" />
+                  <img src="/images/france-visa-page/ticks/Read, Circle.svg" alt="Multiple Entry" className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#B23124]">ویزا ورود متعدد (Multiple)</h3>
-              <p className="text-base text-justify font-medium text-[#316086] leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#B23124]">ویزا ورود متعدد (Multiple)</h3>
+              <p className="text-sm sm:text-base text-justify font-medium text-[#316086] leading-relaxed">
                 شما با این نوع ویزا می‌توانید در طول مدت زمان اعتبار آن بدون محدودیت در رفت و آمد، به کشورهای حوزه شنگن وارد و از آن‌ها خارج شوید. این نوع ویزا هم برای اقامت‌های کوتاه مدت و هم برای اقامت‌های بلند مدت صادر می‌شود.
               </p>
             </div>
@@ -148,18 +148,18 @@ const FranceVisaPage: React.FC = () => {
       </div>
 
       {/* Reasons Section */}
-      <div className="relative z-10 py-16 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/france-visa-page/main-bg.png")'}}>
+      <div className="relative z-10 py-8 sm:py-12 md:py-16 bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/france-visa-page/main-bg.png")'}}>
         <div className="absolute inset-0 bg-[#1E3950] bg-opacity-80"></div>
         <Container className="relative z-10">
-          <div className="text-center space-y-8">
-            <h2 className="text-2xl font-semibold text-white">دلیل درخواست ویزای کوتاه مدت فرانسه</h2>
+          <div className="text-center space-y-4 sm:space-y-6 md:space-y-8">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-white px-4 sm:px-0">دلیل درخواست ویزای کوتاه مدت فرانسه</h2>
             
-            <p className="text-base font-medium text-white leading-relaxed max-w-4xl mx-auto">
+            <p className="text-sm sm:text-base font-medium text-white leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
               "دلیل حضور در فرانسه" یکی از اصلی‌ترین موارد برای تعیین نوع ویزا است. افراد مختلف می‌توانند با توجه تمایلات و دلایل متفاوت برای صدور ویزای کوتاه مدت فرانسه اقدام نمایند که در اینجا به چند مورد اصلی آن اشاره می‌کنیم:
             </p>
 
             {/* Reasons Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 mt-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-0">
               {[
                 { iconSrc: "/images/france-visa-page/Football.svg", text: "شرکت در دوره ورزشی/هنری" },
                 { iconSrc: "/images/france-visa-page/Book, Open.svg", text: "شرکت در دوره آموزشی" },
@@ -170,10 +170,10 @@ const FranceVisaPage: React.FC = () => {
                 { iconSrc: "/images/france-visa-page/Suitcase, Financial, Portfolio.svg", text: "سفر توریستی" }
               ].map((reason, index) => (
                 <div key={index} className="text-center space-y-2">
-                  <div className="w-16 h-16  flex items-center justify-center mx-auto">
-                    <img src={reason.iconSrc} alt="" className="w-10 h-10" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto">
+                    <img src={reason.iconSrc} alt="" className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />
                   </div>
-                  <p className="text-sm font-medium text-white leading-tight whitespace-pre-line">
+                  <p className="text-xs sm:text-sm font-medium text-white leading-tight whitespace-pre-line">
                     {reason.text}
                   </p>
                 </div>
@@ -181,11 +181,11 @@ const FranceVisaPage: React.FC = () => {
             </div>
 
             {/* Required Documents */}
-            <div className="space-y-6 pt-12 ">
-              <h3 className="text-xl font-semibold text-[#F2C3BE] text-right">مدارک موردنیاز ویزای کوتاه مدت</h3>
+            <div className="space-y-4 sm:space-y-6 pt-8 sm:pt-10 md:pt-12 px-4 sm:px-0">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#F2C3BE] text-right">مدارک موردنیاز ویزای کوتاه مدت</h3>
               
               <div className="text-right">
-                <p className="text-base font-medium text-white leading-relaxed">
+                <p className="text-sm sm:text-base font-medium text-white leading-relaxed">
                   متقاضیان دریافت ویزای کوتاه مدت فرانسه باید نسبت به ارائه یک سری مدارک مشخص اقدام نمایند و آن‌ها را برای بررسی درخواست ویزا به{' '}
                   <a href="https://visa.vfsglobal.com/irn/fa/fra" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">
                     سازمان VFS Global
@@ -193,25 +193,25 @@ const FranceVisaPage: React.FC = () => {
                   {' '}ارائه دهند:
                 </p>
                 
-                <div className="mt-4 space-y-2 text-right">
-                  <p className="text-base font-medium text-white">
+                <div className="mt-3 sm:mt-4 space-y-2 text-right">
+                  <p className="text-sm sm:text-base font-medium text-white">
                     <span className="text-[#F2C3BE]">–</span> فرم ویزا
                   </p>
-                  <p className="text-base font-medium text-white">
+                  <p className="text-sm sm:text-base font-medium text-white">
                     <span className="text-[#F2C3BE]">–</span> پاسپورت
                   </p>
-                  <p className="text-base font-medium text-white">
+                  <p className="text-sm sm:text-base font-medium text-white">
                     <span className="text-[#F2C3BE]">–</span> مدارک مبنی بر دلایل شما برای اقامت در حوزه شنگن
                   </p>
-                  <p className="text-base font-medium text-white">
+                  <p className="text-sm sm:text-base font-medium text-white">
                     <span className="text-[#F2C3BE]">–</span> مدارک مبنی بر اثبات منابع مالی شما برای تامین نیازهای اقتصادی در حین اقامت در حوزه شنگن
                   </p>
-                  <p className="text-base font-medium text-white">
+                  <p className="text-sm sm:text-base font-medium text-white">
                     <span className="text-[#F2C3BE]">–</span> قرارداد بیمه
                   </p>
                 </div>
 
-                <p className="text-base font-medium text-white leading-relaxed mt-6">
+                <p className="text-sm sm:text-base font-medium text-white leading-relaxed mt-4 sm:mt-6">
                   سازمان VFS global پرونده شما را به{' '}
                   <a href="https://ir.ambafrance.org/-%D9%81%D8%A7%D8%B3%DB%8C-" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">
                     سفارت فرانسه در ایران
@@ -225,29 +225,29 @@ const FranceVisaPage: React.FC = () => {
       </div>
 
       {/* Visa Extension Section */}
-      <div className="relative z-10 py-16">
+      <div className="relative z-10 py-8 sm:py-12 md:py-16">
         <Container>
-          <div className="space-y-6">
-            <h2 className="text-2xl font-semibold text-[#B23124] text-right">تمدید ویزای کوتاه مدت فرانسه</h2>
+          <div className="space-y-4 sm:space-y-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#B23124] text-right px-4 sm:px-0">تمدید ویزای کوتاه مدت فرانسه</h2>
             
-            <div className="text-right space-y-4">
-              <p className="text-lg font-medium text-[#316086] leading-relaxed">
+            <div className="text-right space-y-3 sm:space-y-4 px-4 sm:px-0">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-[#316086] leading-relaxed">
                 هنگامی که شما در فرانسه هستید می‌توانید مدت اعتبار ویزای خود را تمدید کنید. اما این تمدید به دو دلیل قابل انجام است:
               </p>
               
               <div className="space-y-2 text-right">
-                <p className="text-lg font-medium text-[#316086]">
+                <p className="text-sm sm:text-base md:text-lg font-medium text-[#316086]">
                   – مسائل خانوادگی (فوت، بیماری، تصادف در خانواده)
                 </p>
-                <p className="text-lg font-medium text-[#316086]">
+                <p className="text-sm sm:text-base md:text-lg font-medium text-[#316086]">
                   – مسائل کاری
                 </p>
               </div>
               
-              <p className="text-lg font.medium text-[#316086] leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-[#316086] leading-relaxed">
                 این شرایط خاص است و مدت تمدید حداکثر ۹۰ روزی خواهد بود و متقاضی (غیر از موارد اضطراری و مسائل مربوط به حقوق بشر) ملزم به پرداخت ۳۰ یورو خواهد بود.
               </p>
-              <p className="text-lg font.medium text-[#6D6E70] leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg font-medium text-[#6D6E70] leading-relaxed">
               در این مقاله با ویزای کوتاه مدت فرانسه (Type C) آشنا شدیم. خواندیم که اعتبار این نوع ویزا حداکثر ۹۰ روز است و زمان صدور، انقضاء ویزا و دفعات ورود و خروج به فرانسه با توجه به دلایل ارائه شده توسط افراد متقاضی می‌تواند متفاوت باشد. ویزای کوتاه مدت فرانسه در بعضی موارد خاص قابل تمدید است.              </p>
             </div>
           </div>
@@ -255,7 +255,7 @@ const FranceVisaPage: React.FC = () => {
       </div>
 
       {/* Consultation Form Section */}
-      <div className="relative z-10 py-16">
+      <div className="relative z-10 py-8 sm:py-12 md:py-16">
         <Container>
           <div className="max-w-6xl mx-auto">
             <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9565.PNG" />
@@ -269,14 +269,14 @@ const FranceVisaPage: React.FC = () => {
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
 
       {/* FAQ Section */}
       <FAQSection 
         faqItems={faqData}
         title="سوالات متداول"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
     </div>
   )

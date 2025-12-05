@@ -104,10 +104,10 @@ const CanadaImmigrationPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-zinc-100 relative overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-16">
+      <section className="pt-8 sm:pt-12 md:pt-16">
         <Container>
           <div className="text-center">
-            <h1 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4 text-cyan-800">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-7 sm:leading-8 md:leading-10 mb-3 sm:mb-4 text-cyan-800 px-4 sm:px-0">
               مهاجرت به کانادا
             </h1>
           </div>
@@ -115,16 +115,16 @@ const CanadaImmigrationPage: React.FC = () => {
       </section>
 
       {/* Immigration Methods Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
-          <div className="mb-16">
-            <h2 className="text-red-700 text-2xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-8">
+          <div className="mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-red-700 text-lg sm:text-xl md:text-2xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-6 sm:mb-8 px-4 sm:px-0">
               از چه راه هایی می توان برای مهاجرت به کانادا اقدام کرد؟
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {immigrationMethods.map((method, index) => (
-                <div key={index} className="text-right">
-                  <p className="text-lg font-medium font-['IRANYekanX'] leading-relaxed">
+                <div key={index} className="text-right px-4 sm:px-0">
+                  <p className="text-sm sm:text-base md:text-lg font-medium font-['IRANYekanX'] leading-relaxed">
                     <span className="text-red-700 font-semibold">{method.title}</span>
                     <br />
                     <span className="text-cyan-800">{method.description}</span>
@@ -137,7 +137,7 @@ const CanadaImmigrationPage: React.FC = () => {
       </section>
 
       {/* Banner Section */}
-      <section className="relative py-20 mb-16">
+      <section className="relative py-12 sm:py-16 md:py-20 mb-8 sm:mb-12 md:mb-16">
         <div className="absolute inset-0">
           <img
             src="/images/canada-immigration-page/Rectangle 66.png"
@@ -146,30 +146,30 @@ const CanadaImmigrationPage: React.FC = () => {
           />
         </div>
         <Container>
-          <div className="relative text-center text-white">
-            <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
+          <div className="relative text-center text-white px-4 sm:px-0">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-7 sm:leading-8 md:leading-10 mb-3 sm:mb-4" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
               برای رویای کانادا، یک قدم بردار.
             </h2>
-            <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
+            <p className="text-base sm:text-lg md:text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-6 sm:mb-8" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
               ارزیابی امتیاز شما با ورسای
             </p>
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-[32px] text-base sm:text-lg font-bold font-['IRANYekanX']">
               درخواست مشاوره
             </Button>
           </div>
         </Container>
       </section>
 
-      <div className="mt-8">
+      <div className="mt-6 sm:mt-8">
         <Container>
-          <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right">
+          <p className="text-neutral-500 text-sm sm:text-base md:text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right px-4 sm:px-0">
             با توجه به شرایطی که دارید برای مثال با در نظر گرفتن وضعیت تاهل، میزان بودجه و سرمایه، تخصص و مهارت هایی که دارید و … می توانید یکی از روش های مهاجرت به کانادا را انتخاب و اقدامات لازم را انجام دهید، نقطه بسیار مهم این است که اقدامات و دریافت ویزا برای مهاجرت کار آسانی نیست، اما تمام کسانی که د راه درست تلاش کرده و اقدامات لازم را انجام داده اند موفق به دریافت ویزای مهاجرت به کانادا شده اند.
           </p>
         </Container>
       </div>
 
       {/* Consultation Form Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <Container>
           <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9563.PNG" />
         </Container>
@@ -181,14 +181,14 @@ const CanadaImmigrationPage: React.FC = () => {
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
 
       {/* FAQ Section */}
       <FAQSection
         faqItems={faqItems}
         title="سوالات متداول"
-        className="py-16"
+        className="py-8 sm:py-12 md:py-16"
       />
     </div>
   )

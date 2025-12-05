@@ -21,27 +21,27 @@ const ConsultationForm: React.FC = () => {
   }
 
   return (
-    <section className="py-20 ">
+    <section className="py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            <span className="text-[#316086] text-3xl font-extrabold font-['IRANYekanX'] leading-10">ثبت درخواست مشاوره با </span>
-            <span className="text-[#d74a3c] text-3xl font-extrabold font-['IRANYekanX'] leading-10">ورسای</span>
+        <div className="">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center font-bold text-gray-900 mb-4 sm:mb-6">
+            <span className="text-[#316086] text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-8 sm:leading-9 md:leading-10">ثبت درخواست مشاوره با </span>
+            <span className="text-[#d74a3c] text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-8 sm:leading-9 md:leading-10">ورسای</span>
           </h2>
-          <p className="text-[#316086] text-lg font-semibold font-['IRANYekanX'] leading-relaxed mb-8">
+          <p className="text-[#316086] text-sm sm:text-base md:text-lg font-semibold font-['IRANYekanX'] leading-relaxed mb-6 sm:mb-8 text-center sm:text-right">
             برای ثبت درخواست مشاوره با ورسای، ابتدا اطلاعات زیر را برای ما ارسال کنید. همکاران ما در اولین فرصت برای تنظیم جلسه  با شما تماس خواهند گرفت.
           </p>
 
 
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
 
           {/* Form */}
-          <div className="p-8 pt-0">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="pt-0 order-2 lg:order-1">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-500 mb-2">
+                  <label className="block text-xs sm:text-sm font-semibold text-neutral-500 mb-2">
                     <span className="text-red-500">*</span> نام و نام خانوادگی
                   </label>
                   <input
@@ -49,28 +49,28 @@ const ConsultationForm: React.FC = () => {
                     placeholder="نام و نام خانوادگی خود را وارد کنید."
                     value={formData.name}
                     onChange={(e) => handleChange('name', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl   inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-500 mb-2">
+                  <label className="block text-xs sm:text-sm font-semibold text-neutral-500 mb-2">
                     <span className="text-red-500">*</span> شماره تماس
                   </label>
                   <input
                     type="tel"
-                    placeholder="شماره تماس خود را وارد کنید."
+                    placeholder="شماره تماس خود را وارد کنید"
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-start items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight text-right"
                     required
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-500 mb-2">
+                  <label className="block text-xs sm:text-sm font-semibold text-neutral-500 mb-2">
                     <span className="text-red-500">*</span> ایمیل
                   </label>
                   <input
@@ -78,18 +78,18 @@ const ConsultationForm: React.FC = () => {
                     placeholder="آدرس ایمیل خود را وارد کنید."
                     value={formData.email}
                     onChange={(e) => handleChange('email', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl  inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-neutral-500 mb-2">
+                  <label className="block text-xs sm:text-sm font-semibold text-neutral-500 mb-2">
                     <span className="text-red-500">*</span> موضوع مشاوره
                   </label>
                   <select
                     value={formData.subject}
                     onChange={(e) => handleChange('subject', e.target.value)}
-                    className="w-64 p-3 bg-white rounded-2xl  text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
+                    className="w-full sm:w-64 p-3 bg-white rounded-2xl text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
                     required
                   >
                     <option value="">موضوع مشاوره را انتخاب کنید.</option>
@@ -102,29 +102,29 @@ const ConsultationForm: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-neutral-500 mb-2">
+                <label className="block text-xs sm:text-sm font-semibold text-neutral-500 mb-2">
                   متن پیام
                 </label>
                 <textarea
                   placeholder="در صورت تمایل، متن پیام خود را بنویسید."
                   value={formData.message}
                   onChange={(e) => handleChange('message', e.target.value)}
-                  className="w-full h-24 p-3 bg-white rounded-2xl  inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
+                  className="w-full h-24 p-3 bg-white rounded-2xl inline-flex justify-end items-start gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#d74a3c] rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#e5867d] inline-flex justify-center items-center gap-2"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-[#d74a3c] rounded-[32px] outline outline-1 outline-offset-[-1px] outline-[#e5867d] inline-flex justify-center items-center gap-2 w-full sm:w-auto"
               >
-                <div className="text-white text-lg font-bold font-['IRANYekanX'] leading-tight">ارسال درخواست</div>
+                <div className="text-white text-base sm:text-lg font-bold font-['IRANYekanX'] leading-tight">ارسال درخواست</div>
               </button>
             </form>
           </div>
           {/* Image */}
-          <div className="relative flex flex-col items-center">
+          <div className="relative flex flex-col items-center lg:items-end order-1 lg:order-2">
             <div className="relative">
-              <img className="w-[474px] max-w-full" src="/images/home-page/consulting-request.png" alt="Consultation" />
+              <img className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[474px]" src="/images/home-page/consulting-request.png" alt="Consultation" />
             </div>
             
           </div>

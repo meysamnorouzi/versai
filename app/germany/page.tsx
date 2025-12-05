@@ -77,20 +77,20 @@ const GermanyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f2f1f1] relative overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4">
+      <section className="pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-12 md:pb-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-[32px] font-extrabold text-[#316086] leading-[1.41] mb-8">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h1 className="text-[24px] sm:text-[28px] md:text-[32px] font-extrabold text-[#316086] leading-[1.41] mb-4 sm:mb-6 md:mb-8">
               مهاجرت به آلمان
             </h1>
             <div className="max-w-4xl mx-auto text-right">
-              <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-6">
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-4 sm:mb-6">
                 آلمان به عنوان بزرگترین اقتصاد اروپا و چهارمین اقتصاد جهان، فرصت‌های بی‌نظیری برای مهاجران فراهم می‌کند. این کشور با داشتن سیستم آموزشی پیشرفته، بازار کار پویا و کیفیت بالای زندگی، یکی از محبوب‌ترین مقاصد مهاجرتی جهان محسوب می‌شود.
               </p>
-              <p className="text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-6">
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-[#6d6e70] leading-[1.53] mb-4 sm:mb-6">
                 آلمان با جمعیتی بیش از 83 میلیون نفر و نرخ بیکاری پایین، نیاز مبرمی به نیروی کار متخصص دارد. این کشور در زمینه‌های مختلف از جمله مهندسی، پزشکی، IT، و علوم پایه فرصت‌های شغلی فراوانی ارائه می‌دهد.
               </p>
-              <p className="text-[16px] font-medium text-[#316086] leading-[1.61]">
+              <p className="text-[13px] sm:text-[14px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                 سیستم مهاجرتی آلمان بسیار منظم و قانونمند است. دولت آلمان برنامه‌های مختلفی برای جذب نیروی کار متخصص، دانشجویان بین‌المللی و سرمایه‌گذاران دارد که هر کدام شرایط و مزایای خاص خود را دارند.
               </p>
             </div>
@@ -99,22 +99,22 @@ const GermanyPage: React.FC = () => {
       </section>
 
       {/* Immigration Methods Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <img 
                 src="https://placehold.co/446x502" 
                 alt="German immigration methods"
-                className="w-full h-[502px] object-cover rounded-2xl border border-stone-300"
+                className="w-full h-[300px] sm:h-[400px] md:h-[502px] object-cover rounded-2xl border border-stone-300"
               />
             </div>
-            <div className="order-1 lg:order-2 space-y-8">
+            <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
               <div>
-                <h2 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
+                <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-4 sm:mb-6">
                   روش‌های مختلف مهاجرت به آلمان
                 </h2>
-                <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
+                <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                   <p>
                     آلمان روش‌های متنوعی برای مهاجرت ارائه می‌دهد که شامل ویزای کاری، تحصیلی، سرمایه‌گذاری، ازدواج و پناهندگی می‌شود. هر روش شرایط و مدارک خاص خود را دارد.
                   </p>
@@ -125,11 +125,11 @@ const GermanyPage: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
+                <h3 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-4 sm:mb-6">
                   مزایای مهاجرت به آلمان
                 </h3>
-                <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
-                  <ul className="space-y-3 list-disc list-inside">
+                <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
+                  <ul className="space-y-2 sm:space-y-3 list-disc list-inside">
                     <li>
                       اقتصاد قوی و بازار کار پویا با نرخ بیکاری پایین
                     </li>
@@ -154,7 +154,7 @@ const GermanyPage: React.FC = () => {
       </section>
 
       {/* Consultation CTA Banner */}
-      <section className="py-20 px-4 bg-red-900/80 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-red-900/80 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://placehold.co/1440x320" 
@@ -163,8 +163,8 @@ const GermanyPage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-red-900/80"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h2 className="text-[32px] font-extrabold text-stone-50 leading-[1.41] mb-8 [text-shadow:0px_0px_6px_rgba(255,255,255,0.71)]">
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-0">
+          <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-extrabold text-stone-50 leading-[1.41] mb-6 sm:mb-8 [text-shadow:0px_0px_6px_rgba(255,255,255,0.71)]">
             برای مشاوره تخصصی مهاجرت به آلمان از کارشناسان موسسه مهاجرتی ورسای کمک بگیرید.
           </h2>
           <Button 
@@ -178,33 +178,33 @@ const GermanyPage: React.FC = () => {
       </section>
 
       {/* Versailles Recommendations Section */}
-      <section className="py-16 px-4">
+      <section className="py-8 sm:py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6">
-              <h2 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6 sm:mb-8">
                 توصیه‌های ورسای به شما
               </h2>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {recommendations.map((recommendation, index) => (
                   <div key={index} className="flex gap-2 items-start">
-                    <div className="flex-shrink-0 w-6 h-6 mt-1">
-                      <Star className="w-6 h-6 text-[#b23124]" />
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 mt-1">
+                      <Star className="w-5 h-5 sm:w-6 sm:h-6 text-[#b23124]" />
                     </div>
-                    <p className="text-[16px] font-medium text-[#316086] leading-[1.61]">
+                    <p className="text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                       {recommendation}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <img 
                 src="https://placehold.co/627x279" 
                 alt="Study in Germany"
-                className="w-full h-[279px] object-cover rounded-2xl"
+                className="w-full h-[200px] sm:h-[250px] md:h-[279px] object-cover rounded-2xl"
               />
-              <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
+              <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">
                 <p>
                   <span>شرایط دریافت اقامت در آلمان چیست؟ </span>
                   <span className="text-[#b23124]">اینجا</span>
@@ -228,14 +228,14 @@ const GermanyPage: React.FC = () => {
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
-        className="py-16 px-4"
+        className="py-8 sm:py-12 md:py-16 px-4"
       />
 
       {/* FAQ Section */}
       <FAQSection 
         faqItems={faqItems}
         title="سوالات متداول"
-        className="py-16 px-4"
+        className="py-8 sm:py-12 md:py-16 px-4"
       />
     </div>
   )

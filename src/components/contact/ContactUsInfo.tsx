@@ -19,57 +19,57 @@ const ContactUsInfo: React.FC = () => {
       </div>
       
       <Container className="relative z-10">
-        <div className="flex justify-between items-start gap-16">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 md:gap-16">
           {/* Contact Information and Address - Right Side */}
-          <div className="flex-1 space-y-8">
+          <div className="flex-1 space-y-6 sm:space-y-8 w-full">
             {/* Contact Section */}
             <div className="space-y-4">
               <div>
-                <h2 className="text-[20px] font-semibold font-['IRANYekanX'] text-[#E74C3C] text-right leading-[1.1] mb-2">
+                <h2 className="text-[18px] sm:text-[20px] font-semibold font-['IRANYekanX'] text-[#E74C3C] text-right leading-[1.1] mb-2">
                   تماس با ما
                 </h2>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center justify-start gap-3">
-                <div className="w-6 h-6 flex items-center justify-center">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center justify-start gap-2 sm:gap-3">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0">
                     <img 
                       src="/icons/contact/contact info/phone.svg" 
                       alt="Phone"
-                      className="w-6 h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1]">
+                  <span className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] break-all">
                    ۹۸۲۱۲۸۴۲۱۶۹۰+ / ۹۸۹۳۵۴۲۴۲۷۱۵+
                   </span>
                 
                 </div>
                 
-                <div className="flex items-center justify-start gap-3">
-                <div className="w-6 h-6 flex items-center justify-center">
+                <div className="flex items-center justify-start gap-2 sm:gap-3">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0">
                     <img 
                       src="/icons/contact/contact info/phone.svg" 
                       alt="Phone"
-                      className="w-6 h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1]">
+                  <span className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1]">
                     33679949935+
                   </span>
                
                 </div>
                 
-                <div className="flex items-center justify-start gap-3">
-                <div className="w-6 h-6 flex items-center justify-center">
+                <div className="flex items-center justify-start gap-2 sm:gap-3">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0">
                     <img 
                       src="/icons/contact/contact info/email.svg" 
                       alt="Email"
-                      className="w-6 h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1]">
+                  <a href="mailto:info@versai.fr" className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] break-all">
                     info@versai.fr
-                  </span>
+                  </a>
                  
                 </div>
               </div>
@@ -80,35 +80,35 @@ const ContactUsInfo: React.FC = () => {
             {/* Address Section */}
             <div className="space-y-4">
               <div>
-                <h2 className="text-[20px] font-semibold font-['IRANYekanX'] text-[#E74C3C] text-right leading-[1.1] mb-2">
+                <h2 className="text-[18px] sm:text-[20px] font-semibold font-['IRANYekanX'] text-[#E74C3C] text-right leading-[1.1] mb-2">
                   نشانی ما
                 </h2>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start justify-start gap-3">
-                <div className="w-6 h-6 flex items-center justify-center mt-1 flex-shrink-0">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-start justify-start gap-2 sm:gap-3">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-1 flex-shrink-0">
                     <img 
                       src="/icons/contact/contact info/location.svg" 
                       alt="Location"
-                      className="w-6 h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <div className="text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4] max-w-[500px]">
+                  <div className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4]">
                     دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای
                   </div>
                   
                 </div>
                 
-                <div className="flex items-start justify-start gap-3">
-                <div className="w-6 h-6 flex items-center justify-center mt-1 flex-shrink-0">
+                <div className="flex items-start justify-start gap-2 sm:gap-3">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-1 flex-shrink-0">
                     <img 
                       src="/icons/contact/contact info/location.svg" 
                       alt="Location"
-                      className="w-6 h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <div className="text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4] max-w-[500px]">
+                  <div className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4]">
                     دفتر فرانسه: 29A Route de Woippy, Metz 57050, France
                   </div>
                  
@@ -118,39 +118,42 @@ const ContactUsInfo: React.FC = () => {
           </div>
 
           {/* Buttons - Left Side */}
-          <div className="flex flex-col items-end space-y-4 w-[280px]">
+          <div className="flex flex-row lg:flex-col items-center lg:items-end justify-center lg:justify-start space-x-3 lg:space-x-0 space-y-0 lg:space-y-4 w-full lg:w-[280px]">
             {/* Consultation Request Button */}
-            <button className=" px-4 py-2 bg-[#E74C3C] text-white text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#C23325] transition-colors duration-200 text-right">
+            <button className="px-3 sm:px-4 py-2 bg-[#E74C3C] text-white text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#C23325] transition-colors duration-200 text-right whitespace-nowrap">
               درخواست مشاوره
             </button>
             
             {/* WhatsApp Button */}
-            <button className=" px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-3">
-              <span>ارتباط در واتساپ</span>
+            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-2 sm:gap-3">
+              <span className="hidden sm:inline">ارتباط در واتساپ</span>
+              <span className="sm:hidden">واتساپ</span>
               <img 
                 src="/icons/contact/contact buttons/Group.svg" 
                 alt="WhatsApp"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
               />
             </button>
             
             {/* Telegram Button */}
-            <button className=" px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-3">
-              <span>ارتباط در تلگرام</span>
+            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
+              <span className="hidden sm:inline">ارتباط در تلگرام</span>
+              <span className="sm:hidden">تلگرام</span>
               <img 
                 src="/icons/contact/contact buttons/Group (2).svg" 
                 alt="Telegram"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
               />
             </button>
             
             {/* Instagram Button */}
-            <button className=" px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-3">
-              <span>صفحه اینستاگرام ورسای</span>
+            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
+              <span className="hidden md:inline">صفحه اینستاگرام ورسای</span>
+              <span className="md:hidden">اینستاگرام</span>
               <img 
                 src="/icons/contact/contact buttons/Group (3).svg" 
                 alt="Instagram"
-                className="w-6 h-6"
+                className="w-5 h-5 sm:w-6 sm:h-6"
               />
             </button>
           </div>

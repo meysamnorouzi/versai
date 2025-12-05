@@ -131,29 +131,29 @@ const BlogListPage: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10">
         {/* Page Title */}
-        <div className="text-center py-16">
-          <h1 className="text-cyan-800 text-3xl font-extrabold font-['IRANYekanX'] leading-10">
+        <div className="text-center py-8 sm:py-12 md:py-16">
+          <h1 className="text-cyan-800 text-xl sm:text-2xl md:text-3xl font-extrabold font-['IRANYekanX'] leading-7 sm:leading-8 md:leading-10 px-4 sm:px-0">
             مقالات ورسای
           </h1>
         </div>
 
         {/* Subtitle */}
-        <div className="text-right max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <h2 className="text-cyan-800 text-2xl font-semibold font-['IRANYekanX'] leading-relaxed">
+        <div className="text-right max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+          <h2 className="text-cyan-800 text-lg sm:text-xl md:text-2xl font-semibold font-['IRANYekanX'] leading-relaxed">
             مقالات منتشر شده در یک ماه گذشته
           </h2>
         </div>
 
         {/* Blog Grid */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 md:pb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {articles.map((article) => (
               <BlogCard key={article.id} article={article} />
             ))}
           </div>
           
           {/* Load More Button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-10 md:mt-12">
             <Button variant="secondary" size="lg">
               مشاهده مقالات بیشتر
             </Button>

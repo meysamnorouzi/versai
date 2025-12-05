@@ -1,0 +1,42 @@
+# Download Figma assets to local public/assets directory
+
+$assetsDir = "public\assets\language-course"
+New-Item -ItemType Directory -Force -Path $assetsDir | Out-Null
+
+# Asset 1: Decorative background SVG (used twice in LanguageCourseHero)
+$url1 = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/mcp/get_code/assets/67e36a2d-24d2-4c78-9596-081cd64948a6/figma%3Aasset/4999f8b75ff58b54086a954df9a69c1edb3d53fa.svg?AWSAccessKeyId=ASIAQ4GOSFWCYAHDX4VS&Expires=1759327009&Signature=EQ3hP%2BesVCBe0PGr4I7KqQWoY2I%3D&response-expires=Wed%2C%2015%20Oct%202025%2013%3A41%3A49%20GMT&x-amz-security-token=IQoJb3JpZ2luX2VjEH0aCXVzLXdlc3QtMiJHMEUCIQD7VmzyRWmVxA6sgFPNwehvIaIohRLE2jv%2FaGMEYyq9igIgdQObiOZzlcqOEc48SxiF3%2Fp7yKMquALXfO6Yz%2BAVSKoqhwUIFhAAGgwwNjA1NjI3NDY3NTciDO8rkJunrwE3i%2B5U7SrkBBBVC9jN6MClu9T6z%2FdTo19mwUDByHeflQUaTl2MUjTPnOrrwF33wLIaf58VR5Da7U94F%2F5%2F6sdEW%2F6abkmh1923Mk8bg3c3mQS68gQ5cPdDz3aDdGDnyIW33q9kvLVkEhd69TgZqocJHb3FIyAV2Avo%2F5c%2Fv4MQ43dHBxG14Z40fBymqDENXXmgU2Gur%2F6Uz6HskI5TMxMxa3syxxGVZZaGwnXhcdpjfxaFUrqeL1POC5bHCkz53dsumr1CiVTWSZgs9UjnnzggQGEh%2F94gFhPyF9ZLepYUDf66F0R7d6VPhIyjc6m5nI5zV10D62D%2FslJ7nDpV2xrgRP64OOq9ZhoKgqhLAL%2FYb3GnXB2UYkziHMIH%2FRcxgNGpSFI%2BSlIBFN9yPJsd9Lh7Bvo%2BKlzZFTDmBdjv830FxH3vm%2B9a8hVBLAXWIucyg0Lw8PjstjvKd33a7pW4wNyFTcvlS1nWuvmcjBADJH%2BJl3J9h49SDrX9DNwMDQQjyTNTPmH1v5XoKrZQKTyGTfFxqjbp7Orrdi8a%2BA4uPgiYuFe1jVtUqrVSLUedQ0FHtm62%2Bk9Oy1skng7Vp0QdZRi5glvsFSY9SFd41B1%2BNzB3Rjzft1MQmKMuWj7e0aaHFtg6oSRWUKAj6M7UF5bijgwXYtqkAXFnghWU1B%2FOjY6mDq%2Frv%2F7cfp73oXT%2Bvb4XwhZP5NU3RYw7cnkZXemdQWfZNA78P03z3IdnvBomnK6r7dN4hFGj4MUYGuEhq4bCQ0JH5xbljNAPQkp1CeO10coij307jYktEDhrik17uucIAkTe0AdUMYpmGHN09jD20PTGBjqbAdS9cy8dd5W4R1ut8yb91Wfa8tQAJW0cByzqkNnZQe50fx9CB2AWO6b93I3%2B8kYicMAxuPzsu10A00yPqzc9PakYb7t%2FmG0RDKa6OX2IBVDGXpBnjDYKf3ITjJ4AlyoAqdkGTWikQeqRDv9TLCaHaDAMzDmOubmjcTRjzv16lbkgTXFxChPfVu57ITLX0%2BpNM09%2BQKBweaksrdgz"
+$output1 = "$assetsDir\decorative-bg.svg"
+Write-Host "Downloading decorative background SVG..."
+Invoke-WebRequest -Uri $url1 -OutFile $output1
+
+# Asset 2: Play button SVG
+$url2 = "https://figma-alpha-api.s3.us-west-2.amazonaws.com/mcp/get_code/assets/67e36a2d-24d2-4c78-9596-081cd64948a6/figma%3Aasset/736fc34ae053002d987df43c84cb0650856e43e4.svg?AWSAccessKeyId=ASIAQ4GOSFWCYAHDX4VS&Expires=1759327009&Signature=yLEqgovkN1%2FnAxyT09hkZSKZSVU%3D&response-expires=Wed%2C%2015%20Oct%202025%2013%3A41%3A49%20GMT&x-amz-security-token=IQoJb3JpZ2luX2VjEH0aCXVzLXdlc3QtMiJHMEUCIQD7VmzyRWmVxA6sgFPNwehvIaIohRLE2jv%2FaGMEYyq9igIgdQObiOZzlcqOEc48SxiF3%2Fp7yKMquALXfO6Yz%2BAVSKoqhwUIFhAAGgwwNjA1NjI3NDY3NTciDO8rkJunrwE3i%2B5U7SrkBBBVC9jN6MClu9T6z%2FdTo19mwUDByHeflQUaTl2MUjTPnOrrwF33wLIaf58VR5Da7U94F%2F5%2F6sdEW%2F6abkmh1923Mk8bg3c3mQS68gQ5cPdDz3aDdGDnyIW33q9kvLVkEhd69TgZqocJHb3FIyAV2Avo%2F5c%2Fv4MQ43dHBxG14Z40fBymqDENXXmgU2Gur%2F6Uz6HskI5TMxMxa3syxxGVZZaGwnXhcdpjfxaFUrqeL1POC5bHCkz53dsumr1CiVTWSZgs9UjnnzggQGEh%2F94gFhPyF9ZLepYUDf66F0R7d6VPhIyjc6m5nI5zV10D62D%2FslJ7nDpV2xrgRP64OOq9ZhoKgqhLAL%2FYb3GnXB2UYkziHMIH%2FRcxgNGpSFI%2BSlIBFN9yPJsd9Lh7Bvo%2BKlzZFTDmBdjv830FxH3vm%2B9a8hVBLAXWIucyg0Lw8PjstjvKd33a7pW4wNyFTcvlS1nWuvmcjBADJH%2BJl3J9h49SDrX9DNwMDQQjyTNTPmH1v5XoKrZQKTyGTfFxqjbp7Orrdi8a%2BA4uPgiYuFe1jVtUqrVSLUedQ0FHtm62%2Bk9Oy1skng7Vp0QdZRi5glvsFSY9SFd41B1%2BNzB3Rjzft1MQmKMuWj7e0aaHFtg6oSRWUKAj6M7UF5bijgwXYtqkAXFnghWU1B%2FOjY6mDq%2Frv%2F7cfp73oXT%2Bvb4XwhZP5NU3RYw7cnkZXemdQWfZNA78P03z3IdnvBomnK6r7dN4hFGj4MUYGuEhq4bCQ0JH5xbljNAPQkp1CeO10coij307jYktEDhrik17uucIAkTe0AdUMYpmGHN09jD20PTGBjqbAdS9cy8dd5W4R1ut8yb91Wfa8tQAJW0cByzqkNnZQe50fx9CB2AWO6b93I3%2B8kYicMAxuPzsu10A00yPqzc9PakYb7t%2FmG0RDKa6OX2IBVDGXpBnjDYKf3ITjJ4AlyoAqdkGTWikQeqRDv9TLCaHaDAMzDmOubmjcTRjzv16lbkgTXFxChPfVu57ITLX0%2BpNM09%2BQKBweaksrdgz"
+$output2 = "$assetsDir\play-button.svg"
+Write-Host "Downloading play button SVG..."
+Invoke-WebRequest -Uri $url2 -OutFile $output2
+
+# Asset 3: Video thumbnail image
+$url3 = "https://s3-alpha-sig.figma.com/img/46e9/61ad/9d5105f88cb0e53312ca65f7df06cc31?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OdreVIzTFd1eSOwHJeKqKEHZmfxt5gjM-eQd1Pqwbajzbk-0CdJyPOI0v3sM5wd1IX~aLWwKJaKHaVPiNsp77oCb2Q-cN56ZLL3SYEOokXFzMnLK8ujOSEebM4BiG~exMvX8bl5p2zvVWXsb4mBQs53bQmlO--I6jgoOyasgSPpsDSyuaXND3WkRzH5P0Wu26Pocc92dr5X4fxzoGiyfHaJXWcqtzIMBAVYI7BTc8xs8umSBadKqQobsUWQ5T9LzZ7zPP25JYiB2c7lwURhBg2uV~5rxyWEF6Q8pVsZJcC9F6iygkD~YmkgulmBaNF0nYd8UlY~SGE4GxdBHyvn1Wg__"
+$output3 = "$assetsDir\video-thumbnail.jpg"
+Write-Host "Downloading video thumbnail..."
+Invoke-WebRequest -Uri $url3 -OutFile $output3
+
+# Asset 4: University image
+$url4 = "https://s3-alpha-sig.figma.com/img/f4d9/4a6b/1c3974e3b1b08fec6d47e0ae9983143f?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NwtgfiM-DRNLMPzcXLTYrQTpEVM4jQVZ6P4QSrEAiyj-gVQOFH~ozzCxrt5fiLLma7DzLS~ual25k2M0GSkHsqsZulnizuK6f~W3zIqYRqxLBonNvcL60Jj4ldiuG1Mi7dfZyYon2RwUQOpZNKwviBW0c68MCcXMCQkCoS8667TNa8lv07Sl0hNRsN2z-rtY5n5qMuipws~DGKkBW-AaFM5ThhC8MLqGbIf5B29CQ1irDlNByoq3T0c2PeMjk34PclUOAn6JOL-rcrgz9SfcD1MzaE7HIuD-Gfhm6MdC4Q-Uns6iJ7CSK4sup7zxYNdNGBqcPz72jabUi60Z4rGkWw__"
+$output4 = "$assetsDir\ucly-university.jpg"
+Write-Host "Downloading UCLY university image..."
+Invoke-WebRequest -Uri $url4 -OutFile $output4
+
+# Asset 5: Lyon city image (used in both UCLYUniversitySection and LyonCitySection)
+$url5 = "https://s3-alpha-sig.figma.com/img/b840/96f8/3a7ae4e6f74b420aa99f3fe533f0e66f?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=K3BZim7TlXitQOMaGSfmj0hDB~IcoVnHl3-wmBZQNXenqgQoZCyBTYzY6ijDCfEtXFgg5ZinVGVpfXEQoGxNQT0CNHLS5-fhaj4qiv8PLrO~q9Cr~8~71OKG18w6T2aVJI2r5g8MSeNjaGzDTZIBakRMJEGvwVyw35gus0YdY0DzeJPLYiNbhXgOX7krzUFZuxdJc8ZmxsCsrgteKV8d35fEj57cchr8T5RYrHsnuEBXmDbk~zc~eDFyUNHQz01Kfq01hlE-GlItUTEHPQdlHDhvHJh~WAYv4J~p62xIoHYapG4RTf1oNCazNzhs8NkabTT6GJePqjzTR4R9ThAS5A__"
+$output5 = "$assetsDir\lyon-city.jpg"
+Write-Host "Downloading Lyon city image..."
+Invoke-WebRequest -Uri $url5 -OutFile $output5
+
+# Asset 6: CTA background image
+$url6 = "https://s3-alpha-sig.figma.com/img/4a68/4d7f/c8db3ef78f5c2ca28fcf6a386f92c0f9?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VpOgcfWuM~Ymr0QG9Oz4JBCWAZrXVAHMa2AA9uUarI2zAuXZtWhfmITXLlJQN8QPzXZAeX~CnESxmfQG8Hi3Z~KaaYXNbthEf4RLrjcdT3RwoB2QZ56tjAufj1XcKjhmh9vJBGy5dq0J-E0Tk82YgUbc~sjbh2e~aTv7wu-BFH0hQOmXkzN57LjQa-eJMdRafo3shsbOooA5uCsF6TQzRAiVpL3oxYtxkAX60AP1HEpr~KvMniW~367FijfrBLkMif15v-aLL5UJbwBsgm0471he2KIE37N4p8MuHFb6dHg05mG68dSTAllw679-y~Q2GyFSJqR38KirodP-7VYRxA__"
+$output6 = "$assetsDir\cta-background.jpg"
+Write-Host "Downloading CTA background image..."
+Invoke-WebRequest -Uri $url6 -OutFile $output6
+
+Write-Host "All assets downloaded successfully!"

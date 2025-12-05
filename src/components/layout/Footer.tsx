@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                        alt="Location"
                      />
                    </div>
-                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای</div>
+                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر تهران: تهران، ونک پارک، برج سبز</div>
 
                  </div>
                  <div className="flex justify-start items-start gap-2 w-full">
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                        alt="Location"
                      />
           </div>
-                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر فرانسه:  29A Route de Woippy, Metz 57050, France</div>
+                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر فرانسه:    Metz 57050, France</div>
 
                 </div>
               </div>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                        alt="Phone"
                      />
                    </div>
-                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">33679949935+</div>
+                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">۹۸۹۳۷۸۰۰۰۳۹۹+</div>
 
                  </div>
                </div>
@@ -111,11 +111,12 @@ const Footer: React.FC = () => {
               </div>
 
               {/* Useful Links */}
-              <div className="flex flex-col justify-start items-end gap-4 w-full lg:w-auto">
+              <div className="flex flex-col justify-start items-end gap-4 w-full lg:w-auto mt-3">
                 <div className="self-stretch text-right justify-start text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">پیوند های مفید</div>
                 <div className="self-stretch flex flex-col justify-start items-end gap-3">
-                  <a href="#" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت سفارت فرانسه</a>
-                  <a href="#" className="self-stretch text-right lg:text-center justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت مترجم معتمد سفارت فرانسه</a>
+                  <a href="https://ir.ambafrance.org/-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-" target="_blank" rel="noopener noreferrer" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت سفارت فرانسه</a>
+                  <a href="https://farnoud.fr/" target="_blank" rel="noopener noreferrer" className="self-stretch text-right  justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت مترجم معتمد سفارت فرانسه</a>
+                  <a href="https://www.eicl.fr/" target="_blank" rel="noopener noreferrer" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">موسسه ایکل فرانسه </a>
                 </div>
               </div>
 
@@ -162,9 +163,9 @@ const Footer: React.FC = () => {
             </div>
               <div className="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-blue-950"></div>
               <div className="text-right justify-start">
-                <span className="text-slate-200 text-base font-semibold font-['IRANYekanX'] leading-normal">تمام حقوق این وبسایت متعلق به  موسسه مهاجرتی </span>
-                <span className="text-white text-base font-semibold font-['IRANYekanX'] leading-normal">ورسای</span>
-                <span className="text-slate-200 text-base font-semibold font-['IRANYekanX'] leading-normal">  است.</span>
+                <span className="text-slate-200 text-sm font-medium font-['IRANYekanX'] leading-normal">تمام حقوق این وبسایت متعلق به  موسسه مهاجرتی </span>
+                <span className="text-white text-sm font-semibold font-['IRANYekanX'] leading-normal">ورسای</span>
+                <span className="text-slate-200 text-sm font-medium font-['IRANYekanX'] leading-normal">  است.</span>
               </div>
             </div>
           </div>
