@@ -1,9 +1,41 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
-import useSEO from '../hooks/useSEO'
+import Link from 'next/link'
+import type { Metadata } from 'next'
 
-const ArticleDetailPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>()
+interface PageProps {
+  params: {
+    id: string
+  }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = params
+  
+  // Mock article data - in a real app, this would come from an API
+  const article = {
+    id: parseInt(id || '1'),
+    title: 'مزایای دوره زبان کشور فرانسه',
+    category: 'فرانسه',
+  }
+
+  return {
+    title: `${article.title} - موسسه مهاجرتی ورسای`,
+    description: `مقاله ${article.title} - ${article.category}`,
+    keywords: 'دوره زبان، فرانسه، مهاجرت، یادگیری زبان',
+    openGraph: {
+      title: `${article.title} - موسسه مهاجرتی ورسای`,
+      description: `مقاله ${article.title} - ${article.category}`,
+      url: `https://versai.ir/article/${id}`,
+      type: 'article',
+    },
+    alternates: {
+      canonical: `https://versai.ir/article/${id}`,
+    },
+  }
+}
+
+const ArticleDetailPage: React.FC<PageProps> = ({ params }) => {
+  const { id } = params
   
   // Mock article data - in a real app, this would come from an API
   const article = {
@@ -29,25 +61,16 @@ const ArticleDetailPage: React.FC = () => {
     author: 'موسسه مهاجرتی ورسای'
   }
 
-  // SEO Configuration
-  useSEO({
-    title: `${article.title} - موسسه مهاجرتی ورسای`,
-    description: `مقاله ${article.title} - ${article.category}`,
-    keywords: 'دوره زبان، فرانسه، مهاجرت، یادگیری زبان',
-    url: `https://versai.ir/article/${id}`,
-    type: 'article'
-  })
-
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
+    <div className="min-h-screen" dir="rtl">
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="mb-8">
           <ol className="flex items-center space-x-2 space-x-reverse text-sm text-gray-500">
-            <li><Link to="/" className="hover:text-cyan-800 transition-colors">صفحه اصلی</Link></li>
+            <li><Link href="/" className="hover:text-cyan-800 transition-colors">صفحه اصلی</Link></li>
             <li>/</li>
-            <li><Link to="/articles" className="hover:text-cyan-800 transition-colors">مقالات</Link></li>
+            <li><Link href="/articles" className="hover:text-cyan-800 transition-colors">مقالات</Link></li>
             <li>/</li>
             <li className="text-gray-900">{article.title}</li>
           </ol>
@@ -89,7 +112,7 @@ const ArticleDetailPage: React.FC = () => {
         {/* Back to Articles */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <Link 
-            to="/articles" 
+            href="/articles" 
             className="inline-flex items-center text-cyan-800 hover:text-red-700 transition-colors font-semibold"
           >
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,3 +127,4 @@ const ArticleDetailPage: React.FC = () => {
 }
 
 export default ArticleDetailPage
+

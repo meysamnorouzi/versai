@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import Container from '../ui/Container'
 import Icon from '../ui/Icon'
@@ -29,23 +31,28 @@ const AboutSection: React.FC = () => {
   const testimonials = [
     {
       text: "من به کمک موسسه ورسای تونستم برای کالج زبان دانشگاه UCLY لیون اقدام کنم. کل پروسه برای من حدود شش ماه طول کشید. به طور مرتب با مشاور مجموعه مراحل رو چک میکردم و کل پروسه ثبت نام و تهیه مدارک و مصاحبه کامپوس و رزرو خوابگاه، بدون استرس پیش رفت. واقعا از همراهی موسسه ممنونم.",
-      image: "/images/home-page/success-story1.png"
+      image: "/images/home-page/success-story1.png",
+      name: "ص.زارعی"
     },
     {
       text: "من به دنبال مهاجرت با Express Entry بودم و با چند موسسه مشورت کردم. برخی از آنها تنها به ارائه خدمات پایه بسنده می‌کردند و نتایج مطلوبی نداشتند. وقتی با ورسای کار را آغاز کردم، تیم مهاجرتی‌شان با بررسی دقیق CRS و بررسی استراتژی استانی (PNP) کارمان را به سطح جدیدی برد.",
-      image: "/images/home-page/success-story2.png"
+      image: "/images/home-page/success-story2.png",
+      name: "ص.زارعی"
     },
     {
       text: "اقدام برای دوره زبان فرانسه برای من با همکاری ورسای خیلی راحت تر شد. من پرونده کامپوس فرانس رو ایجاد کرده بودم ولی هیچ ایده ای نداشتم که چطور پرونده رو کامل کنم و باید چه نکاتی رو رعایت کنم. کارشناس های باتجربه ورسای پرونده من رو به طور دقیق و در دقیقه نود کامل کردند.",
-      image: "/images/home-page/success-story3.png"
+      image: "/images/home-page/success-story3.png",
+      name: "ص.زارعی"
     },
     {
       text: "من به کمک موسسه ورسای تونستم برای کالج زبان دانشگاه UCLY لیون اقدام کنم. کل پروسه برای من حدود شش ماه طول کشید. به طور مرتب با مشاور مجموعه مراحل رو چک میکردم و کل پروسه ثبت نام و تهیه مدارک و مصاحبه کامپوس و رزرو خوابگاه، بدون استرس پیش رفت. واقعا از همراهی موسسه ممنونم.",
-      image: "/images/home-page/success-story1.png"
+      image: "/images/home-page/success-story1.png",
+      name: "ص.زارعی"
     },
     {
       text: "من به دنبال مهاجرت با Express Entry بودم و با چند موسسه مشورت کردم. برخی از آنها تنها به ارائه خدمات پایه بسنده می‌کردند و نتایج مطلوبی نداشتند. وقتی با ورسای کار را آغاز کردم، تیم مهاجرتی‌شان با بررسی دقیق CRS و بررسی استراتژی استانی (PNP) کارمان را به سطح جدیدی برد.",
-      image: "/images/home-page/success-story2.png"
+      image: "/images/home-page/success-story2.png",
+      name: "ص.زارعی"
     },
   ]
 
@@ -160,7 +167,10 @@ const AboutSection: React.FC = () => {
             <div className="flex gap-4 overflow-hidden">
               {visibleTestimonials.map((testimonial, index) => (
                 <div key={currentTestimonialIndex + index} className="w-80 bg-[#1e3950] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#316086] overflow-hidden flex flex-col items-start justify-start gap-2 py-4 px-6 flex-shrink-0">
-                  <img className="border border-[#d3e2ef]" src={testimonial.image} alt={`Testimonial ${currentTestimonialIndex + index + 1}`} />
+                  {/* <img className="border border-[#d3e2ef]" src={testimonial.image} alt={`Testimonial ${currentTestimonialIndex + index + 1}`} /> */}
+                  <h3 className="text-right text-[#d3e2ef] text-sm font-medium font-['IRANYekanX'] leading-6 mt-4 border-b border-[#d3e2ef42] w-full pb-1">
+                    {testimonial.name}
+                  </h3>
                   <div className="text-right text-[#d3e2ef] text-sm font-medium font-['IRANYekanX'] leading-6 mt-4">
                     {testimonial.text}
                   </div>

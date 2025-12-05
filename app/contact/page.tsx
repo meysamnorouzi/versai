@@ -1,18 +1,33 @@
-import React from 'react';
-import ContactUsHero from '../components/contact/ContactUsHero';
-import ContactUsInfo from '../components/contact/ContactUsInfo';
-import ContactUsAbout from '../components/contact/ContactUsAbout';
-import ContactUsServices from '../components/contact/ContactUsServices';
-import ContactMap from '../components/contact/ContactMap';
-import ConsultationForm from '../components/ui/ConsultationForm';
-import Icon from '../components/ui/Icon';
-import Container from '../components/ui/Container';
+import React from 'react'
+import ContactUsHero from '@/src/components/contact/ContactUsHero'
+import ContactUsInfo from '@/src/components/contact/ContactUsInfo'
+import ContactUsAbout from '@/src/components/contact/ContactUsAbout'
+import ContactUsServices from '@/src/components/contact/ContactUsServices'
+import ContactMap from '@/src/components/contact/ContactMap'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import Icon from '@/src/components/ui/Icon'
+import Container from '@/src/components/ui/Container'
+import { PAGE_SEO } from '@/src/config/seo'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: PAGE_SEO.contact.title,
+  description: PAGE_SEO.contact.description,
+  keywords: PAGE_SEO.contact.keywords,
+  openGraph: {
+    title: PAGE_SEO.contact.title,
+    description: PAGE_SEO.contact.description,
+    url: 'https://versai.ir/contact',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/contact',
+  },
+}
 
 const ContactUsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f2f1f1] relative overflow-hidden">
-   
-
       {/* Hero Section */}
       <ContactUsHero />
 
@@ -55,7 +70,8 @@ const ContactUsPage: React.FC = () => {
         </Container>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default ContactUsPage;
+export default ContactUsPage
+

@@ -1,8 +1,24 @@
 import React from 'react'
-import Container from '../components/ui/Container'
-import ConsultationForm from '../components/ui/ConsultationForm'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import FAQSection from '../components/ui/FAQSection'
+import Container from '@/src/components/ui/Container'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import FAQSection from '@/src/components/ui/FAQSection'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ویزای کوتاه مدت فرانسه (Type C) | موسسه مهاجرتی ورسای',
+  description: 'راهنمای کامل ویزای کوتاه مدت فرانسه (Type C)، انواع ویزا، شرایط و مدارک مورد نیاز',
+  keywords: 'ویزای فرانسه، ویزای شنگن، ویزای کوتاه مدت فرانسه، Type C، ورسای',
+  openGraph: {
+    title: 'ویزای کوتاه مدت فرانسه (Type C) | موسسه مهاجرتی ورسای',
+    description: 'راهنمای کامل ویزای کوتاه مدت فرانسه (Type C)',
+    url: 'https://versai.ir/france-visa',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/france-visa',
+  },
+}
 
 const FranceVisaPage: React.FC = () => {
   const faqData = [
@@ -62,7 +78,6 @@ const FranceVisaPage: React.FC = () => {
       <div className="absolute top-[18.89%] -right-[50.1%] w-[171.9%] h-[57.88%] opacity-10">
         <div className="w-full h-full bg-gradient-to-br from-[#316086] to-transparent transform.rotate-[21.716deg]"></div>
       </div>
-
 
       {/* Header Section */}
       <div className="relative z-10 pt-12 pb-16">
@@ -263,9 +278,9 @@ const FranceVisaPage: React.FC = () => {
         title="سوالات متداول"
         className="py-16"
       />
-
     </div>
   )
 }
 
 export default FranceVisaPage
+

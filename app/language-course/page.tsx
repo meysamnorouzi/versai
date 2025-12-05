@@ -1,23 +1,29 @@
 import React from 'react'
-import LanguageCourseHero from '../components/language-course/LanguageCourseHero'
-import LanguageCourseBenefits from '../components/language-course/LanguageCourseBenefits'
-import LanguageCourseCTA from '../components/language-course/LanguageCourseCTA'
-import UCLYUniversitySection from '../components/language-course/UCLYUniversitySection'
-import ConsultationForm from '../components/ui/ConsultationForm'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import FAQSection from '../components/ui/FAQSection'
-import useSEO from '../hooks/useSEO'
+import LanguageCourseHero from '@/src/components/language-course/LanguageCourseHero'
+import LanguageCourseBenefits from '@/src/components/language-course/LanguageCourseBenefits'
+import LanguageCourseCTA from '@/src/components/language-course/LanguageCourseCTA'
+import UCLYUniversitySection from '@/src/components/language-course/UCLYUniversitySection'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import FAQSection from '@/src/components/ui/FAQSection'
+import type { Metadata } from 'next'
 
-const LanguageCoursePage: React.FC = () => {
-  // SEO Configuration
-  useSEO({
+export const metadata: Metadata = {
+  title: 'دوره زبان فرانسه - مهاجرت آسان با ورسای',
+  description: 'دوره زبان فرانسه در دانشگاه UCLY لیون. نماینده رسمی دانشگاه UCLY در ایران. مهاجرت آسان و سریع به فرانسه.',
+  keywords: 'دوره زبان فرانسه, دانشگاه UCLY, مهاجرت به فرانسه, تحصیل در فرانسه, ورسای',
+  openGraph: {
     title: 'دوره زبان فرانسه - مهاجرت آسان با ورسای',
     description: 'دوره زبان فرانسه در دانشگاه UCLY لیون. نماینده رسمی دانشگاه UCLY در ایران. مهاجرت آسان و سریع به فرانسه.',
-    keywords: 'دوره زبان فرانسه, دانشگاه UCLY, مهاجرت به فرانسه, تحصیل در فرانسه, ورسای',
     url: 'https://versai.ir/language-course',
-    type: 'website'
-  })
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/language-course',
+  },
+}
 
+const LanguageCoursePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#f2f1f1]">
       <LanguageCourseHero />
@@ -83,3 +89,4 @@ const LanguageCoursePage: React.FC = () => {
 }
 
 export default LanguageCoursePage
+

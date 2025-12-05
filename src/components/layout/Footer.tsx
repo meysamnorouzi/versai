@@ -11,23 +11,23 @@ const Footer: React.FC = () => {
         {/* Container for content */}
         <Container className="h-full relative z-10 pb-8 pt-12">
 
-          <div className="flex justify-between items-start gap-4">
-            <div className="flex flex-col justify-start items-start gap-4 pb-2">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-4">
+            <div className="flex flex-col justify-start items-start gap-4 pb-2 w-full lg:w-auto">
               {/* Quick Access */}
-              <div className="w-[522px] text-right justify-start text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">دسترسی سریع</div>
-              <div className="flex justify-start items-center gap-16">
-                <a href="#" className="w-20 justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">دوره زبان</a>
-                <a href="#" className="w-48 justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اکسپرس انتری کانادا</a>
+              <div className="w-full lg:w-[522px] text-right justify-start text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">دسترسی سریع</div>
+              <div className="flex flex-wrap justify-start items-center gap-4 lg:gap-16">
+                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">دوره زبان</a>
+                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اکسپرس انتری کانادا</a>
                 <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اقامت فرانسه</a>
               </div>
-              <div className="flex justify-start items-center border-b border-transparent bg-gradient-to-l from-[#D3E2EF] to-transparent bg-no-repeat bg-bottom pb-6 gap-16" style={{backgroundSize: '100% 1px'}}>
-                <a href="#" className="w-20  justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">تماس با ما</a>
-                <a href="#" className="w-48 justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">مقالات</a>
+              <div className="flex flex-wrap justify-start items-center border-b border-transparent bg-gradient-to-l from-[#D3E2EF] to-transparent bg-no-repeat bg-bottom pb-6 gap-4 lg:gap-16" style={{backgroundSize: '100% 1px'}}>
+                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">تماس با ما</a>
+                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">مقالات</a>
                 <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">ثبت شرکت در فرانسه</a>
               </div>
 
               {/* Logo */}
-              <div className="w-64 flex items-center justify-center mb-6">
+              <div className="w-full max-w-64 flex items-center justify-center mb-6">
                 <img
                   className="w-full object-contain"
                   src="/images/logo-white.png"
@@ -37,9 +37,9 @@ const Footer: React.FC = () => {
           
 
               {/* Addresses */}
-              <div className="w-[585px] flex flex-col justify-start items-start gap-4">
-                 <div className="flex justify-start items-start gap-2">
-                   <div className="w-6 h-6 relative">
+              <div className="w-full lg:w-[585px] flex flex-col justify-start items-start gap-4">
+                 <div className="flex justify-start items-start gap-2 w-full">
+                   <div className="w-6 h-6 relative flex-shrink-0">
                      <Icon 
                        section="footer" 
                        name="location" 
@@ -47,11 +47,11 @@ const Footer: React.FC = () => {
                        alt="Location"
                      />
                    </div>
-                   <div className="w-[553px] text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای</div>
+                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای</div>
 
                  </div>
-                 <div className="flex justify-start items-start gap-2">
-                   <div className="w-6 h-6 relative">
+                 <div className="flex justify-start items-start gap-2 w-full">
+                   <div className="w-6 h-6 relative flex-shrink-0">
                      <Icon 
                        section="footer" 
                        name="location" 
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                        alt="Location"
                      />
           </div>
-                   <div className="w-96 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر فرانسه:  29A Route de Woippy, Metz 57050, France</div>
+                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر فرانسه:  29A Route de Woippy, Metz 57050, France</div>
 
                 </div>
               </div>
@@ -93,10 +93,10 @@ const Footer: React.FC = () => {
                </div>
             </div>
 
-            <div className="flex flex-col justify-start items-end gap-4">
+            <div className="flex flex-col justify-start items-end gap-4 w-full lg:w-auto">
 
               {/* Google Map */}
-              <div className="w-[475px] h-72 rounded-lg overflow-hidden shadow-lg">
+              <div className="w-full max-w-full lg:w-[475px] h-64 sm:h-72 rounded-lg overflow-hidden shadow-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.123456789!2d51.3890!3d35.6892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00c8b8b8b8b8%3A0x1234567890abcdef!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                   width="100%"
@@ -111,16 +111,13 @@ const Footer: React.FC = () => {
               </div>
 
               {/* Useful Links */}
-              <div className="flex flex-col justify-start items-end gap-4">
+              <div className="flex flex-col justify-start items-end gap-4 w-full lg:w-auto">
                 <div className="self-stretch text-right justify-start text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">پیوند های مفید</div>
                 <div className="self-stretch flex flex-col justify-start items-end gap-3">
                   <a href="#" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت سفارت فرانسه</a>
-                  <a href="#" className="self-stretch text-center justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت مترجم معتمد سفارت فرانسه</a>
+                  <a href="#" className="self-stretch text-right lg:text-center justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت مترجم معتمد سفارت فرانسه</a>
                 </div>
               </div>
-              
-
-
 
             </div>
           </div>

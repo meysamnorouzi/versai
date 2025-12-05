@@ -1,13 +1,13 @@
 // WordPress API Configuration
 export const WORDPRESS_CONFIG = {
   // API Endpoints
-  apiUrl: import.meta.env.VITE_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2',
-  siteUrl: import.meta.env.VITE_WORDPRESS_SITE_URL || 'https://your-wordpress-site.com',
+  apiUrl: process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2',
+  siteUrl: process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL || 'https://your-wordpress-site.com',
   
   // Authentication
-  apiKey: import.meta.env.VITE_WORDPRESS_API_KEY || '',
-  username: import.meta.env.VITE_WORDPRESS_USERNAME || '',
-  password: import.meta.env.VITE_WORDPRESS_PASSWORD || '',
+  apiKey: process.env.NEXT_PUBLIC_WORDPRESS_API_KEY || '',
+  username: process.env.NEXT_PUBLIC_WORDPRESS_USERNAME || '',
+  password: process.env.NEXT_PUBLIC_WORDPRESS_PASSWORD || '',
   
   // Custom Endpoints
   customEndpoints: {
@@ -44,7 +44,7 @@ export const WORDPRESS_CONFIG = {
   maxPerPage: 100,
   
   // Error Handling
-  showErrors: import.meta.env.DEV,
+  showErrors: process.env.NODE_ENV === 'development',
   logErrors: true,
   
   // Security

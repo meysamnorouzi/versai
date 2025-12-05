@@ -39,7 +39,7 @@ class WordPressErrorBoundary extends Component<Props, State> {
     })
 
     // Log error to console in development
-    if (import.meta.env.DEV) {
+    if (process.env.NODE_ENV === 'development') {
       console.error('WordPress Error Boundary caught an error:', error, errorInfo)
     }
 
@@ -94,7 +94,7 @@ class WordPressErrorBoundary extends Component<Props, State> {
             </div>
 
             {/* Error Details (Development Only) */}
-            {import.meta.env.DEV && this.state.error && (
+            {process.env.NODE_ENV === 'development' && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="cursor-pointer text-sm text-gray-500 hover:text-gray-700">
                   جزئیات خطا (فقط در حالت توسعه)

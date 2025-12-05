@@ -1,18 +1,24 @@
 import React from 'react'
-import BlogCard from '../components/blog/BlogCard'
-import Button from '../components/ui/Button'
-import useSEO from '../hooks/useSEO'
+import BlogCard from '@/src/components/blog/BlogCard'
+import Button from '@/src/components/ui/Button'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'مقالات ورسای - موسسه مهاجرتی ورسای',
+  description: 'مقالات منتشر شده در یک ماه گذشته - موسسه مهاجرتی ورسای',
+  keywords: 'مقالات، مهاجرت، فرانسه، کانادا، ویزا، اقامت',
+  openGraph: {
+    title: 'مقالات ورسای - موسسه مهاجرتی ورسای',
+    description: 'مقالات منتشر شده در یک ماه گذشته',
+    url: 'https://versai.ir/articles',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/articles',
+  },
+}
 
 const BlogListPage: React.FC = () => {
-  // SEO Configuration
-  useSEO({
-    title: 'مقالات ورسای - موسسه مهاجرتی ورسای',
-    description: 'مقالات منتشر شده در یک ماه گذشته - موسسه مهاجرتی ورسای',
-    keywords: 'مقالات، مهاجرت، فرانسه، کانادا، ویزا، اقامت',
-    url: 'https://versai.ir/articles',
-    type: 'website'
-  })
-
   const articles = [
     {
       id: 1,
@@ -159,3 +165,4 @@ const BlogListPage: React.FC = () => {
 }
 
 export default BlogListPage
+

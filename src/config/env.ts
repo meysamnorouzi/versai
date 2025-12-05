@@ -1,9 +1,9 @@
 // Environment configuration
 export const config = {
-  wordpressApiUrl: import.meta.env.VITE_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2',
-  wordpressSiteUrl: import.meta.env.VITE_WORDPRESS_SITE_URL || 'https://your-wordpress-site.com',
-  apiKey: import.meta.env.VITE_WORDPRESS_API_KEY || '',
-  nodeEnv: import.meta.env.VITE_NODE_ENV || 'development',
-  isDevelopment: import.meta.env.VITE_NODE_ENV === 'development',
-  isProduction: import.meta.env.VITE_NODE_ENV === 'production',
+  wordpressApiUrl: process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2',
+  wordpressSiteUrl: process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL || 'https://your-wordpress-site.com',
+  apiKey: process.env.NEXT_PUBLIC_WORDPRESS_API_KEY || '',
+  nodeEnv: process.env.NODE_ENV || 'development',
+  isDevelopment: process.env.NODE_ENV === 'development',
+  isProduction: process.env.NODE_ENV === 'production',
 }

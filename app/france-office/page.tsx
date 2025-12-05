@@ -1,24 +1,29 @@
 import React from 'react'
-import {  Users, Building, Coins, FileText, User, FolderOpen, Pen, File } from 'lucide-react'
-import Container from '../components/ui/Container'
-import Button from '../components/ui/Button'
-import ConsultationForm from '../components/ui/ConsultationForm'
-import FAQSection from '../components/ui/FAQSection'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import useSEO from '../hooks/useSEO'
+import { Users, Building, Coins, FileText, User, FolderOpen, Pen, File } from 'lucide-react'
+import Container from '@/src/components/ui/Container'
+import Button from '@/src/components/ui/Button'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import FAQSection from '@/src/components/ui/FAQSection'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ثبت شرکت در فرانسه - راه‌اندازی کسب‌وکار در فرانسه بدون دردسر | ورسای',
+  description: 'راهنمای کامل ثبت شرکت در فرانسه شامل مراحل، شرایط، مزایا و انواع شرکت‌ها. مشاوره تخصصی با ورسای برای راه‌اندازی کسب‌وکار در فرانسه.',
+  keywords: 'ثبت شرکت فرانسه, راه‌اندازی کسب‌وکار فرانسه, شرکت تجاری فرانسه, اقامت فرانسه, مهاجرت فرانسه',
+  openGraph: {
+    title: 'ثبت شرکت در فرانسه - راه‌اندازی کسب‌وکار در فرانسه بدون دردسر | ورسای',
+    description: 'راهنمای کامل ثبت شرکت در فرانسه شامل مراحل، شرایط، مزایا و انواع شرکت‌ها.',
+    url: 'https://versai.ir/france-office',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/france-office',
+  },
+}
 
 const FranceOfficePage: React.FC = () => {
-
-  // SEO Configuration
-  useSEO({
-    title: 'ثبت شرکت در فرانسه - راه‌اندازی کسب‌وکار در فرانسه بدون دردسر | ورسای',
-    description: 'راهنمای کامل ثبت شرکت در فرانسه شامل مراحل، شرایط، مزایا و انواع شرکت‌ها. مشاوره تخصصی با ورسای برای راه‌اندازی کسب‌وکار در فرانسه.',
-    keywords: 'ثبت شرکت فرانسه, راه‌اندازی کسب‌وکار فرانسه, شرکت تجاری فرانسه, اقامت فرانسه, مهاجرت فرانسه',
-    url: 'https://versai.ir/france-office',
-    type: 'website'
-  })
-
   const companyRequirements = [
     {
       icon: Users,
@@ -175,12 +180,8 @@ const FranceOfficePage: React.FC = () => {
     }
   ]
 
-
   return (
     <div className="min-h-screen bg-[#f2f1f1] font-['IRANYekanX'] relative">
-
-
-
       {/* Hero Section */}
       <section className="relative py-16 ">
         <Container>
@@ -423,3 +424,4 @@ const FranceOfficePage: React.FC = () => {
 }
 
 export default FranceOfficePage
+

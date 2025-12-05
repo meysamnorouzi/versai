@@ -1,25 +1,31 @@
 import React from 'react'
-import HeroSection from '../components/home/HeroSection'
-import ServicesSection from '../components/home/ServicesSection'
-import AboutSection from '../components/home/AboutSection'
-import LanguageCourseSection from '../components/home/LanguageCourseSection'
-import CTABanner from '../components/home/CTABanner'
-import ConsultationForm from '../components/ui/ConsultationForm'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import FAQSection from '../components/ui/FAQSection'
-import useSEO from '../hooks/useSEO'
-import { PAGE_SEO } from '../config/seo'
+import HeroSection from '@/src/components/home/HeroSection'
+import ServicesSection from '@/src/components/home/ServicesSection'
+import AboutSection from '@/src/components/home/AboutSection'
+import LanguageCourseSection from '@/src/components/home/LanguageCourseSection'
+import CTABanner from '@/src/components/home/CTABanner'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import FAQSection from '@/src/components/ui/FAQSection'
+import { PAGE_SEO } from '@/src/config/seo'
+import type { Metadata } from 'next'
 
-const HomePage: React.FC = () => {
-  // SEO Configuration
-  useSEO({
+export const metadata: Metadata = {
+  title: PAGE_SEO.home.title,
+  description: PAGE_SEO.home.description,
+  keywords: PAGE_SEO.home.keywords,
+  openGraph: {
     title: PAGE_SEO.home.title,
     description: PAGE_SEO.home.description,
-    keywords: PAGE_SEO.home.keywords,
     url: 'https://versai.ir/',
-    type: 'website'
-  })
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/',
+  },
+}
 
+const HomePage: React.FC = () => {
   const faqItems = [
     {
       question: 'اولین گام اقدام برای دوره‌های زبان چیست؟',
@@ -48,7 +54,7 @@ const HomePage: React.FC = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <HeroSection />
       <ServicesSection />
       <AboutSection />
@@ -91,3 +97,4 @@ const HomePage: React.FC = () => {
 }
 
 export default HomePage
+

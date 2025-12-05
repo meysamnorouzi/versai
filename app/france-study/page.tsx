@@ -1,19 +1,27 @@
 import React from 'react'
 import { Star } from 'lucide-react'
-import Button from '../components/ui/Button'
-import FAQSection from '../components/ui/FAQSection'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import ConsultationForm from '../components/ui/ConsultationForm'
-import useSEO from '../hooks/useSEO'
+import Button from '@/src/components/ui/Button'
+import FAQSection from '@/src/components/ui/FAQSection'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'تحصیل در فرانسه | موسسه مهاجرتی ورسای',
+  description: 'راهنمای کامل تحصیل در فرانسه، شرایط پذیرش، انواع ویزای تحصیلی و مشاوره تخصصی از کارشناسان موسسه مهاجرتی ورسای',
+  keywords: 'تحصیل در فرانسه، پذیرش دانشگاه فرانسه، ویزای تحصیلی فرانسه، مشاوره تحصیل فرانسه',
+  openGraph: {
+    title: 'تحصیل در فرانسه | موسسه مهاجرتی ورسای',
+    description: 'راهنمای کامل تحصیل در فرانسه، شرایط پذیرش، انواع ویزای تحصیلی',
+    url: 'https://versai.ir/france-study',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/france-study',
+  },
+}
 
 const FranceStudyPage: React.FC = () => {
-
-  useSEO({
-    title: 'تحصیل در فرانسه | موسسه مهاجرتی ورسای',
-    description: 'راهنمای کامل تحصیل در فرانسه، شرایط پذیرش، انواع ویزای تحصیلی و مشاوره تخصصی از کارشناسان موسسه مهاجرتی ورسای',
-    keywords: 'تحصیل در فرانسه، پذیرش دانشگاه فرانسه، ویزای تحصیلی فرانسه، مشاوره تحصیل فرانسه'
-  })
-
   const faqItems = [
     {
       question: 'اولین گام اقدام برای دوره‌های زبان چیست؟',
@@ -72,7 +80,6 @@ const FranceStudyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f2f1f1] relative overflow-hidden">
-
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -230,9 +237,9 @@ const FranceStudyPage: React.FC = () => {
         faqItems={faqItems}
         title="سوالات متداول"
       />
-
     </div>
   )
 }
 
 export default FranceStudyPage
+

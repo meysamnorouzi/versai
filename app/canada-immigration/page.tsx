@@ -1,10 +1,25 @@
-import React from 'react';
-import SEOHead from '../components/seo/SEOHead';
-import Container from '../components/ui/Container';
-import Button from '../components/ui/Button';
-import FAQSection from '../components/ui/FAQSection';
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection';
-import ConsultationForm from '../components/ui/ConsultationForm';
+import React from 'react'
+import Container from '@/src/components/ui/Container'
+import Button from '@/src/components/ui/Button'
+import FAQSection from '@/src/components/ui/FAQSection'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'مهاجرت به کانادا - راهنمای کامل روش‌های مهاجرت | ورسای',
+  description: 'راهنمای کامل روش‌های مختلف مهاجرت به کانادا شامل ویزای توریستی، سرمایه‌گذاری، کاری، تحصیلی و حمایتی با مشاوره تخصصی ورسای',
+  keywords: 'مهاجرت کانادا، ویزای کانادا، اقامت کانادا، سرمایه گذاری کانادا، ویزای کاری کانادا، ورسای',
+  openGraph: {
+    title: 'مهاجرت به کانادا - راهنمای کامل روش‌های مهاجرت | ورسای',
+    description: 'راهنمای کامل روش‌های مختلف مهاجرت به کانادا شامل ویزای توریستی، سرمایه‌گذاری، کاری، تحصیلی و حمایتی با مشاوره تخصصی ورسای',
+    url: 'https://versai.ir/canada-immigration',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/canada-immigration',
+  },
+}
 
 const CanadaImmigrationPage: React.FC = () => {
   const faqItems = [
@@ -32,7 +47,7 @@ const CanadaImmigrationPage: React.FC = () => {
       question: "چه مدارکی برای پروندهٔ اقامت تحصیلی فرانسه لازم است؟",
       answer: "مدارک تحصیلی، پاسپورت، عکس، گواهی زبان و مدارک مالی از جمله مدارک مورد نیاز است."
     }
-  ];
+  ]
 
   const relatedArticles = [
     {
@@ -53,7 +68,7 @@ const CanadaImmigrationPage: React.FC = () => {
       link: "/articles/ucly-university-lyon",
       excerpt: "با دانشگاه UCLY و فرصت‌های تحصیلی آن در لیون آشنا شوید."
     }
-  ];
+  ]
 
   const immigrationMethods = [
     {
@@ -84,113 +99,100 @@ const CanadaImmigrationPage: React.FC = () => {
       title: "ویزای حمایتی",
       description: "کسی که در کانادا زندگی می کند و اقامت دائم دارد می تواند اسپانسر بستگان خود شود تا برای کار یا تحصیل به کانادا بیایند. فرد حمایت کننده می بایست بتواند از پس هزینه های مالی و تامین نیازهای اولیه همچون اقامت و خوراک و لباس بر بیاید. در صورتی که فردی بخواهد برای همسر یا شریک قانونی خود اقامت دائم دریافت کند، مسئولیت مالی او را تا 3 سال اول بر عهده خواهد داشت و همسری که از این طریق اقامت دائم دریافت کرده است تا ۵ سال اجازهٔ اسپانسر شدن برای همسر دیگری را نخواهد داشت. افرادی که اقامت دائم دارند می توانند با سوپر ویزای کانادا، امکان اقامت فرزندان، نوه ها و والدین خود یا پدر بزرگ و مادربزرگ خود را فراهم کنند."
     }
-  ];
+  ]
 
   return (
-    <>
-      <SEOHead
-        title="مهاجرت به کانادا - راهنمای کامل روش‌های مهاجرت | ورسای"
-        description="راهنمای کامل روش‌های مختلف مهاجرت به کانادا شامل ویزای توریستی، سرمایه‌گذاری، کاری، تحصیلی و حمایتی با مشاوره تخصصی ورسای"
-        keywords="مهاجرت کانادا، ویزای کانادا، اقامت کانادا، سرمایه گذاری کانادا، ویزای کاری کانادا، ورسای"
+    <div className="min-h-screen bg-zinc-100 relative overflow-hidden">
+      {/* Hero Section */}
+      <section className="pt-16">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4 text-cyan-800">
+              مهاجرت به کانادا
+            </h1>
+          </div>
+        </Container>
+      </section>
+
+      {/* Immigration Methods Section */}
+      <section className="py-16">
+        <Container>
+          <div className="mb-16">
+            <h2 className="text-red-700 text-2xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-8">
+              از چه راه هایی می توان برای مهاجرت به کانادا اقدام کرد؟
+            </h2>
+            <div className="space-y-8">
+              {immigrationMethods.map((method, index) => (
+                <div key={index} className="text-right">
+                  <p className="text-lg font-medium font-['IRANYekanX'] leading-relaxed">
+                    <span className="text-red-700 font-semibold">{method.title}</span>
+                    <br />
+                    <span className="text-cyan-800">{method.description}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Banner Section */}
+      <section className="relative py-20 mb-16">
+        <div className="absolute inset-0">
+          <img
+            src="/images/canada-immigration-page/Rectangle 66.png"
+            alt="Canada Immigration"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <Container>
+          <div className="relative text-center text-white">
+            <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
+              برای رویای کانادا، یک قدم بردار.
+            </h2>
+            <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
+              ارزیابی امتیاز شما با ورسای
+            </p>
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
+              درخواست مشاوره
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      <div className="mt-8">
+        <Container>
+          <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right">
+            با توجه به شرایطی که دارید برای مثال با در نظر گرفتن وضعیت تاهل، میزان بودجه و سرمایه، تخصص و مهارت هایی که دارید و … می توانید یکی از روش های مهاجرت به کانادا را انتخاب و اقدامات لازم را انجام دهید، نقطه بسیار مهم این است که اقدامات و دریافت ویزا برای مهاجرت کار آسانی نیست، اما تمام کسانی که د راه درست تلاش کرده و اقدامات لازم را انجام داده اند موفق به دریافت ویزای مهاجرت به کانادا شده اند.
+          </p>
+        </Container>
+      </div>
+
+      {/* Consultation Form Section */}
+      <section className="py-16">
+        <Container>
+          <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9563.PNG" />
+        </Container>
+      </section>
+
+      {/* Related Articles Section */}
+      <RelatedArticlesSection
+        articles={relatedArticles}
+        title="مقالات مرتبط"
+        showViewAll={true}
+        viewAllLink="/articles"
+        className="py-16"
       />
 
-      <div className="min-h-screen bg-zinc-100 relative overflow-hidden">
+      {/* FAQ Section */}
+      <FAQSection
+        faqItems={faqItems}
+        title="سوالات متداول"
+        className="py-16"
+      />
+    </div>
+  )
+}
 
-        {/* Hero Section */}
-        <section className="pt-16">
-          <Container>
-            <div className="text-center">
-              <h1 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4 text-cyan-800">
-                مهاجرت به کانادا
-              </h1>
-            </div>
-          </Container>
-        </section>
+export default CanadaImmigrationPage
 
-        {/* Immigration Methods Section */}
-        <section className="py-16">
-          <Container>
-            <div className="mb-16">
-              <h2 className="text-red-700 text-2xl font-semibold font-['IRANYekanX'] leading-snug text-right mb-8">
-                از چه راه هایی می توان برای مهاجرت به کانادا اقدام کرد؟
-              </h2>
-              <div className="space-y-8">
-                {immigrationMethods.map((method, index) => (
-                  <div key={index} className="text-right">
-                    <p className="text-lg font-medium font-['IRANYekanX'] leading-relaxed">
-                      <span className="text-red-700 font-semibold">{method.title}</span>
-                      <br />
-                      <span className="text-cyan-800">{method.description}</span>
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </Container>
-        </section>
-
-        {/* Banner Section */}
-        <section className="relative py-20 mb-16">
-          <div className="absolute inset-0">
-            <img
-              src="/images/canada-immigration-page/Rectangle 66.png"
-              alt="Canada Immigration"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <Container>
-            <div className="relative text-center text-white">
-              <h2 className="text-3xl font-extrabold font-['IRANYekanX'] leading-10 mb-4" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
-                برای رویای کانادا، یک قدم بردار.
-              </h2>
-              <p className="text-xl font-extrabold font-['IRANYekanX'] leading-relaxed mb-8" style={{ textShadow: '0px 0px 6px rgba(255,255,255,0.71)' }}>
-                ارزیابی امتیاز شما با ورسای
-              </p>
-              <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-[32px] text-lg font-bold font-['IRANYekanX']">
-                درخواست مشاوره
-              </Button>
-            </div>
-          </Container>
-        </section>
-
-        <div className="mt-8">
-          <Container>
-            <p className="text-neutral-500 text-lg font-medium font-['IRANYekanX'] leading-relaxed text-right">
-              با توجه به شرایطی که دارید برای مثال با در نظر گرفتن وضعیت تاهل، میزان بودجه و سرمایه، تخصص و مهارت هایی که دارید و … می توانید یکی از روش های مهاجرت به کانادا را انتخاب و اقدامات لازم را انجام دهید، نقطه بسیار مهم این است که اقدامات و دریافت ویزا برای مهاجرت کار آسانی نیست، اما تمام کسانی که د راه درست تلاش کرده و اقدامات لازم را انجام داده اند موفق به دریافت ویزای مهاجرت به کانادا شده اند.
-            </p>
-          </Container>
-
-        </div>
-
-        {/* Consultation Form Section */}
-        <section className="py-16">
-          <Container>
-            <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9563.PNG" />
-          </Container>
-        </section>
-
-
-        {/* Related Articles Section */}
-        <RelatedArticlesSection
-          articles={relatedArticles}
-          title="مقالات مرتبط"
-          showViewAll={true}
-          viewAllLink="/articles"
-          className="py-16"
-        />
-
-        {/* FAQ Section */}
-        <FAQSection
-          faqItems={faqItems}
-          title="سوالات متداول"
-          className="py-16"
-        />
-
-
-      </div>
-    </>
-  );
-};
-
-export default CanadaImmigrationPage;

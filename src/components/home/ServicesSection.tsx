@@ -42,13 +42,13 @@ const ServicesSection: React.FC = () => {
         
         
         {/* First row */}
-        <div className="w-full px-40 flex justify-center items-center gap-7 mb-7">
+        <div className="w-full  flex justify-center items-center gap-7 mb-7">
           {services.slice(0, 3).map((service, index) => (
-            <div key={index} className="w-80 h-[350px] px-8 py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
-              <div className="text-center text-[#1e3950] text-xl font-semibold font-['IRANYekanX'] leading-snug w-full group-hover:text-stone-50 group-hover:hidden transition-all duration-300">
+            <div key={index} className=" h-[350px] px-8 py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
+              <div className="text-center text-[#316086] text-xl font-semibold font-['IRANYekanX'] leading-snug w-full group-hover:text-stone-50 group-hover:hidden transition-all duration-300">
                 {service.title}
               </div>
-              <div className="text-right text-[#cbcbcb] text-base font-medium font-['IRANYekanX'] leading-relaxed w-full group-hover:hidden transition-all duration-300">
+              <div className="text-right text-[#6D6E70] text-base font-medium font-['IRANYekanX'] leading-relaxed w-full group-hover:hidden transition-all duration-300">
                 {service.description}
               </div>
               <img className="w-64 h-48 absolute -top-5 left-1/2 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 rounded-2xl outline outline-2 outline-offset-[-1px] outline-stone-50 transition-all duration-500 ease-out" src="/images/home-page/success-story1.png" alt={service.title} />
@@ -58,7 +58,7 @@ const ServicesSection: React.FC = () => {
               <Button 
                 variant="primary-outline" 
                 size="md" 
-                className="self-stretch opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200"
+                className="self-stretch  transition-all duration-300 delay-200"
               >
                 اطلاعات بیشتر
               </Button>
@@ -67,9 +67,9 @@ const ServicesSection: React.FC = () => {
         </div>
         
         {/* Second row */}
-        <div className="w-full px-40 flex justify-center items-center gap-7">
+        <div className="w-full  flex justify-center items-center gap-7">
           {services.slice(3, 6).map((service, index) => (
-            <div key={index} className="w-80 h-[350px] px-8 py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
+            <div key={index} className=" h-[350px] px-8 py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
               <div className="text-center text-[#1e3950] text-xl font-semibold font-['IRANYekanX'] leading-snug w-full group-hover:text-stone-50 group-hover:hidden transition-all duration-300">
                 {service.title}
               </div>

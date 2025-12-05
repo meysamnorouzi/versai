@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { WordPressPost, WordPressMedia, WordPressCategory, ApiResponse } from '../types'
 
-const API_BASE_URL = import.meta.env.VITE_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2'
+const API_BASE_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2'
 
 const api = axios.create({
   baseURL: API_BASE_URL,

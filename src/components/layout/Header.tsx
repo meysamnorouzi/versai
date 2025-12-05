@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { X, Menu } from 'lucide-react'
 import { getLogoPath, getLogoAlt } from '../../config/logo'
 import { navigationConfig } from '../../config/navigation'
@@ -11,7 +14,7 @@ const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
+  const pathname = usePathname()
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -24,18 +27,18 @@ const Header: React.FC = () => {
   }
 
   const isActiveLink = (href: string, hasChildren?: boolean) => {
-    if (href === '/' && location.pathname === '/') {
+    if (href === '/' && pathname === '/') {
       return true
     }
-    if (href !== '/' && location.pathname.startsWith(href)) {
+    if (href !== '/' && pathname.startsWith(href)) {
       return true
     }
     // Check if any child is active for dropdown items
     if (hasChildren) {
       const item = navigationConfig.find(nav => nav.href === href)
       return item?.children?.some(child => 
-        child.href === location.pathname || 
-        (child.href !== '/' && location.pathname.startsWith(child.href))
+        child.href === pathname || 
+        (child.href !== '/' && pathname.startsWith(child.href))
       )
     }
     return false
@@ -54,9 +57,9 @@ const Header: React.FC = () => {
         <Container className="h-24 py-3 flex justify-between items-center gap-10">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
+            <Link href="/">
               <img 
-                className="w-48 h-16" 
+                className="w-[156px]" 
                 src={getLogoPath('navigation')} 
                 alt={getLogoAlt('navigation')}
               />
@@ -64,7 +67,7 @@ const Header: React.FC = () => {
             </div>
 
           {/* Navigation Items - Desktop Only */}
-          <div className="hidden lg:flex justify-center items-center gap-24">
+          <div className="hidden lg:flex justify-center items-center gap-24 desktop:-mr-24">
             <div className="flex justify-center items-center gap-8">
               {navigationConfig.map((item) => (
               <div key={item.label}>
@@ -73,7 +76,7 @@ const Header: React.FC = () => {
                     trigger={
                         <div className="flex justify-start items-center group">
                       
-                          <div className={`text-center justify-start text-base font-semibold font-['IRANYekanX'] leading-normal cursor-pointer ${getActiveLinkClass(item.href, true)}`}>
+                          <div className={`text-center justify-start text-base font-medium font-['IRANYekanX'] leading-normal cursor-pointer ${getActiveLinkClass(item.href, true)}`}>
                         {item.label}
                           </div>
                         </div>
@@ -84,7 +87,7 @@ const Header: React.FC = () => {
                       {item.children?.map((child) => (
                         <Link
                           key={child.label}
-                          to={child.href}
+                          href={child.href}
                           className="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors duration-200 font-medium font-['IRANYekanX']"
                         >
                           {child.label}
@@ -92,7 +95,7 @@ const Header: React.FC = () => {
                       ))}
                   </Dropdown>
                 ) : (
-                    <Link to={item.href} className="flex justify-start items-center gap-1">
+                    <Link href={item.href} className="flex justify-start items-center gap-1">
                       <div className={`text-center justify-start text-base font-semibold font-['IRANYekanX'] leading-normal cursor-pointer ${getActiveLinkClass(item.href)}`}>
                     {item.label}
                       </div>
@@ -193,7 +196,7 @@ const Header: React.FC = () => {
                       {item.children?.map((child) => (
                       <Link
                         key={child.label}
-                        to={child.href}
+                        href={child.href}
                           className={`block px-6 py-2 text-sm rounded-lg transition-colors ${
                             isActiveLink(child.href) 
                               ? 'bg-red-50 text-red-700 font-semibold' 
@@ -208,7 +211,7 @@ const Header: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    to={item.href}
+                    href={item.href}
                     className={`block px-3 py-2 text-base font-semibold rounded-lg transition-colors ${
                       isActiveLink(item.href) 
                         ? 'bg-red-50 text-red-700' 

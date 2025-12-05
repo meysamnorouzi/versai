@@ -1,14 +1,28 @@
 import React from 'react'
-import FAQSection from '../components/ui/FAQSection'
-import RelatedArticlesSection from '../components/ui/RelatedArticlesSection'
-import { FAQItem, RelatedArticle } from '../types'
-import ConsultationForm from '../components/ui/ConsultationForm'
+import FAQSection from '@/src/components/ui/FAQSection'
+import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { FAQItem, RelatedArticle } from '@/src/types'
+import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
-import Icon from '../components/ui/Icon'
+import Icon from '@/src/components/ui/Icon'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'اقامت در فرانسه - راهنمای کامل اقامت دائم فرانسه | ورسای',
+  description: 'راهنمای کامل روش‌های مختلف مهاجرت و اقامت در فرانسه شامل تولد، ازدواج، کاری، تحصیلی و سرمایه‌گذاری',
+  keywords: 'اقامت فرانسه، اقامت دائم فرانسه، مهاجرت فرانسه، ملیت فرانسوی، ورسای',
+  openGraph: {
+    title: 'اقامت در فرانسه - راهنمای کامل اقامت دائم فرانسه | ورسای',
+    description: 'راهنمای کامل روش‌های مختلف مهاجرت و اقامت در فرانسه',
+    url: 'https://versai.ir/pr-france',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://versai.ir/pr-france',
+  },
+}
 
 const PRFrancePage: React.FC = () => {
-
-  // FAQ data
   const faqItems: FAQItem[] = [
     {
       question: "اولین گام اقدام برای دوره‌های زبان چیست؟",
@@ -36,7 +50,6 @@ const PRFrancePage: React.FC = () => {
     }
   ]
 
-  // Related articles data
   const relatedArticles: RelatedArticle[] = [
     {
       title: "مزایای دوره زبان کشور فرانسه",
@@ -60,7 +73,6 @@ const PRFrancePage: React.FC = () => {
 
   return (
     <div className="w-full bg-[#f2f1f1] text-lg text-[#6d6e70] font-['IRANYekanX']">
-
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -143,9 +155,9 @@ const PRFrancePage: React.FC = () => {
       {/* Banner Section */}
       <section className="relative h-[399px] text-center text-[32px] text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img className="absolute top-[58px] left-0 w-full h-[294px] object-cover" src="images/france-pr-page/blue-img.png" alt="" />
+          <img className="absolute top-[58px] left-0 w-full h-[294px] object-cover" src="/images/france-pr-page/blue-img.png" alt="" />
           <div className="absolute top-0 left-[146px] w-[490px] h-full">
-            <img className="absolute top-0 left-0 w-full h-full object-cover" src="images/france-pr-page/france-map.svg" alt="" />
+            <img className="absolute top-0 left-0 w-full h-full object-cover" src="/images/france-pr-page/france-map.svg" alt="" />
           </div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full">
@@ -229,9 +241,9 @@ const PRFrancePage: React.FC = () => {
         title="سوالات متداول"
         className="py-16"
       />
-
     </div>
   )
 }
 
 export default PRFrancePage
+

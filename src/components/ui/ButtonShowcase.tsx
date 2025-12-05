@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import Button from './Button'
 import { Check, ArrowRight, Download } from 'lucide-react'

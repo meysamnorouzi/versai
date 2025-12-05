@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { ButtonProps } from '../../types'
 import { Loader2, Check, X } from 'lucide-react'
 
@@ -121,7 +121,7 @@ const Button: React.FC<ExtendedButtonProps> = ({
   if (as === 'link' && to) {
     return (
       <Link
-        to={to}
+        href={to}
         className={classes}
         onClick={onClick}
       >
