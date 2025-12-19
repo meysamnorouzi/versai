@@ -3,39 +3,35 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import Button from './Button'
-import { ArrowRight } from 'lucide-react'
+import { ButtonProps } from '../../types'
 
-interface BackButtonProps {
-  variant?: 'primary' | 'primary-outline' | 'secondary' | 'secondary-outline' | 'ghost' | 'ghost-red' | 'success' | 'error' | 'disabled'
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+interface BackButtonProps extends Omit<ButtonProps, 'onClick'> {
   className?: string
-  children: React.ReactNode
 }
 
 const BackButton: React.FC<BackButtonProps> = ({
-  variant = 'primary-outline',
+  children,
+  variant = 'primary',
   size = 'md',
   className = '',
-  children
+  disabled = false,
+  ...props
 }) => {
   const router = useRouter()
 
   const handleBack = () => {
-    if (typeof window !== 'undefined' && window.history.length > 1) {
-      router.back()
-    } else {
-      router.push('/')
-    }
+    router.back()
   }
 
   return (
     <Button
       variant={variant}
       size={size}
-      onClick={handleBack}
       className={className}
+      onClick={handleBack}
+      disabled={disabled}
+      {...props}
     >
-      <ArrowRight className="w-5 h-5 ml-2" />
       {children}
     </Button>
   )
