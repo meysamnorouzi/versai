@@ -1,10 +1,17 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import Container from '@/src/components/ui/Container'
 import Button from '@/src/components/ui/Button'
-import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import type { Metadata } from 'next'
+
+const FAQSection = dynamic(() => import('@/src/components/ui/FAQSection'), {
+  ssr: false
+})
+
+const ConsultationForm = dynamic(() => import('@/src/components/ui/ConsultationForm'), {
+  ssr: false
+})
 
 export const metadata: Metadata = {
   title: 'مهاجرت به کانادا - راهنمای کامل روش‌های مهاجرت | ورسای',

@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { Home, ArrowRight } from 'lucide-react'
+import { Home } from 'lucide-react'
 import Button from '@/src/components/ui/Button'
+import BackButton from '@/src/components/ui/BackButton'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -35,10 +36,9 @@ const NotFound: React.FC = () => {
             </Button>
           </Link>
           
-          <Button variant="primary-outline" onClick={() => window.history.back()} className="w-full">
-            <ArrowRight className="w-5 h-5 ml-2" />
+          <BackButton variant="primary-outline" className="w-full">
             بازگشت به صفحه قبل
-          </Button>
+          </BackButton>
         </div>
       </div>
     </div>

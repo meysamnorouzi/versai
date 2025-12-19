@@ -1,14 +1,18 @@
 import React from 'react'
+import dynamic from 'next/dynamic'
 import ContactUsHero from '@/src/components/contact/ContactUsHero'
 import ContactUsInfo from '@/src/components/contact/ContactUsInfo'
 import ContactUsAbout from '@/src/components/contact/ContactUsAbout'
 import ContactUsServices from '@/src/components/contact/ContactUsServices'
-import ContactMap from '@/src/components/contact/ContactMap'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import Icon from '@/src/components/ui/Icon'
 import Container from '@/src/components/ui/Container'
 import { PAGE_SEO } from '@/src/config/seo'
 import type { Metadata } from 'next'
+
+const ContactMap = dynamic(() => import('@/src/components/contact/ContactMap'), {
+  ssr: false
+})
 
 export const metadata: Metadata = {
   title: PAGE_SEO.contact.title,
