@@ -75,7 +75,11 @@ const Footer: React.FC = () => {
                        alt="Phone"
                      />
                    </div>
-                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">۹۸۲۱۲۸۴۲۱۶۹۰+ / ۹۸۹۳۵۴۲۴۲۷۱۵+</div>
+                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">
+                     <a href="tel:+982128421690" className="hover:underline">۹۸۲۱۲۸۴۲۱۶۹۰+</a>
+                     <span className="mx-1">/</span>
+                     <a href="tel:+989354242715" className="hover:underline">۹۸۹۳۵۴۲۴۲۷۱۵+</a>
+                   </div>
 
                  </div>
                  <div className="flex justify-start items-start gap-2">
@@ -87,7 +91,7 @@ const Footer: React.FC = () => {
                        alt="Phone"
                      />
                    </div>
-                   <div className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed">۹۸۹۳۷۸۰۰۰۳۹۹+</div>
+                   <a href="tel:+989378000399" className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed hover:underline">۹۸۹۳۷۸۰۰۰۳۹۹+</a>
 
                  </div>
                </div>
@@ -98,7 +102,7 @@ const Footer: React.FC = () => {
               {/* Google Map */}
               <div className="w-full max-w-full lg:w-[475px] h-64 sm:h-72 rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.123456789!2d51.3890!3d35.6892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00c8b8b8b8b8%3A0x1234567890abcdef!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.09605172581735!2d51.40051537676046!3d35.750446402446954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e06e815f16e91%3A0x358d24d94b370964!2sGreen%20Tower!5e0!3m2!1sen!2sde!4v1765042907782!5m2!1sen!2sde"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -128,7 +132,7 @@ const Footer: React.FC = () => {
           <div className=" flex justify-center items-start gap-3">
             <div className="self-stretch flex flex-col justify-start items-center gap-4">
                <div className="flex justify-center items-center gap-3">
-                 <a href="https://wa.me/9378000399" className="w-6 h-6 hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
+                 <a href="https://wa.me/9354242715" className="w-6 h-6 hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
                    <Icon 
                      section="footer" 
                      name="whatsapp" 
@@ -136,7 +140,7 @@ const Footer: React.FC = () => {
                      alt="WhatsApp"
                    />
                  </a>
-                 <a href="https://t.me/immiv" className="w-6 h-6 hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
+                 <a href="https://t.me/hma7784" className="w-6 h-6 hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
                    <Icon 
                      section="footer" 
                      name="telegram" 

@@ -5,19 +5,19 @@ const ContactUsServices: React.FC = () => {
   const services = [
     {
       title: "انتخاب بهترین مسیر مهاجرتی",
-      icon: "/icons/contact/Group.svg"
-    },
-    {
-      title: "پشتیبانی کامل تا اقامت",
-      icon: "/icons/contact/Group (2).svg"
-    },
-    {
-      title: "ارزیابی سطح زبان و مدارک",
-      icon: "/icons/contact/Group (3).svg"
+            icon: "/icons/contact/Group (3).svg"
     },
     {
       title: "مشاوره دقیق و تخصصی",
       icon: "/icons/contact/Group (4).svg"
+    },
+    {
+      title: "ارزیابی سطح زبان و مدارک",
+      icon: "/icons/contact/Group (2).svg"
+    },
+    {
+      title: "پشتیبانی کامل تا اقامت",
+      icon: "/icons/contact/Group.svg"
     },
   ];
 
@@ -34,7 +34,7 @@ const ContactUsServices: React.FC = () => {
                   className="w-10 h-10"
                 />
               </div>
-              <span className="text-[16px]  font-['IRANYekanX'] text-[#316086] text-right leading-[1.61] font-bold">
+              <span className="text-[16px]  font-['IRANYekanX'] text-[#316086] text-right leading-[1.61]">
                 {service.title}
               </span>
             </div>

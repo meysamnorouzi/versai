@@ -1,7 +1,15 @@
+'use client';
+
 import React from 'react';
 import Container from '../ui/Container';
 
 const ContactUsInfo: React.FC = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('consultation-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <section className="py-16 relative" dir="rtl">
       {/* Background Pattern */}
@@ -39,9 +47,11 @@ const ContactUsInfo: React.FC = () => {
                       className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] break-all">
-                   ۹۸۲۱۲۸۴۲۱۶۹۰+ / ۹۸۹۳۵۴۲۴۲۷۱۵+
-                  </span>
+                  <div className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] break-all">
+                    <a href="tel:+982128421690" className="hover:underline">۹۸۲۱۲۸۴۲۱۶۹۰+</a>
+                    <span className="mx-1">/</span>
+                    <a href="tel:+989354242715" className="hover:underline">۹۸۹۳۵۴۲۴۲۷۱۵+</a>
+                  </div>
                 
                 </div>
                 
@@ -53,9 +63,9 @@ const ContactUsInfo: React.FC = () => {
                       className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1]">
-                    33679949935+
-                  </span>
+                  <a href="tel:+989378000399" className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] hover:underline">
+                  ۹۸۹۳۷۸۰۰۰۳۹۹+
+                  </a>
                
                 </div>
                 
@@ -95,8 +105,8 @@ const ContactUsInfo: React.FC = () => {
                     />
                   </div>
                   <div className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4]">
-                    دفتر تهران: تهران، ونک پارک، خیابان شیراز جنوبی، پایین تر از بزرگراه همت، پلاک ۲۰، برج سبز، طبقه دهم ، واحد ۲۱ ، موسسه مهاجرتی ورسای
-                  </div>
+
+                  دفتر تهران: تهران، ونک پارک، برج سبز                  </div>
                   
                 </div>
                 
@@ -109,7 +119,7 @@ const ContactUsInfo: React.FC = () => {
                     />
                   </div>
                   <div className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4]">
-                    دفتر فرانسه: 29A Route de Woippy, Metz 57050, France
+                  دفتر فرانسه:   Metz 57050, France
                   </div>
                  
                 </div>
@@ -120,12 +130,15 @@ const ContactUsInfo: React.FC = () => {
           {/* Buttons - Left Side */}
           <div className="flex flex-row lg:flex-col items-center lg:items-end justify-center lg:justify-start space-x-3 lg:space-x-0 space-y-0 lg:space-y-4 w-full lg:w-[280px]">
             {/* Consultation Request Button */}
-            <button className="px-3 sm:px-4 py-2 bg-[#E74C3C] text-white text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#C23325] transition-colors duration-200 text-right whitespace-nowrap">
+            <button 
+              onClick={scrollToForm}
+              className="px-3 sm:px-4 py-2 bg-[#E74C3C] text-white text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#C23325] transition-colors duration-200 text-right whitespace-nowrap"
+            >
               درخواست مشاوره
             </button>
             
             {/* WhatsApp Button */}
-            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-2 sm:gap-3">
+            <a href="https://wa.me/9354242715" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-2 sm:gap-3">
               <span className="hidden sm:inline">ارتباط در واتساپ</span>
               <span className="sm:hidden">واتساپ</span>
               <img 
@@ -133,10 +146,10 @@ const ContactUsInfo: React.FC = () => {
                 alt="WhatsApp"
                 className="w-5 h-5 sm:w-6 sm:h-6"
               />
-            </button>
+            </a>
             
             {/* Telegram Button */}
-            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
+            <a target="_blank" href="https://t.me/hma7784" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
               <span className="hidden sm:inline">ارتباط در تلگرام</span>
               <span className="sm:hidden">تلگرام</span>
               <img 
@@ -144,10 +157,10 @@ const ContactUsInfo: React.FC = () => {
                 alt="Telegram"
                 className="w-5 h-5 sm:w-6 sm:h-6"
               />
-            </button>
+            </a>
             
             {/* Instagram Button */}
-            <button className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
+            <a href="https://www.instagram.com/versai.immigration/" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
               <span className="hidden md:inline">صفحه اینستاگرام ورسای</span>
               <span className="md:hidden">اینستاگرام</span>
               <img 
@@ -155,7 +168,7 @@ const ContactUsInfo: React.FC = () => {
                 alt="Instagram"
                 className="w-5 h-5 sm:w-6 sm:h-6"
               />
-            </button>
+            </a>
           </div>
         </div>
       </Container>

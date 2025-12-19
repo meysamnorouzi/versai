@@ -32,29 +32,34 @@ const LanguageCourseBenefits: React.FC = () => {
 
   const featureCards = [
     {
-      iconName: 'medical',
-      title: "بیمه پزشکی رایگان"
-    },
-    {
-      iconName: 'clock',
-      title: "امکان کار دانشجویی"
-    },
-    {
       iconName: 'component',
-      title: "بدون نیاز به مدرک زبان"
-    },
-    {
-      iconName: 'coins',
-      title: "شهریه مقرون‌به‌صرفه"
+      title: "پروسه کوتاه"
     },
     {
       iconName: 'delivery',
       title: "امکان رزرو خوابگاه دولتی"
     },
     {
+      iconName: 'coins',
+      title: "شهریه مقرون‌به‌صرفه"
+    },
+    {
       iconName: 'component',
-      title: "پروسه کوتاه"
-    }
+      title: "بدون نیاز به مدرک زبان"
+    },
+    {
+      iconName: 'clock',
+      title: "امکان کار دانشجویی"
+    },
+    {
+      iconName: 'medical',
+      title: "بیمه پزشکی رایگان"
+    },
+   
+   
+   
+  
+   
   ]
 
   const renderTextWithHighlight = (text: string, highlighted?: string | string[]) => {
