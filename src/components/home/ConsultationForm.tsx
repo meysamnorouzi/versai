@@ -49,7 +49,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="نام و نام خانوادگی خود را وارد کنید."
                     value={formData.name}
                     onChange={(e) => handleChange('name', e.target.value)}
-                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-full p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
@@ -62,7 +62,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="شماره تماس خود را وارد کنید"
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
-                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-start items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight text-right"
+                    className="w-full p-3 bg-white rounded-2xl inline-flex justify-start items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight text-right"
                     required
                   />
                 </div>
@@ -78,7 +78,7 @@ const ConsultationForm: React.FC = () => {
                     placeholder="آدرس ایمیل خود را وارد کنید."
                     value={formData.email}
                     onChange={(e) => handleChange('email', e.target.value)}
-                    className="w-full sm:w-64 p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
+                    className="w-full p-3 bg-white rounded-2xl inline-flex justify-end items-center gap-2 text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight"
                     required
                   />
                 </div>
@@ -89,7 +89,7 @@ const ConsultationForm: React.FC = () => {
                   <select
                     value={formData.subject}
                     onChange={(e) => handleChange('subject', e.target.value)}
-                    className="w-full sm:w-64 p-3 bg-white rounded-2xl text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
+                    className="w-full p-3 bg-white rounded-2xl text-neutral-400 text-sm font-medium font-['IRANYekanX'] leading-tight appearance-none"
                     required
                   >
                     <option value="">موضوع مشاوره را انتخاب کنید.</option>

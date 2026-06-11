@@ -7,7 +7,7 @@ const UCLYUniversitySection: React.FC = () => {
       <Container>
 
 
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div>
           <div className="bg-[#fdf7f7] rounded-2xl px-4 sm:px-6 lg:px-10 pb-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 py-4 sm:py-6 lg:py-8">
               {/* Left side - UCLY Logo and Info */}
@@ -38,7 +38,7 @@ const UCLYUniversitySection: React.FC = () => {
               {/* Right side - University Image */}
               <div className="order-1 lg:order-2">
 
-                <img src="https://s3-alpha-sig.figma.com/img/f4d9/4a6b/1c3974e3b1b08fec6d47e0ae9983143f?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NwtgfiM-DRNLMPzcXLTYrQTpEVM4jQVZ6P4QSrEAiyj-gVQOFH~ozzCxrt5fiLLma7DzLS~ual25k2M0GSkHsqsZulnizuK6f~W3zIqYRqxLBonNvcL60Jj4ldiuG1Mi7dfZyYon2RwUQOpZNKwviBW0c68MCcXMCQkCoS8667TNa8lv07Sl0hNRsN2z-rtY5n5qMuipws~DGKkBW-AaFM5ThhC8MLqGbIf5B29CQ1irDlNByoq3T0c2PeMjk34PclUOAn6JOL-rcrgz9SfcD1MzaE7HIuD-Gfhm6MdC4Q-Uns6iJ7CSK4sup7zxYNdNGBqcPz72jabUi60Z4rGkWw__" alt="" className="w-2/3 object-cover mx-auto" />
+                <img src="https://s3-alpha-sig.figma.com/img/f4d9/4a6b/1c3974e3b1b08fec6d47e0ae9983143f?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NwtgfiM-DRNLMPzcXLTYrQTpEVM4jQVZ6P4QSrEAiyj-gVQOFH~ozzCxrt5fiLLma7DzLS~ual25k2M0GSkHsqsZulnizuK6f~W3zIqYRqxLBonNvcL60Jj4ldiuG1Mi7dfZyYon2RwUQOpZNKwviBW0c68MCcXMCQkCoS8667TNa8lv07Sl0hNRsN2z-rtY5n5qMuipws~DGKkBW-AaFM5ThhC8MLqGbIf5B29CQ1irDlNByoq3T0c2PeMjk34PclUOAn6JOL-rcrgz9SfcD1MzaE7HIuD-Gfhm6MdC4Q-Uns6iJ7CSK4sup7zxYNdNGBqcPz72jabUi60Z4rGkWw__" alt="" className="w-full max-w-sm lg:w-2/3 object-cover mx-auto" />
               </div>
             </div>
             <div className="text-[#6d6e70] text-base sm:text-lg font-medium font-['IRANYekanX'] leading-7 space-y-3 lg:space-y-4  mb-6">

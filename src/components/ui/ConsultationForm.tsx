@@ -45,7 +45,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
 
   return (
     <div className={`bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden ${className}`} style={{ backgroundImage: `url("${backgroundImageSrc}")` }}>
-      <div className="bg-[#1E3950] bg-opacity-25 p-12">
+      <div className="bg-[#1E3950] bg-opacity-25 p-4 sm:p-6 md:p-8 lg:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
           <div className="space-y-6">
@@ -120,8 +120,8 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                   />
                 </div>
               </div>
-              <div className="flex justify-between items-center">
-                <div className="space-y-2 w-2/3">
+              <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-4">
+                <div className="space-y-2 w-full lg:w-2/3">
                   <label className="block text-sm font-semibold text-white text-right">متن پیام</label>
                   <textarea
                     name="message"
@@ -136,7 +136,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                   variant="primary"
                   size="md"
                   type="submit"
-                  className=""
+                  className="w-full lg:w-auto flex-shrink-0"
                 >
                   ارسال درخواست
                 </Button>

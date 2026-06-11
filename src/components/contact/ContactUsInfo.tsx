@@ -128,7 +128,7 @@ const ContactUsInfo: React.FC = () => {
           </div>
 
           {/* Buttons - Left Side */}
-          <div className="flex flex-row lg:flex-col items-center lg:items-end justify-center lg:justify-start space-x-3 lg:space-x-0 space-y-0 lg:space-y-4 w-full lg:w-[280px]">
+          <div className="flex flex-col sm:flex-row lg:flex-col flex-wrap items-stretch sm:items-center lg:items-end justify-center lg:justify-start gap-3 w-full lg:w-[280px]">
             {/* Consultation Request Button */}
             <button 
               onClick={scrollToForm}

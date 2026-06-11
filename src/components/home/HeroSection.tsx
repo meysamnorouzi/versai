@@ -4,7 +4,7 @@ import Button from '../ui/Button'
 const HeroSection: React.FC = () => {
   return (
     <div className="w-full bg-[#1E3950] px-4 sm:px-8 md:px-16 lg:px-40 py-4 sm:py-6 lg:py-8 flex flex-col justify-start items-center gap-2">
-      <div className="w-full max-w-[1200px] rounded-2xl relative pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-4" style={{ backgroundImage: 'url(/images/home-page/Hero-photo.png)', backgroundSize: '45%', backgroundPosition: 'left 10% top 10%', backgroundRepeat: 'no-repeat' }}>
+      <div className="w-full max-w-[1200px] rounded-2xl relative pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-4 bg-no-repeat bg-[length:0%_0%] sm:bg-[length:35%_auto] lg:bg-[length:45%_auto] bg-[position:left_10%_top_10%]" style={{ backgroundImage: 'url(/images/home-page/Hero-photo.png)' }}>
 
         <div className="flex items-center justify-center w-full lg:w-2/3">
 
@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
         </div>
        {/* Stats Section */}
        <div className="flex justify-center items-center mt-8 sm:mt-12 md:mt-16 lg:mt-20">
-        <div className="inline-flex justify-start items-center gap-4 sm:gap-8 md:gap-16 lg:gap-40 flex-wrap sm:flex-nowrap">
+        <div className="inline-flex justify-center items-center gap-4 sm:gap-8 md:gap-16 lg:gap-40 flex-wrap">
           <div className="w-auto sm:w-28 inline-flex flex-col justify-start items-center">
             <div className="self-stretch text-center justify-start">
               <span className="text-white text-2xl sm:text-3xl md:text-4xl font-extrabold font-['IRANYekanX'] leading-8 sm:leading-9 md:leading-10">۱۷۰</span>

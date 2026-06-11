@@ -24,9 +24,9 @@ const ContactUsServices: React.FC = () => {
   return (
     <section className="py-2 bg-[#f2f1f1] relative">
       <Container>
-        <div className="flex justify-between items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:flex lg:justify-between lg:items-center">
           {services.map((service, index) => (
-            <div key={index} className="flex items-center gap-2">
+            <div key={index} className="flex items-center gap-2 justify-start">
               <div className="w-10 h-10 flex items-center justify-center">
                 <img 
                   src={service.icon} 
@@ -34,7 +34,7 @@ const ContactUsServices: React.FC = () => {
                   className="w-10 h-10"
                 />
               </div>
-              <span className="text-[16px]  font-['IRANYekanX'] text-[#316086] text-right leading-[1.61]">
+              <span className="text-sm sm:text-base font-['IRANYekanX'] text-[#316086] text-right leading-[1.61]">
                 {service.title}
               </span>
             </div>

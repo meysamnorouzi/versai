@@ -16,7 +16,7 @@ const TopBar: React.FC = () => {
               alt="Phone"
             />
           </div>
-          <div className="text-center justify-start text-[#4686BB] text-xl font-medium font-['IRANYekanX'] leading-7">۰۲۱۲۸۴۲۱۶۹۰</div>
+          <div className="text-center justify-start text-[#4686BB] text-sm sm:text-base lg:text-xl font-medium font-['IRANYekanX'] leading-7">۰۲۱۲۸۴۲۱۶۹۰</div>
       
         </div>
         

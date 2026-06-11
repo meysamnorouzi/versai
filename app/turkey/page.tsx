@@ -109,15 +109,15 @@ const TurkeyPage: React.FC = () => {
               <img 
                 src="https://placehold.co/446x502" 
                 alt="Turkish immigration methods"
-                className="w-full h-[502px] object-cover rounded-2xl border border-stone-300"
+                className="w-full h-[300px] sm:h-[400px] md:h-[502px] object-cover rounded-2xl border border-stone-300"
               />
             </div>
             <div className="order-1 lg:order-2 space-y-8">
               <div>
-                <h2 className="text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
+                <h2 className="text-lg sm:text-xl lg:text-[24px] font-semibold text-[#b23124] leading-[1.1] mb-6">
                   روش‌های مختلف مهاجرت به ترکیه
                 </h2>
-                <div className="space-y-4 text-[16px] font-medium text-[#316086] leading-[1.61]">
+                <div className="space-y-4 text-sm sm:text-base lg:text-[16px] font-medium text-[#316086] leading-[1.61]">
                   <p>
                     ترکیه روش‌های متنوعی برای مهاجرت ارائه می‌دهد که شامل ویزای کاری، تحصیلی، سرمایه‌گذاری، ازدواج، خرید ملک و ویزای توریستی می‌شود. هر روش شرایط و مدارک خاص خود را دارد.
                   </p>

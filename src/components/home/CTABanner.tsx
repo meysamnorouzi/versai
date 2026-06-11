@@ -8,16 +8,16 @@ const CTABanner: React.FC = () => {
         <div className="w-full h-full bg-slate-200/50 rounded-lg"></div>
       </div>
       
-      <div className="w-[686px] flex flex-col justify-start items-center gap-6 relative">
+      <div className="w-full max-w-[686px] px-4 flex flex-col justify-start items-center gap-6 relative">
 
         <div className="flex flex-col justify-start items-center gap-6">
      
           <div className="text-center">
-            <span className="text-[#fdfeff] text-4xl font-extrabold font-['IRANYekanX'] leading-10">بدون مدرک زبان، به   </span>
-            <span className="text-[#d74a3c] text-4xl font-extrabold font-['IRANYekanX'] leading-10">فرانسه</span>
-            <span className="text-[#fdfeff] text-4xl font-extrabold font-['IRANYekanX'] leading-10">   مهاجرت کن!</span>
+            <span className="text-[#fdfeff] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-['IRANYekanX'] leading-tight sm:leading-9 lg:leading-10">بدون مدرک زبان، به   </span>
+            <span className="text-[#d74a3c] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-['IRANYekanX'] leading-tight sm:leading-9 lg:leading-10">فرانسه</span>
+            <span className="text-[#fdfeff] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-['IRANYekanX'] leading-tight sm:leading-9 lg:leading-10">   مهاجرت کن!</span>
           </div>
-          <div className="text-center text-[#fdfeff] text-2xl font-semibold font-['IRANYekanX'] leading-relaxed">
+          <div className="text-center text-[#fdfeff] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold font-['IRANYekanX'] leading-relaxed">
             دوره زبان، سریعترین و راحت ترین روش مهاجرت به فرانسه
           </div>
 

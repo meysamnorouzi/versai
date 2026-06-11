@@ -271,16 +271,16 @@ const FranceOfficePage: React.FC = () => {
       {/* CTA Banner */}
       <section className="py-8 ">
         <Container>
-          <div className="bg-[#fdfeff] border border-[#d74a3c] rounded-[62px] py-4 px-12 flex items-center justify-between">
-            <div className="flex-1 text-right">
-              <p className="text-[18px] font-semibold text-[#b23124] leading-[1.4]">
+          <div className="bg-[#fdfeff] border border-[#d74a3c] rounded-2xl sm:rounded-[62px] py-4 px-4 sm:px-8 lg:px-12 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-4">
+            <div className="flex-1 text-right w-full">
+              <p className="text-base sm:text-lg lg:text-[18px] font-semibold text-[#b23124] leading-[1.4]">
                 گروه مهاجرتی ورسای با تجربه خود در این فرآیند، به شما در ثبت شرکت خود در فرانسه کمک می کند.
               </p>
             </div>
             <Button
               variant="primary"
               size="sm"
-              className="bg-[#d74a3c] border-[#e5867d] text-[#fdfeff] hover:bg-[#c73e30] px-6 py-3 rounded-[32px] text-[18px] font-bold ml-6"
+              className="bg-[#d74a3c] border-[#e5867d] text-[#fdfeff] hover:bg-[#c73e30] px-6 py-3 rounded-[32px] text-base sm:text-lg lg:text-[18px] font-bold lg:ml-6 w-full lg:w-auto flex-shrink-0"
             >
               درخواست مشاوره
             </Button>

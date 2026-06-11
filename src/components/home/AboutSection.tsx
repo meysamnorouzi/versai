@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from '../ui/Container'
 import Icon from '../ui/Icon'
 import VideoPlayer from '../ui/VideoPlayer'
@@ -8,25 +8,7 @@ import { getVideoUrl, getPosterUrl, getVideoMetadata } from '../../config/videos
 
 const AboutSection: React.FC = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
-  
-  const features = [
-    {
-      title: 'انتخاب بهترین مسیر مهاجرتی',
-      iconName: 'target'
-    },
-    {
-      title: 'مشاوره دقیق و تخصصی',
-      iconName: 'speak'
-    },
-    {
-      title: 'ارزیابی سطح زبان و مدارک',
-      iconName: 'checkmark'
-    },
-    {
-      title: 'پشتیبانی کامل تا اقامت',
-      iconName: 'testing'
-    }
-  ]
+  const [visibleCount, setVisibleCount] = useState(3)
 
   const testimonials = [
     {
@@ -55,22 +37,58 @@ const AboutSection: React.FC = () => {
       name: "ص.زارعی"
     },
   ]
+  
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth < 768) setVisibleCount(1)
+      else if (window.innerWidth < 1024) setVisibleCount(2)
+      else setVisibleCount(3)
+    }
+    updateVisibleCount()
+    window.addEventListener('resize', updateVisibleCount)
+    return () => window.removeEventListener('resize', updateVisibleCount)
+  }, [])
+
+  useEffect(() => {
+    setCurrentTestimonialIndex((prev) =>
+      Math.min(prev, Math.max(0, testimonials.length - visibleCount))
+    )
+  }, [visibleCount, testimonials.length])
+  
+  const features = [
+    {
+      title: 'انتخاب بهترین مسیر مهاجرتی',
+      iconName: 'target'
+    },
+    {
+      title: 'مشاوره دقیق و تخصصی',
+      iconName: 'speak'
+    },
+    {
+      title: 'ارزیابی سطح زبان و مدارک',
+      iconName: 'checkmark'
+    },
+    {
+      title: 'پشتیبانی کامل تا اقامت',
+      iconName: 'testing'
+    }
+  ]
 
   const handlePrevious = () => {
     setCurrentTestimonialIndex((prev) => 
-      prev === 0 ? testimonials.length - 3 : prev - 1
+      prev === 0 ? testimonials.length - visibleCount : prev - 1
     )
   }
 
   const handleNext = () => {
     setCurrentTestimonialIndex((prev) => 
-      prev >= testimonials.length - 3 ? 0 : prev + 1
+      prev >= testimonials.length - visibleCount ? 0 : prev + 1
     )
   }
 
   const visibleTestimonials = testimonials.slice(
     currentTestimonialIndex, 
-    currentTestimonialIndex + 3
+    currentTestimonialIndex + visibleCount
   )
 
   return (
@@ -164,9 +182,9 @@ const AboutSection: React.FC = () => {
               <div className="text-[#f2f9ff] text-lg sm:text-xl">‹</div>
             </button>
 
-            <div className="flex gap-2 sm:gap-4 overflow-hidden flex-1">
+            <div className="flex gap-2 sm:gap-4 overflow-hidden flex-1 justify-center lg:justify-start">
               {visibleTestimonials.map((testimonial, index) => (
-                <div key={currentTestimonialIndex + index} className="w-[280px] sm:w-72 md:w-80 bg-[#1e3950] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#316086] overflow-hidden flex flex-col items-start justify-start gap-2 py-3 sm:py-4 px-4 sm:px-6 flex-shrink-0">
+                <div key={currentTestimonialIndex + index} className="w-full max-w-[280px] sm:max-w-none sm:w-72 md:w-80 lg:w-80 bg-[#1e3950] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#316086] overflow-hidden flex flex-col items-start justify-start gap-2 py-3 sm:py-4 px-4 sm:px-6 flex-shrink-0">
                   {/* <img className="border border-[#d3e2ef]" src={testimonial.image} alt={`Testimonial ${currentTestimonialIndex + index + 1}`} /> */}
                   <h3 className="text-right text-[#d3e2ef] text-xs sm:text-sm font-medium font-['IRANYekanX'] leading-5 sm:leading-6 mt-2 sm:mt-4 border-b border-[#d3e2ef42] w-full pb-1">
                     {testimonial.name}

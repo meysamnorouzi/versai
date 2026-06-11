@@ -46,7 +46,7 @@ const ContactUsPage: React.FC = () => {
             <img
               src="/images/shared/logo-white.png"
               alt="Versai Logo"
-              className="w-[250px] sm:w-[300px] md:w-[374px] h-auto object-cover"
+              className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[374px] h-auto object-cover"
             />
           </div>
           <div className="w-full lg:flex-1">
