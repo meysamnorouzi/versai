@@ -3,6 +3,7 @@ import { ChevronDown, Phone, MessageCircle, Star } from 'lucide-react'
 import Button from '@/src/components/ui/Button'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -45,27 +46,6 @@ const SwedenPage: React.FC = () => {
     {
       question: 'هزینه زندگی در سوئد چقدر است؟',
       answer: 'هزینه زندگی در سوئد نسبتاً بالا است اما کیفیت زندگی و خدمات اجتماعی عالی است. به طور متوسط ماهانه 1000-1500 یورو برای یک نفر کافی است.'
-    }
-  ]
-
-  const blogArticles = [
-    {
-      title: 'مزایای دوره زبان کشور فرانسه',
-      image: '/images/blog-page/Rectangle 41.png',
-      link: '/articles/french-language-course-benefits',
-      excerpt: 'نگاهی کوتاه به مزایای دوره‌های زبان فرانسه.'
-    },
-    {
-      title: 'شرایط درخواست ویزای دیجیتال نومد اسپانیا',
-      image: '/images/blog-page/Rectangle 41(1).png',
-      link: '/articles/spain-digital-nomad-visa',
-      excerpt: 'راهنمای فشرده برای ویزای نومد اسپانیا.'
-    },
-    {
-      title: 'معرفی دانشگاه UCLY شهر لیون فرانسه',
-      image: '/images/blog-page/Rectangle 41(2).png',
-      link: '/articles/ucly-university-lyon',
-      excerpt: 'معرفی اجمالی دانشگاه UCLY در لیون.'
     }
   ]
 
@@ -224,10 +204,7 @@ const SwedenPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection 
-        articles={blogArticles.map(article => ({
-          ...article,
-          link: article.link || '/articles'
-        }))}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

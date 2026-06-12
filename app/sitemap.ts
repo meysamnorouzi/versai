@@ -54,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/france-investment`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/germany`,
       lastModified: CURRENT_DATE,
       changeFrequency: 'weekly' as const,
@@ -73,6 +79,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/turkey`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/netherlands`,
+      lastModified: CURRENT_DATE,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/romania`,
       lastModified: CURRENT_DATE,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

@@ -6,6 +6,7 @@ import LanguageCourseSection from '@/src/components/home/LanguageCourseSection'
 import CTABanner from '@/src/components/home/CTABanner'
 import ConsultationForm from '@/src/components/home/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import { PAGE_SEO } from '@/src/config/seo'
 import type { Metadata } from 'next'
@@ -62,26 +63,7 @@ const HomePage: React.FC = () => {
       <CTABanner />
       <ConsultationForm />
       <RelatedArticlesSection 
-        articles={[
-          {
-            title: "مزایای دوره زبان کشور فرانسه",
-            image: "/images/blog-page/Rectangle 41.png",
-            link: "/france-study",
-            excerpt: "اگر دنبال تقویت زبان فرانسه هستید، این مطلب را بخوانید."
-          },
-          {
-            title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-            image: "/images/blog-page/Rectangle 41(1).png",
-            link: "/france-visa",
-            excerpt: "راهنمای مختصر دریافت ویزای دیجیتال نومد اسپانیا."
-          },
-          {
-            title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-            image: "/images/blog-page/Rectangle 41(2).png",
-            link: "/france-study",
-            excerpt: "آشنایی کوتاه با دانشگاه UCLY و شهر لیون."
-          }
-        ]}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

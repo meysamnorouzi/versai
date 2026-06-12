@@ -1,32 +1,90 @@
 import React from 'react'
 import Button from '../ui/Button'
 
+const cardBaseClasses =
+  'group relative w-full min-h-[300px] sm:min-h-[320px] h-[300px] sm:h-[320px] md:h-[350px] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] bg-[#fdfeff] overflow-visible transition-[background-color,box-shadow,outline-color] duration-500 ease-in-out hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400'
+
+interface ServiceCardProps {
+  title: string
+  description: string
+  image: string
+  titleColor?: string
+  descriptionColor?: string
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  description,
+  image,
+  titleColor = 'text-[#316086]',
+  descriptionColor = 'text-[#6D6E70]',
+}) => (
+  <div className={cardBaseClasses}>
+    <div className="absolute inset-0 flex flex-col items-start justify-start gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 transition-opacity duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+      <div
+        className={`w-full text-center text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug ${titleColor}`}
+      >
+        {title}
+      </div>
+      <div
+        className={`w-full text-right text-sm sm:text-base font-medium font-['IRANYekanX'] leading-relaxed ${descriptionColor}`}
+      >
+        {description}
+      </div>
+    </div>
+
+    <div className="absolute inset-0 flex flex-col items-center justify-end gap-4 px-4 sm:px-6 md:px-8 pb-6 sm:pb-8 md:pb-10 opacity-0 pointer-events-none transition-opacity duration-300 delay-75 group-hover:opacity-100 group-hover:pointer-events-auto">
+      <img
+        className="pointer-events-none absolute left-1/2 top-0 h-36 w-48 -translate-x-1/2 translate-y-8 rounded-2xl object-cover opacity-0 outline outline-2 outline-offset-[-1px] outline-stone-50 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:h-40 sm:w-56 md:h-48 md:w-64"
+        src={image}
+        alt={title}
+      />
+      <div className="w-full text-center text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug text-stone-50">
+        {title}
+      </div>
+      <Button
+        variant="primary-outline"
+        size="md"
+        className="w-full border-stone-50 text-stone-50 hover:bg-stone-50 hover:text-red-700 hover:border-stone-50"
+      >
+        اطلاعات بیشتر
+      </Button>
+    </div>
+  </div>
+)
+
 const ServicesSection: React.FC = () => {
   const services = [
     {
       title: 'تحصیل در فرانسه',
-      description: 'برای اینکه بتوانید در فرانسه ادامه تحصیل دهید، اولین قدم این است که از دانشگاه‌ها یا کالج‌های فرانسه پذیرش بگیرید. کشور فرانسه...'
+      description: 'برای اینکه بتوانید در فرانسه ادامه تحصیل دهید، اولین قدم این است که از دانشگاه‌ها یا کالج‌های فرانسه پذیرش بگیرید. کشور فرانسه...',
+      image: '/images/france-study-page/STUDY-IN-FRANCE 1.png',
     },
     {
       title: ' اقامت فرانسه',
-      description: 'در این مقاله سعی داریم به صورت مختصر و مفید اطلاعات مورد نیاز را در اختیار شما قرار دهیم، اما برای مشاوره تخصصی برای مهاجرت...'
+      description: 'در این مقاله سعی داریم به صورت مختصر و مفید اطلاعات مورد نیاز را در اختیار شما قرار دهیم، اما برای مشاوره تخصصی برای مهاجرت...',
+      image: '/images/france-pr-page/blue-img.png',
     },
     {
       title: 'دوره زبان در فرانسه',
-      description: 'با شرکت در این دوره ها شما از مزایای ویزای دانشجویی در کشور فرانسه مانند بیمه پزشکی رایگان، امکان کار دانشجویی برخوردار می شوید.'
+      description: 'با شرکت در این دوره ها شما از مزایای ویزای دانشجویی در کشور فرانسه مانند بیمه پزشکی رایگان، امکان کار دانشجویی برخوردار می شوید.',
+      image: '/images/language-course-page/pexels-mikhail-nilov-8430274 1.png',
     },
     {
       title: 'دریافت ویزای کوتاه مدت',
-      description: 'بسیاری از افراد به دلایل کاری، خانوادگی، تحصیلی، توریستی و … برای دریافت ویزای کوتاه مدت فرانسه اقدام می‌کنند. با اخذ ویزای کوتاه...'
+      description: 'بسیاری از افراد به دلایل کاری، خانوادگی، تحصیلی، توریستی و … برای دریافت ویزای کوتاه مدت فرانسه اقدام می‌کنند. با اخذ ویزای کوتاه...',
+      image: '/images/france-visa-page/main-bg.png',
     },
     {
       title: 'اکسپرس انتری کانادا',
-      description: 'Express Entry یک سیستم مدیریتیِ سه گروه نیروی کار متخصص است که برای انتخاب متقاضیان واجد شرایط برای اقامت دائم کانادا عمل می‌کند. این سیستم...'
+      description: 'Express Entry یک سیستم مدیریتیِ سه گروه نیروی کار متخصص است که برای انتخاب متقاضیان واجد شرایط برای اقامت دائم کانادا عمل می‌کند. این سیستم...',
+      image: '/images/canada-express-entry-page/Rectangle 66.png',
     },
     {
       title: 'ثبت شرکت در فرانسه',
-      description: 'در این مقاله قصد داریم در مورد ثبت شرکت در فرانسه و ثبت شرکت تجاری در فرانسه  به عنوان یکی از راه های مهاجرت به فرانسه  و مراحل ...'
-    }
+      description: 'در این مقاله قصد داریم در مورد ثبت شرکت در فرانسه و ثبت شرکت تجاری در فرانسه  به عنوان یکی از راه های مهاجرت به فرانسه  و مراحل ...',
+      image: '/images/france-office-page/Rectangle 67.png',
+    },
   ]
 
   return (
@@ -42,52 +100,28 @@ const ServicesSection: React.FC = () => {
         
         
         {/* First row */}
-        <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 md:gap-7 mb-4 sm:mb-5 md:mb-7">
+        <div className="mb-4 grid w-full grid-cols-1 gap-4 sm:mb-5 sm:grid-cols-2 sm:gap-5 md:mb-7 md:gap-7 lg:grid-cols-3">
           {services.slice(0, 3).map((service, index) => (
-            <div key={index} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1rem)] lg:w-auto min-h-[300px] sm:min-h-[320px] md:h-[350px] px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-4 sm:gap-5 md:gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
-              <div className="text-center text-[#316086] text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug w-full group-hover:text-stone-50 group-hover:hidden transition-all duration-300">
-                {service.title}
-              </div>
-              <div className="text-right text-[#6D6E70] text-sm sm:text-base font-medium font-['IRANYekanX'] leading-relaxed w-full group-hover:hidden transition-all duration-300">
-                {service.description}
-              </div>
-              <img className="w-48 sm:w-56 md:w-64 h-36 sm:h-40 md:h-48 absolute -top-5 left-1/2 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 rounded-2xl outline outline-2 outline-offset-[-1px] outline-stone-50 transition-all duration-500 ease-out" src="/images/home-page/success-story1.png" alt={service.title} />
-              <div className="self-stretch text-center justify-start text-stone-50 text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                {service.title}
-              </div>
-              <Button 
-                variant="primary-outline" 
-                size="md" 
-                className="self-stretch transition-all duration-300 delay-200"
-              >
-                اطلاعات بیشتر
-              </Button>
-            </div>
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              image={service.image}
+            />
           ))}
         </div>
-        
+
         {/* Second row */}
-        <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 md:gap-7">
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-7 lg:grid-cols-3">
           {services.slice(3, 6).map((service, index) => (
-            <div key={index} className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1rem)] lg:w-auto min-h-[300px] sm:min-h-[320px] md:h-[350px] px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 relative bg-[#fdfeff] rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#f2f1f1] flex flex-col justify-start items-start gap-4 sm:gap-5 md:gap-6 overflow-visible group hover:bg-red-700 hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] hover:outline-neutral-400 hover:justify-end hover:items-center hover:gap-4 transition-all duration-500 ease-in-out">
-              <div className="text-center text-[#1e3950] text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug w-full group-hover:text-stone-50 group-hover:hidden transition-all duration-300">
-                {service.title}
-              </div>
-              <div className="text-right text-[#cbcbcb] text-sm sm:text-base font-medium font-['IRANYekanX'] leading-relaxed w-full group-hover:hidden transition-all duration-300">
-                {service.description}
-              </div>
-              <img className="w-48 sm:w-56 md:w-64 h-36 sm:h-40 md:h-48 absolute -top-5 left-1/2 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 rounded-2xl outline outline-2 outline-offset-[-1px] outline-stone-50 transition-all duration-500 ease-out" src="/images/home-page/success-story1.png" alt={service.title} />
-              <div className="self-stretch text-center justify-start text-stone-50 text-base sm:text-lg md:text-xl font-semibold font-['IRANYekanX'] leading-snug opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
-                {service.title}
-              </div>
-              <Button 
-                variant="primary-outline" 
-                size="md" 
-                className="self-stretch opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200"
-              >
-                اطلاعات بیشتر
-              </Button>
-            </div>
+            <ServiceCard
+              key={index}
+              title={service.title}
+              description={service.description}
+              image={service.image}
+              titleColor="text-[#1e3950]"
+              descriptionColor="text-[#cbcbcb]"
+            />
           ))}
         </div>
       </div>

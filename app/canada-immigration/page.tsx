@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Container from '@/src/components/ui/Container'
 import Button from '@/src/components/ui/Button'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
 const FAQSection = dynamic(() => import('@/src/components/ui/FAQSection'), {
@@ -53,27 +54,6 @@ const CanadaImmigrationPage: React.FC = () => {
     {
       question: "چه مدارکی برای پروندهٔ اقامت تحصیلی فرانسه لازم است؟",
       answer: "مدارک تحصیلی، پاسپورت، عکس، گواهی زبان و مدارک مالی از جمله مدارک مورد نیاز است."
-    }
-  ]
-
-  const relatedArticles = [
-    {
-      title: "مزایای دوره زبان کشور فرانسه",
-      image: "/images/blog-page/Rectangle 41.png",
-      link: "/articles/french-language-course-benefits",
-      excerpt: "راهنمای انتخاب دوره زبان و مزایای تحصیل در فرانسه."
-    },
-    {
-      title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "/images/blog-page/Rectangle 41(1).png",
-      link: "/articles/spain-digital-nomad-visa",
-      excerpt: "شرایط، مدارک و نکات مهم برای دریافت ویزای نومد اسپانیا."
-    },
-    {
-      title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-      image: "/images/blog-page/Rectangle 41(2).png",
-      link: "/articles/ucly-university-lyon",
-      excerpt: "با دانشگاه UCLY و فرصت‌های تحصیلی آن در لیون آشنا شوید."
     }
   ]
 
@@ -184,7 +164,7 @@ const CanadaImmigrationPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection
-        articles={relatedArticles}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

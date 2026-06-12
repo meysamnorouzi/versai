@@ -13,6 +13,7 @@ export const navigationConfig: NavigationItem[] = [
       { label: 'ثبت شرکت در فرانسه', href: '/france-office' },
       { label: 'تحصیل در فرانسه', href: '/france-study' },
       { label: 'اقامت فرانسه', href: '/pr-france' },
+      { label: 'سرمایه‌گذاری در فرانسه', href: '/france-investment' },
       { label: 'ویزای شنگن', href: '/france-visa' },
     ]
   },
@@ -34,6 +35,8 @@ export const navigationConfig: NavigationItem[] = [
       { label: 'ترکیه', href: '/turkey' },
       { label: 'ایتالیا', href: '/italy' },
       { label: 'سوئد', href: '/sweden' },
+      { label: 'هلند', href: '/netherlands' },
+      { label: 'رومانی', href: '/romania' },
     ]
   },
   { 

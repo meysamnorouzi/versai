@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '@/src/components/ui/Container'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import type { Metadata } from 'next'
 
@@ -45,27 +46,6 @@ const FranceVisaPage: React.FC = () => {
     {
       question: "چه مدارکی برای پروندهٔ اقامت تحصیلی فرانسه لازم است؟",
       answer: "مدارک اصلی شامل پاسپورت، مدارک تحصیلی، مدرک زبان، نامه پذیرش دانشگاه و مدارک مالی است."
-    }
-  ]
-
-  const relatedArticles = [
-    {
-      title: "مزایای دوره زبان کشور فرانسه",
-      image: "/images/blog-page/Rectangle 41.png",
-      link: '/articles/1',
-      excerpt: "اگر به دنبال تقویت زبان فرانسوی هستید، دوره‌های معتبر در فرانسه انتخابی عالی است."
-    },
-    {
-      title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-      image: "/images/blog-page/Rectangle 41(1).png",
-      link: '/articles/2',
-      excerpt: "با ویزای دیجیتال نومد اسپانیا می‌توانید از هرجا کار کنید و اقامت بگیرید."
-    },
-    {
-      title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-      image: "/images/blog-page/Rectangle 41(2).png",
-      link: '/articles/3',
-      excerpt: "دانشگاه UCLY لیون با برنامه‌های زبان و رشته‌های متنوع مقصدی محبوب است."
     }
   ]
 
@@ -265,7 +245,7 @@ const FranceVisaPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection 
-        articles={relatedArticles}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

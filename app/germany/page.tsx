@@ -3,6 +3,7 @@ import { ChevronDown, Phone, MessageCircle, Star } from 'lucide-react'
 import Button from '@/src/components/ui/Button'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -45,24 +46,6 @@ const GermanyPage: React.FC = () => {
     {
       question: 'هزینه زندگی در آلمان چقدر است؟',
       answer: 'هزینه زندگی در آلمان بسته به شهر متفاوت است. به طور متوسط ماهانه 800-1200 یورو برای یک نفر کافی است.'
-    }
-  ]
-
-  const blogArticles = [
-    {
-      title: 'راهنمای کامل ویزای کاری آلمان',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/germany-work-visa-guide'
-    },
-    {
-      title: 'تحصیل رایگان در دانشگاه‌های آلمان',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/free-education-germany'
-    },
-    {
-      title: 'نحوه دریافت اقامت دائم آلمان',
-      image: 'https://placehold.co/350x388',
-      link: '/articles/germany-permanent-residency'
     }
   ]
 
@@ -221,10 +204,7 @@ const GermanyPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection 
-        articles={blogArticles.map(article => ({
-          ...article,
-          link: article.link || '/articles'
-        }))}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

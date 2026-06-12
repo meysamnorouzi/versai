@@ -76,7 +76,7 @@ const Header: React.FC = () => {
                     trigger={
                         <div className="flex justify-start items-center group">
                       
-                          <div className={`text-center justify-start text-base font-medium font-['IRANYekanX'] leading-normal cursor-pointer ${getActiveLinkClass(item.href, true)}`}>
+                          <div className={`text-center justify-start text-base font-semibold font-['IRANYekanX'] leading-normal cursor-pointer ${getActiveLinkClass(item.href, true)}`}>
                         {item.label}
                           </div>
                         </div>

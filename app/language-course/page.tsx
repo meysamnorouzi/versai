@@ -5,6 +5,7 @@ import LanguageCourseCTA from '@/src/components/language-course/LanguageCourseCT
 import UCLYUniversitySection from '@/src/components/language-course/UCLYUniversitySection'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import type { Metadata } from 'next'
 
@@ -32,23 +33,7 @@ const LanguageCoursePage: React.FC = () => {
       <UCLYUniversitySection />
       <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9567.PNG" />
       <RelatedArticlesSection 
-        articles={[
-          {
-            title: "مزایای دوره زبان کشور فرانسه",
-            image: "/images/france-pr-page/success-story1.png",
-            link: "/france-study"
-          },
-          {
-            title: "شرایط درخواست ویزای دیجیتال نومد اسپانیا",
-            image: "/images/france-pr-page/success-story2.png",
-            link: "/france-visa"
-          },
-          {
-            title: "معرفی دانشگاه UCLY شهر لیون فرانسه",
-            image: "/images/france-pr-page/success-story3.png",
-            link: "/france-study"
-          }
-        ]}
+        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"
