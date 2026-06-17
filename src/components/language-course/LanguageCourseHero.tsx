@@ -55,7 +55,6 @@ const LanguageCourseHero: React.FC = () => {
             <div className="w-full max-w-[605px] h-64 sm:h-80 lg:h-96 rounded-2xl relative overflow-hidden mx-auto">
               <VideoPlayer
                 src="/videos/language-course.mp4"
-                poster="https://s3-alpha-sig.figma.com/img/46e9/61ad/9d5105f88cb0e53312ca65f7df06cc31?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OdreVIzTFd1eSOwHJeKqKEHZmfxt5gjM-eQd1Pqwbajzbk-0CdJyPOI0v3sM5wd1IX~aLWwKJaKHaVPiNsp77oCb2Q-cN56ZLL3SYEOokXFzMnLK8ujOSEebM4BiG~exMvX8bl5p2zvVWXsb4mBQs53bQmlO--I6jgoOyasgSPpsDSyuaXND3WkRzH5P0Wu26Pocc92dr5X4fxzoGiyfHaJXWcqtzIMBAVYI7BTc8xs8umSBadKqQobsUWQ5T9LzZ7zPP25JYiB2c7lwURhBg2uV~5rxyWEF6Q8pVsZJcC9F6iygkD~YmkgulmBaNF0nYd8UlY~SGE4GxdBHyvn1Wg__"
                 className="w-full h-full"
                 controls={true}
                 autoplay={false}

@@ -110,7 +110,7 @@ const ContactUsInfo: React.FC = () => {
             </button>
             
             {/* WhatsApp Button */}
-            <a href="https://wa.me/9354242715" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-2 sm:gap-3">
+            <a href="https://wa.me/9354242715" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
               <span className="hidden sm:inline">ارتباط در واتساپ</span>
               <span className="sm:hidden">واتساپ</span>
               <img 
