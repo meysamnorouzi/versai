@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Container from '../ui/Container'
 import Icon from '../ui/Icon'
 
@@ -16,14 +17,13 @@ const Footer: React.FC = () => {
               {/* Quick Access */}
               <div className="w-full lg:w-[522px] text-right justify-start text-red-200 text-lg font-semibold font-['IRANYekanX'] leading-relaxed">دسترسی سریع</div>
               <div className="flex flex-wrap justify-start items-center gap-4 lg:gap-16">
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">دوره زبان</a>
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اکسپرس انتری کانادا</a>
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اقامت فرانسه</a>
+                <Link href="/language-course" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">دوره زبان</Link>
+                <Link href="/pr-france" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">اقامت فرانسه</Link>
               </div>
               <div className="flex flex-wrap justify-start items-center border-b border-transparent bg-gradient-to-l from-[#D3E2EF] to-transparent bg-no-repeat bg-bottom pb-6 gap-4 lg:gap-16" style={{backgroundSize: '100% 1px'}}>
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">تماس با ما</a>
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">مقالات</a>
-                <a href="#" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">ثبت شرکت در فرانسه</a>
+                <Link href="/contact" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">تماس با ما</Link>
+                <Link href="/articles" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">مقالات</Link>
+                <Link href="/france-office" className="justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal hover:text-white transition-colors">ثبت شرکت در فرانسه</Link>
               </div>
 
               {/* Logo */}
@@ -54,13 +54,14 @@ const Footer: React.FC = () => {
                    <div className="w-6 h-6 relative flex-shrink-0">
                      <Icon 
                        section="footer" 
-                       name="location" 
+                       name="email" 
                        className="w-6 h-6" 
-                       alt="Location"
+                       alt="Email"
                      />
-          </div>
-                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">دفتر فرانسه:    Metz 57050, France</div>
-
+                   </div>
+                   <div className="flex-1 text-right justify-start text-sky-50 text-base font-semibold font-['IRANYekanX'] leading-normal">
+                     <a href="mailto:info@versai.fr" className="hover:underline">ایمیل : info@versai.fr</a>
+                   </div>
                 </div>
               </div>
               
@@ -80,18 +81,6 @@ const Footer: React.FC = () => {
                      <span className="mx-1">/</span>
                      <a href="tel:+989354242715" className="hover:underline">۹۸۹۳۵۴۲۴۲۷۱۵+</a>
                    </div>
-
-                 </div>
-                 <div className="flex justify-start items-start gap-2">
-                   <div className="w-6 h-6 relative">
-                     <Icon 
-                       section="footer" 
-                       name="phone" 
-                       className="w-6 h-6" 
-                       alt="Phone"
-                     />
-                   </div>
-                   <a href="tel:+989378000399" className="text-right justify-start text-white text-lg font-semibold font-['IRANYekanX'] leading-relaxed hover:underline">۹۸۹۳۷۸۰۰۰۳۹۹+</a>
 
                  </div>
                </div>
@@ -120,7 +109,7 @@ const Footer: React.FC = () => {
                 <div className="self-stretch flex flex-col justify-start items-end gap-3">
                   <a href="https://ir.ambafrance.org/-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C-" target="_blank" rel="noopener noreferrer" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت سفارت فرانسه</a>
                   <a href="https://farnoud.fr/" target="_blank" rel="noopener noreferrer" className="self-stretch text-right  justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">سایت مترجم معتمد سفارت فرانسه</a>
-                  <a href="https://www.eicl.fr/" target="_blank" rel="noopener noreferrer" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">موسسه ایکل فرانسه </a>
+                  <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score.html" target="_blank" rel="noopener noreferrer" className="self-stretch text-right justify-start text-sky-50 text-sm font-semibold font-['IRANYekanX'] leading-tight hover:text-white transition-colors">اکسپرس انتری کانادا</a>
                 </div>
               </div>
 
