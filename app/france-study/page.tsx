@@ -88,8 +88,8 @@ const FranceStudyPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
             <div className="order-2 lg:order-1">
               <img 
-                src="https://placehold.co/446x502" 
-                alt="University admission process"
+                src="/images/shared/photo_2026-06-18_10-13-39.jpg" 
+                alt="دانشجویان در حال مطالعه"
                 className="w-full h-[300px] sm:h-[400px] md:h-[502px] object-cover rounded-2xl border border-stone-300"
               />
             </div>
@@ -135,8 +135,8 @@ const FranceStudyPage: React.FC = () => {
       <section className="py-12 sm:py-16 md:py-20 px-4 bg-red-900/80 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://placehold.co/1440x320" 
-            alt="Background"
+            src="/images/shared/photo_2026-06-18_10-13-39.jpg" 
+            alt=""
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-red-900/80"></div>
@@ -178,8 +178,8 @@ const FranceStudyPage: React.FC = () => {
             </div>
             <div className="space-y-4 sm:space-y-6">
               <img 
-                src="https://placehold.co/627x279" 
-                alt="Study in France"
+                src="/images/shared/photo_2026-06-18_10-13-42.jpg" 
+                alt="دانشجو در محوطه دانشگاه"
                 className="w-full h-[200px] sm:h-[250px] md:h-[279px] object-cover rounded-2xl"
               />
               <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] md:text-[16px] font-medium text-[#316086] leading-[1.61]">

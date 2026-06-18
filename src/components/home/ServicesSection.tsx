@@ -62,7 +62,7 @@ const ServicesSection: React.FC = () => {
     {
       title: 'تحصیل در فرانسه',
       description: 'برای اینکه بتوانید در فرانسه ادامه تحصیل دهید، اولین قدم این است که از دانشگاه‌ها یا کالج‌های فرانسه پذیرش بگیرید. کشور فرانسه...',
-      image: '/images/france-study-page/STUDY-IN-FRANCE 1.png',
+      image: '/images/shared/photo_2026-06-18_10-13-39.jpg',
       href: '/france-study',
     },
     {
