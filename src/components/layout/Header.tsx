@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { X, Menu } from 'lucide-react'
+import { X, Menu, ChevronDown } from 'lucide-react'
 import { getLogoPath, getLogoAlt } from '../../config/logo'
 import { navigationConfig } from '../../config/navigation'
 import Container from '../ui/Container'
@@ -14,7 +14,20 @@ const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [expandedMobileItems, setExpandedMobileItems] = useState<Set<string>>(new Set())
   const pathname = usePathname()
+
+  const toggleMobileItem = (label: string) => {
+    setExpandedMobileItems(prev => {
+      const next = new Set(prev)
+      if (next.has(label)) {
+        next.delete(label)
+      } else {
+        next.add(label)
+      }
+      return next
+    })
+  }
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -50,11 +63,26 @@ const Header: React.FC = () => {
       ? "text-red-700 font-semibold" 
       : "text-cyan-800 hover:text-red-700 transition-colors"
   }
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setExpandedMobileItems(new Set())
+      return
+    }
+
+    const activeParents = navigationConfig
+      .filter(item => item.hasDropdown && isActiveLink(item.href, true))
+      .map(item => item.label)
+
+    if (activeParents.length > 0) {
+      setExpandedMobileItems(new Set(activeParents))
+    }
+  }, [isMobileMenuOpen, pathname])
   
   return (
     <>
       <div className="w-full bg-white rounded-bl-2xl rounded-br-2xl border-b border-zinc-100 sticky top-0 z-50" dir="rtl">
-        <Container className="min-h-[5rem] lg:h-24 py-3 flex justify-between items-center gap-4 lg:gap-10">
+        <Container variant="header" className="min-h-[5rem] lg:h-24 py-3 flex justify-between items-center gap-4 lg:gap-6 min-[1220px]:gap-10">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -67,8 +95,8 @@ const Header: React.FC = () => {
             </div>
 
           {/* Navigation Items - Desktop Only */}
-          <div className="hidden lg:flex justify-center items-center gap-24 desktop:-mr-24">
-            <div className="flex justify-center items-center gap-8">
+          <div className="hidden lg:flex justify-center items-center gap-12 min-[1220px]:gap-24 desktop:-mr-24">
+            <div className="flex justify-center items-center gap-4 min-[1220px]:gap-8">
               {navigationConfig.map((item) => (
               <div key={item.label}>
                 {item.hasDropdown ? (
@@ -188,26 +216,46 @@ const Header: React.FC = () => {
             {navigationConfig.map((item) => (
               <div key={item.label}>
                 {item.hasDropdown ? (
-                  <div className="space-y-2">
-                    <div className={`px-3 py-2 text-base font-semibold ${getActiveLinkClass(item.href, true)}`}>
-                  {item.label}
-                    </div>
-                  <div className="mr-4 space-y-1">
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => toggleMobileItem(item.label)}
+                      className={`w-full flex items-center justify-between px-3 py-2 text-base font-semibold rounded-lg transition-colors ${
+                        isActiveLink(item.href, true)
+                          ? 'text-red-700'
+                          : 'text-cyan-800 hover:bg-red-50 hover:text-red-700'
+                      }`}
+                      aria-expanded={expandedMobileItems.has(item.label)}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${
+                          expandedMobileItems.has(item.label) ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`mr-4 space-y-1 overflow-hidden transition-all duration-200 ${
+                        expandedMobileItems.has(item.label)
+                          ? 'max-h-[500px] opacity-100 mt-1'
+                          : 'max-h-0 opacity-0'
+                      }`}
+                    >
                       {item.children?.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
+                        <Link
+                          key={child.label}
+                          href={child.href}
                           className={`block px-6 py-2 text-sm rounded-lg transition-colors ${
-                            isActiveLink(child.href) 
-                              ? 'bg-red-50 text-red-700 font-semibold' 
+                            isActiveLink(child.href)
+                              ? 'bg-red-50 text-red-700 font-semibold'
                               : 'text-gray-600 hover:bg-red-50 hover:text-red-700'
                           }`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ) : (
                   <Link

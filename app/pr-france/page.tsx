@@ -135,12 +135,12 @@ const PRFrancePage: React.FC = () => {
       {/* Banner Section */}
       <section className="relative min-h-[250px] sm:min-h-[300px] md:h-[399px] text-center text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img className="absolute top-[58px] left-0 w-full h-[200px] sm:h-[250px] md:h-[294px] object-cover" src="/images/france-pr-page/blue-img.png" alt="" />
-          <div className="absolute top-0 left-0 sm:left-[146px] w-full sm:w-[490px] h-full">
+          <img className="absolute inset-0 w-full h-full object-cover" src="/images/france-pr-page/blue-img.png" alt="" />
+          <div className="absolute top-0 left-0 sm:left-[146px] w-full sm:w-[490px] h-full hidden md:block">
             <img className="absolute top-0 left-0 w-full h-full object-cover" src="/images/france-pr-page/france-map.svg" alt="" />
           </div>
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-0">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:h-full md:justify-start md:pt-14 px-4 md:px-0">
           <div className="leading-[1.41] font-extrabold w-full max-w-[454px] [text-shadow:0px_0px_6px_rgba(255,255,255,0.71)]">
             <p className="m-0">آینده‌تان در فرانسه،</p>
             <p className="m-0"> با یک مسیر ساده آغاز می‌شود.</p>

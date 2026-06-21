@@ -58,20 +58,6 @@ const ContactUsInfo: React.FC = () => {
                 <div className="flex items-center justify-start gap-2 sm:gap-3">
                 <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0">
                     <img 
-                      src="/icons/contact/contact info/phone.svg" 
-                      alt="Phone"
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  </div>
-                  <a href="tel:+989378000399" className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-['IRANYekanX'] text-[#33475B] leading-[1.1] hover:underline">
-                  ۹۸۹۳۷۸۰۰۰۳۹۹+
-                  </a>
-               
-                </div>
-                
-                <div className="flex items-center justify-start gap-2 sm:gap-3">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center flex-shrink-0">
-                    <img 
                       src="/icons/contact/contact info/email.svg" 
                       alt="Email"
                       className="w-5 h-5 sm:w-6 sm:h-6"
@@ -109,20 +95,6 @@ const ContactUsInfo: React.FC = () => {
                   دفتر تهران: تهران، ونک پارک، برج سبز                  </div>
                   
                 </div>
-                
-                <div className="flex items-start justify-start gap-2 sm:gap-3">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-1 flex-shrink-0">
-                    <img 
-                      src="/icons/contact/contact info/location.svg" 
-                      alt="Location"
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  </div>
-                  <div className="text-[14px] sm:text-[15px] md:text-[16px] font-semibold font-['IRANYekanX'] text-[#33475B] text-right leading-[1.4]">
-                  دفتر فرانسه:   Metz 57050, France
-                  </div>
-                 
-                </div>
               </div>
             </div>
           </div>
@@ -138,7 +110,7 @@ const ContactUsInfo: React.FC = () => {
             </button>
             
             {/* WhatsApp Button */}
-            <a href="https://wa.me/9354242715" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-end gap-2 sm:gap-3">
+            <a href="https://wa.me/9354242715" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 bg-white text-[#E74C3C] border border-[#E74C3C] text-[14px] sm:text-[16px] font-semibold font-['IRANYekanX'] rounded-[32px] hover:bg-[#E74C3C] hover:text-white transition-colors duration-200 flex items-center justify-center gap-2 sm:gap-3">
               <span className="hidden sm:inline">ارتباط در واتساپ</span>
               <span className="sm:hidden">واتساپ</span>
               <img 

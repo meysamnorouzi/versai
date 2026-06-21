@@ -44,11 +44,17 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
   }
 
   return (
-    <div className={`bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden ${className}`} style={{ backgroundImage: `url("${backgroundImageSrc}")` }}>
-      <div className="bg-[#1E3950] bg-opacity-25 p-4 sm:p-6 md:p-8 lg:p-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <div className={`relative rounded-2xl overflow-hidden ${className}`}>
+      <div className="absolute inset-0 bg-[#243d53] lg:hidden" aria-hidden="true" />
+      <div
+        className="absolute inset-0 hidden lg:block bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url("${backgroundImageSrc}")` }}
+        aria-hidden="true"
+      />
+      <div className="relative lg:bg-[#1E3950] lg:bg-opacity-25 p-4 sm:p-6 md:p-8 lg:p-8 min-[1330px]:p-12">
+        <div className="grid grid-cols-1 min-[1330px]:grid-cols-2 gap-12">
           {/* Form */}
-          <div className="space-y-6">
+          <div className="space-y-6 w-full">
             <h2 className="text-xl font-semibold text-white text-right">{title}</h2>
             {description && (
               <p className="text-sm text-white/90 text-right">{description}</p>
@@ -142,22 +148,36 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                 </Button>
               </div>
             </form>
-            <div className="flex justify-start">
+            {/* Mobile: phone + WhatsApp in a row */}
+            <div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 lg:hidden">
+              <div className="flex items-center gap-2">
+                <Phone className="w-6 h-6 text-[#F2C3BE]" />
+                <span className="text-xl font-medium text-white">{phoneNumber}</span>
+              </div>
+              <Button
+                variant="secondary"
+                size="sm"
+                className="w-auto flex-shrink-0 bg-white text-[#D74A3C] border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
+              >
+                {whatsappLabel}
+                <img className="w-6 h-6 ml-2" src={whatsappIconSrc} alt="WhatsApp" />
+              </Button>
+            </div>
+
+            {/* Desktop: original stacked layout */}
+            <div className="hidden lg:flex justify-start">
               <div className="text-left space-y-4">
                 <div className="flex items-center justify-end gap-2">
                   <Phone className="w-6 h-6 text-[#F2C3BE]" />
                   <span className="text-xl font-medium text-white">{phoneNumber}</span>
                 </div>
-                
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="w-full bg-white text-[#D74A3C] border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white "
+                  className="w-full bg-white text-[#D74A3C] border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
                 >
-
                   {whatsappLabel}
                   <img className="w-6 h-6 ml-2" src={whatsappIconSrc} alt="WhatsApp" />
-
                 </Button>
               </div>
             </div>

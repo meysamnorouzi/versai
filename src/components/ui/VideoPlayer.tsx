@@ -35,6 +35,52 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [isPlaying, setIsPlaying] = useState(false)
   const [isLoading, setIsLoading] = useState(showLoading)
   const [error, setError] = useState<string | null>(null)
+  const [generatedPoster, setGeneratedPoster] = useState<string | undefined>()
+  const effectivePoster = poster ?? generatedPoster
+
+  useEffect(() => {
+    setGeneratedPoster(undefined)
+  }, [src, poster])
+
+  useEffect(() => {
+    if (poster) return
+
+    const video = videoRef.current
+    if (!video) return
+
+    const captureFirstFrame = () => {
+      if (!video.videoWidth || !video.videoHeight) return
+
+      const canvas = document.createElement('canvas')
+      canvas.width = video.videoWidth
+      canvas.height = video.videoHeight
+      const ctx = canvas.getContext('2d')
+      if (!ctx) return
+
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+
+      try {
+        setGeneratedPoster(canvas.toDataURL('image/jpeg', 0.92))
+      } catch {
+        // Canvas may be tainted for cross-origin videos
+      }
+    }
+
+    const handleLoadedData = () => {
+      video.pause()
+      captureFirstFrame()
+    }
+
+    video.addEventListener('loadeddata', handleLoadedData)
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      captureFirstFrame()
+    }
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData)
+    }
+  }, [poster, src])
 
   useEffect(() => {
     const video = videoRef.current
@@ -118,7 +164,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <video
         ref={videoRef}
         className="w-full h-full object-cover rounded-lg"
-        poster={poster}
+        poster={effectivePoster}
         preload={poster ? 'metadata' : 'auto'}
         autoPlay={autoplay}
         controls={controls}
@@ -135,7 +181,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       </video>
 
       {/* Loading Overlay */}
-      {showLoading && isLoading && (
+      {isLoading && !effectivePoster && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
           <div className="text-white text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>

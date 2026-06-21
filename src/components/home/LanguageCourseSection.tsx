@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '../ui/Icon'
 import Button from '../ui/Button'
+import VideoPlayer from '../ui/VideoPlayer'
 
 const LanguageCourseSection: React.FC = () => {
   const features = [
@@ -69,13 +70,21 @@ const LanguageCourseSection: React.FC = () => {
           </div>
 
           {/* Video section */}
-          <div className="w-full max-w-[570px] h-48 sm:h-64 lg:h-80 bg-gradient-to-b from-black/0 to-[#1e3950] rounded-2xl relative mx-auto mb-6 sm:mb-8 flex items-end justify-start p-4 sm:p-6">
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 bg-zinc-300 rounded-full border-2 sm:border-4 border-white"></div>
-              </div>
-              <div className="text-right text-[#d3e2ef] text-base sm:text-lg lg:text-2xl font-extrabold font-['IRANYekanX'] leading-snug sm:leading-relaxed lg:leading-loose" style={{ textShadow: '0px 2px 9px rgb(123 169 206 / 0.91)' }}>
-                معرفی دوره زبان کشور فرانسه
+          <div className="w-full max-w-[570px] h-48 sm:h-64 lg:h-80 rounded-2xl relative mx-auto mb-6 sm:mb-8 overflow-hidden">
+            <VideoPlayer
+              src="/videos/language-course.mp4"
+              className="w-full h-full"
+              controls={true}
+              autoplay={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/0 to-[#1e3950] pointer-events-none flex items-end justify-start p-4 sm:p-6">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 bg-zinc-300 rounded-full border-2 sm:border-4 border-white"></div>
+                </div>
+                <div className="text-right text-[#d3e2ef] text-base sm:text-lg lg:text-2xl font-extrabold font-['IRANYekanX'] leading-snug sm:leading-relaxed lg:leading-loose" style={{ textShadow: '0px 2px 9px rgb(123 169 206 / 0.91)' }}>
+                  معرفی دوره زبان کشور فرانسه
+                </div>
               </div>
             </div>
           </div>

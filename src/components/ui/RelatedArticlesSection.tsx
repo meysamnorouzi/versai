@@ -12,14 +12,14 @@ const RelatedArticlesSection: React.FC<RelatedArticlesSectionProps> = ({
   return (
     <section className={`py-16 px-4 ${className}`}>
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-          <h2 className="text-lg sm:text-xl lg:text-[24px] font-extrabold text-[#316086] leading-[1.4] text-center sm:text-right">
+        <div className="flex flex-row items-center justify-between gap-4 mb-8">
+          <h2 className="text-lg sm:text-xl lg:text-[24px] font-extrabold text-[#316086] leading-[1.4] text-right">
             {title}
           </h2>
           {showViewAll && (
             <a
               href={viewAllLink}
-              className="flex items-center justify-center sm:justify-end gap-1 text-base sm:text-lg lg:text-[18px] font-semibold text-[#316086] hover:text-[#b23124] transition-colors duration-200"
+              className="flex items-center justify-end gap-1 flex-shrink-0 text-base sm:text-lg lg:text-[18px] font-semibold text-[#316086] hover:text-[#b23124] transition-colors duration-200"
             >
               نمایش همه
               <ArrowLeft className="w-6 h-6" />
