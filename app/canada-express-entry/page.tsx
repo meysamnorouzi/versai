@@ -6,6 +6,7 @@ import Icon from '@/src/components/ui/Icon'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
+import VideoPlayer from '@/src/components/ui/VideoPlayer'
 import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
@@ -154,11 +155,15 @@ const CanadaExpressEntryPage: React.FC = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <img 
-                src="/images/canada-express-entry-page/pexels-olly-3777559 1.png" 
-                alt="Canada Express Entry" 
-                className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl border border-stone-300"
+            <div className="w-full h-64 sm:h-80 md:h-96 rounded-2xl relative overflow-hidden border border-stone-300">
+              <VideoPlayer
+                src="/videos/express-entry.mp4"
+                className="w-full h-full"
+                controls={true}
+                autoplay={false}
+                loop={false}
+                muted={false}
+                showLoading={false}
               />
             </div>
             

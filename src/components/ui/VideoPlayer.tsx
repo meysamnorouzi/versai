@@ -11,6 +11,7 @@ interface VideoPlayerProps {
   controls?: boolean
   loop?: boolean
   muted?: boolean
+  showLoading?: boolean
   onPlay?: () => void
   onPause?: () => void
   onEnded?: () => void
@@ -25,20 +26,36 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   controls = true,
   loop = false,
   muted = false,
+  showLoading = true,
   onPlay,
   onPause,
   onEnded
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(showLoading)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    const handleLoadStart = () => setIsLoading(true)
+    if (!poster) {
+      const showFirstFrame = () => {
+        video.currentTime = 0.001
+      }
+      video.addEventListener('loadeddata', showFirstFrame)
+      return () => video.removeEventListener('loadeddata', showFirstFrame)
+    }
+  }, [poster, src])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleLoadStart = () => {
+      if (showLoading) setIsLoading(true)
+    }
     const handleCanPlay = () => setIsLoading(false)
     const handlePlay = () => {
       setIsPlaying(true)
@@ -72,7 +89,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', handleError)
     }
-  }, [onPlay, onPause, onEnded])
+  }, [onPlay, onPause, onEnded, showLoading])
 
   const togglePlay = () => {
     const video = videoRef.current
@@ -102,7 +119,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         ref={videoRef}
         className="w-full h-full object-cover rounded-lg"
         poster={poster}
-        preload="metadata"
+        preload={poster ? 'metadata' : 'auto'}
         autoPlay={autoplay}
         controls={controls}
         loop={loop}
@@ -118,7 +135,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       </video>
 
       {/* Loading Overlay */}
-      {isLoading && (
+      {showLoading && isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
           <div className="text-white text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
