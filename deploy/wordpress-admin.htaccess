@@ -1,0 +1,14 @@
+# WordPress in /admin subdirectory — upload to public_html/admin/.htaccess
+# Replace default WordPress rules when WP lives at https://versai.ir/admin
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /admin/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /admin/index.php [L]
+</IfModule>
+# END WordPress

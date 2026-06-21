@@ -88,6 +88,30 @@ export interface ConsultationRequest {
   email: string
   subject: string
   message: string
+  form_source?: string
+}
+
+export interface VersaiBlogArticle {
+  id: number
+  title: string
+  content: string
+  excerpt: string
+  featured_image: string | false
+  slug: string
+  date: string
+  modified: string
+  author: string
+  blog_category: string
+  country: string
+  visa_type: string
+  author_name: string
+  reading_time: string
+  featured: boolean
+  priority: number
+  meta_title: string
+  meta_description: string
+  seo_keywords: string
+  comment_count: number
 }
 
 export interface Service {
@@ -142,15 +166,15 @@ export interface RelatedArticlesSectionProps {
 
 // API Response Types
 export interface ApiResponse<T> {
-  data: T
+  data?: T
   success: boolean
   message?: string
 }
 
-export interface PaginatedResponse<T> {
+export interface VersaiApiListResponse<T> {
+  success: boolean
   data: T[]
   total: number
-  page: number
-  perPage: number
-  totalPages: number
+  pages: number
+  message?: string
 }

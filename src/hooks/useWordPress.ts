@@ -259,7 +259,7 @@ export const useVersaiData = (): UseVersaiDataReturn => {
     
     try {
       const response = await versaiApi.getServices()
-      if (response.success) {
+      if (response.success && response.data) {
         setServices(response.data)
       }
     } catch (err) {
@@ -276,7 +276,7 @@ export const useVersaiData = (): UseVersaiDataReturn => {
     
     try {
       const response = await versaiApi.getSuccessStories()
-      if (response.success) {
+      if (response.success && response.data) {
         setSuccessStories(response.data)
       }
     } catch (err) {
@@ -293,7 +293,7 @@ export const useVersaiData = (): UseVersaiDataReturn => {
     
     try {
       const response = await versaiApi.getFAQs()
-      if (response.success) {
+      if (response.success && response.data) {
         setFaqs(response.data)
       }
     } catch (err) {

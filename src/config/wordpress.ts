@@ -1,23 +1,28 @@
+import { config } from './env'
+
 // WordPress API Configuration
 export const WORDPRESS_CONFIG = {
   // API Endpoints
-  apiUrl: process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://your-wordpress-site.com/wp-json/wp/v2',
-  siteUrl: process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL || 'https://your-wordpress-site.com',
-  
+  apiUrl: config.wordpressApiUrl,
+  versaiApiUrl: config.versaiApiUrl,
+  siteUrl: config.wordpressSiteUrl,
+
   // Authentication
   apiKey: process.env.NEXT_PUBLIC_WORDPRESS_API_KEY || '',
   username: process.env.NEXT_PUBLIC_WORDPRESS_USERNAME || '',
   password: process.env.NEXT_PUBLIC_WORDPRESS_PASSWORD || '',
-  
-  // Custom Endpoints
+
+  // Custom Endpoints (relative to VERSAI API base URL)
   customEndpoints: {
-    services: '/versai/services',
-    successStories: '/versai/success-stories',
-    faqs: '/versai/faqs',
-    consultation: '/versai/consultation',
-    testimonials: '/versai/testimonials',
-    countries: '/versai/countries',
-    visaTypes: '/versai/visa-types'
+    services: '/services',
+    successStories: '/success-stories',
+    faqs: '/faqs',
+    consultation: '/consultation',
+    testimonials: '/testimonials',
+    countries: '/countries',
+    visaTypes: '/visa-types',
+    blogs: '/blogs',
+    blogCategories: '/blog-categories',
   },
   
   // API Settings
@@ -86,13 +91,15 @@ export const getWordPressUrls = () => {
     users: `${WORDPRESS_CONFIG.apiUrl}/users`,
     comments: `${WORDPRESS_CONFIG.apiUrl}/comments`,
     custom: {
-      services: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.services}`,
-      successStories: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.successStories}`,
-      faqs: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.faqs}`,
-      consultation: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.consultation}`,
-      testimonials: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.testimonials}`,
-      countries: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.countries}`,
-      visaTypes: `${WORDPRESS_CONFIG.apiUrl}${WORDPRESS_CONFIG.customEndpoints.visaTypes}`
+      services: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.services}`,
+      successStories: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.successStories}`,
+      faqs: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.faqs}`,
+      consultation: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.consultation}`,
+      testimonials: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.testimonials}`,
+      countries: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.countries}`,
+      visaTypes: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.visaTypes}`,
+      blogs: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.blogs}`,
+      blogCategories: `${WORDPRESS_CONFIG.versaiApiUrl}${WORDPRESS_CONFIG.customEndpoints.blogCategories}`,
     }
   }
 }

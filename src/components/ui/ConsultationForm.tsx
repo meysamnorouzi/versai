@@ -1,11 +1,14 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
+import { usePathname } from 'next/navigation'
 import Button from './Button'
 import { ChevronDown, Phone } from 'lucide-react'
+import useConsultationSubmit from '@/src/hooks/useConsultationSubmit'
 
 type ConsultationFormProps = {
   backgroundImageSrc: string
+  formSource?: string
   title?: string
   description?: string
   phoneNumber?: string
@@ -16,6 +19,7 @@ type ConsultationFormProps = {
 
 const ConsultationForm: React.FC<ConsultationFormProps> = ({
   backgroundImageSrc,
+  formSource: formSourceProp,
   title = 'ثبت درخواست مشاوره با ورسای',
   description,
   phoneNumber = '۰۲۱۲۸۴۲۱۶۹۰',
@@ -23,25 +27,10 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
   whatsappIconSrc = '/images/france-visa-page/Group.svg',
   className = ''
 }) => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // integrate submission endpoint here
-  }
+  const pathname = usePathname()
+  const formSource = formSourceProp || pathname.replace(/^\//, '').split('/')[0] || 'website'
+  const { formData, loading, error, success, handleChange, handleSubmit } =
+    useConsultationSubmit({ formSource })
 
   return (
     <div className={`relative rounded-2xl overflow-hidden ${className}`}>
@@ -61,6 +50,16 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
             )}
 
             <form className="space-y-6" onSubmit={handleSubmit}>
+              {success && (
+                <p className="text-green-200 text-sm text-right" role="status">
+                  درخواست شما با موفقیت ارسال شد.
+                </p>
+              )}
+              {error && (
+                <p className="text-red-200 text-sm text-right" role="alert">
+                  {error}
+                </p>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-white text-right">
@@ -68,11 +67,13 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                   </label>
                   <input
                     type="text"
-                    name="fullName"
-                    value={formData.fullName}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     placeholder="نام و نام خانوادگی خود را وارد کنید."
                     className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086]"
+                    required
+                    disabled={loading}
                   />
                 </div>
                 
@@ -87,6 +88,8 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                     onChange={handleChange}
                     placeholder="شماره تماس خود را وارد کنید."
                     className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086]"
+                    required
+                    disabled={loading}
                   />
                 </div>
               </div>
@@ -102,6 +105,8 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086] appearance-none"
+                      required
+                      disabled={loading}
                     >
                       <option value="">موضوع مشاوره را انتخاب کنید.</option>
                       <option value="ویزای شنگن">ویزای شنگن</option>
@@ -122,7 +127,8 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="آدرس ایمیل خود را وارد کنید."
-                    className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086]"
+                    required
+                    disabled={loading}
                   />
                 </div>
               </div>
@@ -136,6 +142,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                     placeholder="در صورت تمایل، متن پیام خود را بنویسید."
                     rows={4}
                     className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086] resize-none"
+                    disabled={loading}
                   />
                 </div>
                 <Button
@@ -143,8 +150,9 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                   size="md"
                   type="submit"
                   className="w-full lg:w-auto flex-shrink-0"
+                  disabled={loading}
                 >
-                  ارسال درخواست
+                  {loading ? 'در حال ارسال...' : 'ارسال درخواست'}
                 </Button>
               </div>
             </form>

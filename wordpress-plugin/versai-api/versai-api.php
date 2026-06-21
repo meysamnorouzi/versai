@@ -24,6 +24,32 @@ class VersaiAPI {
     public function __construct() {
         add_action('rest_api_init', array($this, 'register_routes'));
         add_action('init', array($this, 'init'));
+        add_action('rest_api_init', array($this, 'add_cors_headers'));
+    }
+
+    /**
+     * CORS headers for frontend API requests
+     */
+    public function add_cors_headers() {
+        remove_filter('rest_pre_serve_request', 'rest_send_cors_headers');
+        add_filter('rest_pre_serve_request', function ($value) {
+            $origin = get_http_origin();
+            $allowed = array(
+                'https://versai.ir',
+                'https://www.versai.ir',
+                'http://localhost:3000',
+                'http://localhost:5173',
+            );
+            if ($origin && in_array($origin, $allowed, true)) {
+                header('Access-Control-Allow-Origin: ' . $origin);
+            } else {
+                header('Access-Control-Allow-Origin: *');
+            }
+            header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+            header('Access-Control-Allow-Headers: Content-Type, Authorization');
+            header('Access-Control-Allow-Credentials: true');
+            return $value;
+        });
     }
     
     public function init() {
@@ -152,6 +178,31 @@ class VersaiAPI {
             'menu_icon' => 'dashicons-edit-page',
             'rewrite' => array('slug' => 'articles')
         ));
+
+        // Consultation form submissions from frontend
+        register_post_type('versai_consultation', array(
+            'labels' => array(
+                'name' => 'درخواست‌های مشاوره',
+                'singular_name' => 'درخواست مشاوره',
+                'menu_name' => 'درخواست‌های مشاوره',
+                'add_new' => 'افزودن درخواست',
+                'add_new_item' => 'افزودن درخواست جدید',
+                'edit_item' => 'ویرایش درخواست',
+                'new_item' => 'درخواست جدید',
+                'view_item' => 'مشاهده درخواست',
+                'search_items' => 'جستجوی درخواست‌ها',
+                'not_found' => 'هیچ درخواستی یافت نشد',
+                'not_found_in_trash' => 'هیچ درخواستی در سطل زباله یافت نشد'
+            ),
+            'public' => false,
+            'publicly_queryable' => false,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_in_rest' => false,
+            'capability_type' => 'post',
+            'supports' => array('title', 'editor'),
+            'menu_icon' => 'dashicons-email-alt'
+        ));
     }
     
     /**
@@ -249,6 +300,15 @@ class VersaiAPI {
             'جزئیات مقاله',
             array($this, 'blog_meta_box_callback'),
             'versai_blog',
+            'normal',
+            'high'
+        );
+
+        add_meta_box(
+            'versai_consultation_details',
+            'جزئیات درخواست مشاوره',
+            array($this, 'consultation_meta_box_callback'),
+            'versai_consultation',
             'normal',
             'high'
         );
@@ -485,6 +545,46 @@ class VersaiAPI {
         </table>
         <?php
     }
+
+    /**
+     * Consultation meta box callback
+     */
+    public function consultation_meta_box_callback($post) {
+        $name = get_post_meta($post->ID, 'versai_consultation_name', true);
+        $phone = get_post_meta($post->ID, 'versai_consultation_phone', true);
+        $email = get_post_meta($post->ID, 'versai_consultation_email', true);
+        $subject = get_post_meta($post->ID, 'versai_consultation_subject', true);
+        $source = get_post_meta($post->ID, 'versai_consultation_source', true);
+        $date = get_post_meta($post->ID, 'versai_consultation_date', true);
+        ?>
+        <table class="form-table">
+            <tr>
+                <th>نام</th>
+                <td><?php echo esc_html($name); ?></td>
+            </tr>
+            <tr>
+                <th>تلفن</th>
+                <td><?php echo esc_html($phone); ?></td>
+            </tr>
+            <tr>
+                <th>ایمیل</th>
+                <td><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></td>
+            </tr>
+            <tr>
+                <th>موضوع</th>
+                <td><?php echo esc_html($subject); ?></td>
+            </tr>
+            <tr>
+                <th>صفحه ارسال</th>
+                <td><?php echo esc_html($source); ?></td>
+            </tr>
+            <tr>
+                <th>تاریخ ارسال</th>
+                <td><?php echo esc_html($date); ?></td>
+            </tr>
+        </table>
+        <?php
+    }
     
     /**
      * Save meta boxes
@@ -577,6 +677,20 @@ class VersaiAPI {
             'callback' => array($this, 'get_blogs'),
             'permission_callback' => '__return_true'
         ));
+
+        // Single blog endpoint
+        register_rest_route('versai/v1', '/blogs/(?P<id>\d+)', array(
+            'methods' => 'GET',
+            'callback' => array($this, 'get_blog_by_id'),
+            'permission_callback' => '__return_true',
+            'args' => array(
+                'id' => array(
+                    'required' => true,
+                    'type' => 'integer',
+                    'sanitize_callback' => 'absint'
+                )
+            )
+        ));
         
         // Countries endpoint
         register_rest_route('versai/v1', '/countries', array(
@@ -626,12 +740,47 @@ class VersaiAPI {
                     'sanitize_callback' => 'sanitize_text_field'
                 ),
                 'message' => array(
-                    'required' => true,
+                    'required' => false,
                     'type' => 'string',
-                    'sanitize_callback' => 'sanitize_textarea_field'
+                    'sanitize_callback' => 'sanitize_textarea_field',
+                    'default' => ''
+                ),
+                'form_source' => array(
+                    'required' => false,
+                    'type' => 'string',
+                    'sanitize_callback' => 'sanitize_text_field',
+                    'default' => 'website'
                 )
             )
         ));
+    }
+
+    /**
+     * Format blog post for API response
+     */
+    private function format_blog_post($post_id) {
+        return array(
+            'id' => $post_id,
+            'title' => get_the_title($post_id),
+            'content' => apply_filters('the_content', get_post_field('post_content', $post_id)),
+            'excerpt' => get_the_excerpt($post_id),
+            'featured_image' => get_the_post_thumbnail_url($post_id, 'large'),
+            'slug' => get_post_field('post_name', $post_id),
+            'date' => get_the_date('c', $post_id),
+            'modified' => get_the_modified_date('c', $post_id),
+            'author' => get_the_author_meta('display_name', get_post_field('post_author', $post_id)),
+            'blog_category' => get_post_meta($post_id, 'versai_blog_category', true),
+            'country' => get_post_meta($post_id, 'versai_country', true),
+            'visa_type' => get_post_meta($post_id, 'versai_visa_type', true),
+            'author_name' => get_post_meta($post_id, 'versai_author_name', true),
+            'reading_time' => get_post_meta($post_id, 'versai_reading_time', true),
+            'featured' => get_post_meta($post_id, 'versai_featured', true) === '1',
+            'priority' => (int) get_post_meta($post_id, 'versai_priority', true),
+            'meta_title' => get_post_meta($post_id, 'versai_meta_title', true),
+            'meta_description' => get_post_meta($post_id, 'versai_meta_description', true),
+            'seo_keywords' => get_post_meta($post_id, 'versai_seo_keywords', true),
+            'comment_count' => (int) get_comments_number($post_id)
+        );
     }
     
     /**
@@ -931,30 +1080,7 @@ class VersaiAPI {
         if ($query->have_posts()) {
             while ($query->have_posts()) {
                 $query->the_post();
-                $post_id = get_the_ID();
-                
-                $blogs[] = array(
-                    'id' => $post_id,
-                    'title' => get_the_title(),
-                    'content' => get_the_content(),
-                    'excerpt' => get_the_excerpt(),
-                    'featured_image' => get_the_post_thumbnail_url($post_id, 'large'),
-                    'slug' => get_post_field('post_name', $post_id),
-                    'date' => get_the_date('c'),
-                    'modified' => get_the_modified_date('c'),
-                    'author' => get_the_author(),
-                    'blog_category' => get_post_meta($post_id, 'versai_blog_category', true),
-                    'country' => get_post_meta($post_id, 'versai_country', true),
-                    'visa_type' => get_post_meta($post_id, 'versai_visa_type', true),
-                    'author_name' => get_post_meta($post_id, 'versai_author_name', true),
-                    'reading_time' => get_post_meta($post_id, 'versai_reading_time', true),
-                    'featured' => get_post_meta($post_id, 'versai_featured', true) === '1',
-                    'priority' => (int) get_post_meta($post_id, 'versai_priority', true),
-                    'meta_title' => get_post_meta($post_id, 'versai_meta_title', true),
-                    'meta_description' => get_post_meta($post_id, 'versai_meta_description', true),
-                    'seo_keywords' => get_post_meta($post_id, 'versai_seo_keywords', true),
-                    'comment_count' => get_comments_number($post_id)
-                );
+                $blogs[] = $this->format_blog_post(get_the_ID());
             }
         }
         
@@ -968,6 +1094,26 @@ class VersaiAPI {
         ), 200);
     }
     
+    /**
+     * Get single blog by ID
+     */
+    public function get_blog_by_id($request) {
+        $id = (int) $request->get_param('id');
+        $post = get_post($id);
+
+        if (!$post || $post->post_type !== 'versai_blog' || $post->post_status !== 'publish') {
+            return new WP_REST_Response(array(
+                'success' => false,
+                'message' => 'مقاله یافت نشد'
+            ), 404);
+        }
+
+        return new WP_REST_Response(array(
+            'success' => true,
+            'data' => $this->format_blog_post($id)
+        ), 200);
+    }
+
     /**
      * Get blog categories
      */
@@ -1006,17 +1152,19 @@ class VersaiAPI {
         $email = $request->get_param('email');
         $subject = $request->get_param('subject');
         $message = $request->get_param('message');
+        $form_source = $request->get_param('form_source') ?: 'website';
         
-        // Create consultation post
         $post_id = wp_insert_post(array(
             'post_type' => 'versai_consultation',
-            'post_title' => $subject,
-            'post_content' => $message,
+            'post_title' => $subject . ' - ' . $name,
+            'post_content' => $message ?: '',
             'post_status' => 'private',
             'meta_input' => array(
                 'versai_consultation_name' => $name,
                 'versai_consultation_phone' => $phone,
                 'versai_consultation_email' => $email,
+                'versai_consultation_subject' => $subject,
+                'versai_consultation_source' => $form_source,
                 'versai_consultation_date' => current_time('mysql')
             )
         ));
