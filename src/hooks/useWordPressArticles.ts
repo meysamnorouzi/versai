@@ -30,7 +30,7 @@ export const useWordPressArticles = (options: UseWordPressArticlesOptions = {}) 
   const [total, setTotal] = useState(0)
 
   const fetchPosts = useCallback(
-    async (pageToLoad = page, append = false) => {
+    async (pageToLoad: number, append = false) => {
       setLoading(true)
       setError(null)
 
@@ -53,14 +53,14 @@ export const useWordPressArticles = (options: UseWordPressArticlesOptions = {}) 
         setLoading(false)
       }
     },
-    [perPage, page, categories, search]
+    [perPage, categories, search]
   )
 
   const loadMore = useCallback(() => {
-    if (page < totalPages) {
+    if (!loading && page < totalPages) {
       return fetchPosts(page + 1, true)
     }
-  }, [fetchPosts, page, totalPages])
+  }, [fetchPosts, loading, page, totalPages])
 
   const refetch = useCallback(() => fetchPosts(1, false), [fetchPosts])
 

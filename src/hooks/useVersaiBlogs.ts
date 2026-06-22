@@ -32,7 +32,7 @@ export const useVersaiBlogs = (options: UseVersaiBlogsOptions = {}) => {
   const [total, setTotal] = useState(0)
 
   const fetchBlogs = useCallback(
-    async (pageToLoad = page, append = false) => {
+    async (pageToLoad: number, append = false) => {
       setLoading(true)
       setError(null)
 
@@ -60,14 +60,14 @@ export const useVersaiBlogs = (options: UseVersaiBlogsOptions = {}) => {
         setLoading(false)
       }
     },
-    [perPage, page, category, country, featured]
+    [perPage, category, country, featured]
   )
 
   const loadMore = useCallback(() => {
-    if (page < totalPages) {
+    if (!loading && page < totalPages) {
       return fetchBlogs(page + 1, true)
     }
-  }, [fetchBlogs, page, totalPages])
+  }, [fetchBlogs, loading, page, totalPages])
 
   const refetch = useCallback(() => fetchBlogs(1, false), [fetchBlogs])
 
