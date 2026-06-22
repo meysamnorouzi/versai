@@ -3,19 +3,20 @@
 import React from 'react'
 import Link from 'next/link'
 import Loading from '@/src/components/ui/Loading'
-import { useVersaiBlog } from '@/src/hooks/useVersaiBlogs'
-import { getBlogAuthor } from '@/src/utils/blog'
-import { formatDate } from '@/src/utils/api'
-
-const DEFAULT_IMAGE = '/images/home-page/success-story1.png'
+import { useWordPressArticle } from '@/src/hooks/useWordPressArticles'
+import { getPostCategory, getPostFeaturedImage } from '@/src/utils/blog'
+import { formatDate, formatWordPressContent } from '@/src/utils/api'
 
 interface ArticleDetailProps {
   id: string
 }
 
+const stripHtml = (html: string): string =>
+  html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim()
+
 const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
   const articleId = parseInt(id, 10)
-  const { blog, loading, error } = useVersaiBlog(Number.isNaN(articleId) ? null : articleId)
+  const { post, loading, error } = useWordPressArticle(Number.isNaN(articleId) ? null : articleId)
 
   if (loading) {
     return (
@@ -25,7 +26,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
     )
   }
 
-  if (error || !blog) {
+  if (error || !post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4" dir="rtl">
         <p className="text-red-600">{error || 'مقاله یافت نشد'}</p>
@@ -36,10 +37,10 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
     )
   }
 
-  const image = blog.featured_image || DEFAULT_IMAGE
-  const category = blog.blog_category || blog.country || 'عمومی'
-  const author = getBlogAuthor(blog)
-  const date = formatDate(blog.date)
+  const title = stripHtml(post.title.rendered)
+  const image = getPostFeaturedImage(post)
+  const category = getPostCategory(post)
+  const date = formatDate(post.date)
 
   return (
     <div className="min-h-screen" dir="rtl">
@@ -58,7 +59,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
               </Link>
             </li>
             <li>/</li>
-            <li className="text-gray-900 truncate max-w-[150px] sm:max-w-none">{blog.title}</li>
+            <li className="text-gray-900 truncate max-w-[150px] sm:max-w-none">{title}</li>
           </ol>
         </nav>
 
@@ -69,19 +70,17 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
             </span>
           </div>
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-['IRANYekanX'] text-gray-900 leading-tight mb-3 sm:mb-4">
-            {blog.title}
+            {title}
           </h1>
           <div className="flex flex-col sm:flex-row items-start sm:items-center text-xs sm:text-sm text-gray-500 space-y-1 sm:space-y-0 sm:space-x-4 space-x-reverse">
-            <span>نویسنده: {author}</span>
             <span>تاریخ: {date}</span>
-            {blog.reading_time && <span>زمان مطالعه: {blog.reading_time}</span>}
           </div>
         </header>
 
         <div className="mb-6 sm:mb-8">
           <img
             src={image}
-            alt={blog.title}
+            alt={title}
             className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-2xl"
           />
         </div>
@@ -89,7 +88,7 @@ const ArticleDetail: React.FC<ArticleDetailProps> = ({ id }) => {
         <article className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
           <div
             className="text-gray-700 leading-relaxed font-['IRANYekanX'] text-sm sm:text-base"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
+            dangerouslySetInnerHTML={{ __html: formatWordPressContent(post.content.rendered) }}
           />
         </article>
 

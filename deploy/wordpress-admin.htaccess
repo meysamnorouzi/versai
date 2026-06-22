@@ -1,5 +1,5 @@
-# WordPress in /admin subdirectory — upload to public_html/admin/.htaccess
-# Replace default WordPress rules when WP lives at https://versai.ir/admin
+# WordPress in /admin subdirectory on MAIN domain (versai.fr/admin)
+# Only use this if WordPress URL is https://versai.fr/admin — NOT for admin.versai.fr
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>

@@ -38,6 +38,7 @@ Versai API is a WordPress plugin that provides custom REST API endpoints for the
 * `GET /wp-json/versai/v1/faqs` - Get frequently asked questions
 * `GET /wp-json/versai/v1/testimonials` - Get customer testimonials
 * `GET /wp-json/versai/v1/blogs` - Get blog articles
+* `GET /wp-json/versai/v1/blogs/{id}` - Get single blog article by ID
 * `GET /wp-json/versai/v1/blog-categories` - Get blog categories
 * `GET /wp-json/versai/v1/countries` - Get available countries
 * `GET /wp-json/versai/v1/visa-types` - Get visa types
@@ -50,6 +51,7 @@ Versai API is a WordPress plugin that provides custom REST API endpoints for the
 * **FAQs** - Frequently asked questions
 * **Testimonials** - Customer testimonials
 * **Blog Articles** - Blog posts with SEO and categorization
+* **Consultation Requests** - Form submissions (admin: درخواست‌های مشاوره)
 
 == Custom Taxonomies ==
 

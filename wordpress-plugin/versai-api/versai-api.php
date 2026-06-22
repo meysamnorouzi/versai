@@ -37,6 +37,8 @@ class VersaiAPI {
             $allowed = array(
                 'https://versai.ir',
                 'https://www.versai.ir',
+                'https://versai.fr',
+                'https://www.versai.fr',
                 'http://localhost:3000',
                 'http://localhost:5173',
             );
@@ -1183,6 +1185,7 @@ class VersaiAPI {
         $email_message .= "تلفن: $phone\n";
         $email_message .= "ایمیل: $email\n";
         $email_message .= "موضوع: $subject\n";
+        $email_message .= "منبع فرم: $form_source\n";
         $email_message .= "پیام:\n$message";
         
         wp_mail($admin_email, $email_subject, $email_message);

@@ -50,8 +50,8 @@ export const useWordPressPosts = (options: UseWordPressPostsOptions = {}): UseWo
         search
       })
       
-      setPosts(response)
-      setTotalPages(Math.ceil(response.length / perPage))
+      setPosts(response.posts)
+      setTotalPages(response.totalPages)
     } catch (err) {
       const errorData = handleApiError(err)
       setError(errorData.message)

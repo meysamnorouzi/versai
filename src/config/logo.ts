@@ -1,18 +1,18 @@
 export const LOGO_CONFIG = {
-  // Main logo paths
-  main: 'images/logo.png',
-  home: 'images/logo.png',
-  
+  // Main logo paths (absolute — required for static export on nested routes)
+  main: '/images/logo.png',
+  home: '/images/logo.png',
+
   // Favicon paths
-  favicon: 'images/logo.png',
-  appleTouchIcon: 'images/logo.png',
-  
+  favicon: '/images/logo.png',
+  appleTouchIcon: '/images/logo.png',
+
   // Different sizes for different use cases
   sizes: {
-    small: 'images/logo.png',      // 16x16, 32x32
-    medium: 'images/logo.png',     // 96x96, 192x192
-    large: 'images/logo.png',      // 512x512
-    navigation: 'images/logo.png' // For navigation bar
+    small: '/images/logo.png',
+    medium: '/images/logo.png',
+    large: '/images/logo.png',
+    navigation: '/images/logo.png',
   },
   
   // Alt text for accessibility

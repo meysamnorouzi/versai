@@ -3,6 +3,7 @@ import {
   WordPressPost,
   WordPressMedia,
   WordPressCategory,
+  WordPressPostsListResult,
   ApiResponse,
   VersaiApiListResponse,
   VersaiBlogArticle,
@@ -10,10 +11,10 @@ import {
 } from '../types'
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://versai.ir/admin/wp-json/wp/v2'
+  process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://admin.versai.fr/wp-json/wp/v2'
 
 const VERSAI_API_URL =
-  process.env.NEXT_PUBLIC_VERSAI_API_URL || 'https://versai.ir/admin/wp-json/versai/v1'
+  process.env.NEXT_PUBLIC_VERSAI_API_URL || 'https://admin.versai.fr/wp-json/versai/v1'
 
 const API_TIMEOUT = Number(process.env.NEXT_PUBLIC_API_TIMEOUT) || 10000
 
@@ -39,18 +40,24 @@ export const postsApi = {
     page?: number
     categories?: number[]
     search?: string
-  }): Promise<WordPressPost[]> => {
-    const response = await api.get('/posts', { params })
-    return response.data
+  }): Promise<WordPressPostsListResult> => {
+    const response = await api.get('/posts', {
+      params: { ...params, _embed: true },
+    })
+    return {
+      posts: response.data,
+      total: Number(response.headers['x-wp-total'] || 0),
+      totalPages: Number(response.headers['x-wp-totalpages'] || 0),
+    }
   },
 
   getById: async (id: number): Promise<WordPressPost> => {
-    const response = await api.get(`/posts/${id}`)
+    const response = await api.get(`/posts/${id}`, { params: { _embed: true } })
     return response.data
   },
 
   getBySlug: async (slug: string): Promise<WordPressPost[]> => {
-    const response = await api.get('/posts', { params: { slug } })
+    const response = await api.get('/posts', { params: { slug, _embed: true } })
     return response.data
   },
 }

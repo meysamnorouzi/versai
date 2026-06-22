@@ -1,21 +1,23 @@
-# Versai - Next.js static export (cPanel / Apache)
-# Copied from public/ to out/ on `next build` when using output: 'export'
+# cPanel static deploy — upload contents of /out to public_html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # WordPress backend in /admin — never send to Next.js app
-  RewriteRule ^admin(/.*)?$ - [L]
+  # CSS/JS/fonts/images — never rewrite to HTML
+  RewriteRule ^_next/ - [L]
+  RewriteRule ^(images|icons|fonts|videos)/ - [L]
 
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.html -f
-  RewriteRule ^(.*)$ $1index.html [L]
+  # Article detail: /article/123 → article.html
+  RewriteRule ^article/[^/]+/?$ /article.html [L]
 
-  RewriteRule ^article/[^/]+/?$ /article/index.html [L]
+  # Page routes: /contact → contact.html
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
 
   RewriteRule ^ /404.html [L]
 </IfModule>
@@ -28,17 +30,6 @@
 
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
-</IfModule>
-
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
 ErrorDocument 404 /404.html

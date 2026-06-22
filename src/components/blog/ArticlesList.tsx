@@ -4,15 +4,15 @@ import React from 'react'
 import BlogCard from '@/src/components/blog/BlogCard'
 import Button from '@/src/components/ui/Button'
 import Loading from '@/src/components/ui/Loading'
-import useVersaiBlogs from '@/src/hooks/useVersaiBlogs'
-import { mapBlogToCard } from '@/src/utils/blog'
+import useWordPressArticles from '@/src/hooks/useWordPressArticles'
+import { mapPostToCard } from '@/src/utils/blog'
 
 const ArticlesList: React.FC = () => {
-  const { blogs, loading, error, hasMore, loadMore, refetch } = useVersaiBlogs({
+  const { posts, loading, error, hasMore, loadMore, refetch } = useWordPressArticles({
     perPage: 12,
   })
 
-  const articles = blogs.map(mapBlogToCard)
+  const articles = posts.map(mapPostToCard)
 
   return (
     <div className="min-h-screen bg-[#f2f1f1] relative overflow-hidden" dir="rtl">

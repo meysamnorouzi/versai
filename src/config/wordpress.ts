@@ -58,7 +58,9 @@ export const WORDPRESS_CONFIG = {
     'http://localhost:3000',
     'http://localhost:5173',
     'https://versai.ir',
-    'https://www.versai.ir'
+    'https://www.versai.ir',
+    'https://versai.fr',
+    'https://www.versai.fr',
   ]
 }
 

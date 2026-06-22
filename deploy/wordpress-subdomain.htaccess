@@ -1,0 +1,18 @@
+# WordPress on subdomain admin.versai.fr
+# Upload to the document root of admin.versai.fr (e.g. public_html/admin/.htaccess
+# when the subdomain points to that folder)
+#
+# URLs: https://admin.versai.fr/wp-admin  (NOT /admin/wp-admin)
+# RewriteBase MUST be / — not /admin/
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

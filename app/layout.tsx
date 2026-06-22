@@ -66,7 +66,6 @@ export const metadata: Metadata = {
     icon: '/images/logo.png',
     apple: '/images/logo.png',
   },
-  manifest: '/manifest.json',
   other: {
     'theme-color': '#1e40af',
     'msapplication-TileColor': '#1e40af',

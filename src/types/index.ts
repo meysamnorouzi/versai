@@ -1,4 +1,11 @@
 // WordPress API Types
+export interface WordPressEmbeddedTerm {
+  id: number
+  name: string
+  slug: string
+  taxonomy: string
+}
+
 export interface WordPressPost {
   id: number
   title: {
@@ -16,6 +23,16 @@ export interface WordPressPost {
   categories: number[]
   tags: number[]
   meta?: Record<string, any>
+  _embedded?: {
+    'wp:featuredmedia'?: WordPressMedia[]
+    'wp:term'?: WordPressEmbeddedTerm[][]
+  }
+}
+
+export interface WordPressPostsListResult {
+  posts: WordPressPost[]
+  total: number
+  totalPages: number
 }
 
 export interface WordPressMedia {
