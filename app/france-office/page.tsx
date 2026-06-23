@@ -5,7 +5,6 @@ import Button from '@/src/components/ui/Button'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -384,7 +383,6 @@ const FranceOfficePage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

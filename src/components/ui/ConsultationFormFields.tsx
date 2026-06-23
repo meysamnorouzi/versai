@@ -74,17 +74,6 @@ const ConsultationFormFields: React.FC<ConsultationFormFieldsProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
-      {success && (
-        <p className={styles.success} role="status">
-          درخواست شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.
-        </p>
-      )}
-      {error && (
-        <p className={styles.error} role="alert">
-          {error}
-        </p>
-      )}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className={styles.label}>
@@ -177,6 +166,17 @@ const ConsultationFormFields: React.FC<ConsultationFormFieldsProps> = ({
           {loading ? 'در حال ارسال...' : submitLabel}
         </button>
       </div>
+
+      {success && (
+        <p className={styles.success} role="status">
+          درخواست شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.
+        </p>
+      )}
+      {error && (
+        <p className={styles.error} role="alert">
+          {error}
+        </p>
+      )}
     </form>
   )
 }

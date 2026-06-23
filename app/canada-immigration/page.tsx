@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic'
 import Container from '@/src/components/ui/Container'
 import Button from '@/src/components/ui/Button'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
 const FAQSection = dynamic(() => import('@/src/components/ui/FAQSection'), {
@@ -164,7 +163,6 @@ const CanadaImmigrationPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

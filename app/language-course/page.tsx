@@ -5,7 +5,6 @@ import LanguageCourseCTA from '@/src/components/language-course/LanguageCourseCT
 import UCLYUniversitySection from '@/src/components/language-course/UCLYUniversitySection'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import type { Metadata } from 'next'
 
@@ -33,7 +32,6 @@ const LanguageCoursePage: React.FC = () => {
       <UCLYUniversitySection />
       <ConsultationForm backgroundImageSrc="/images/form-bgs/IMG_9567.PNG" />
       <RelatedArticlesSection 
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

@@ -2,7 +2,6 @@ import React from 'react'
 import Container from '@/src/components/ui/Container'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import type { Metadata } from 'next'
 
@@ -245,7 +244,6 @@ const FranceVisaPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection 
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

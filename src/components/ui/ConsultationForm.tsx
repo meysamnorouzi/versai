@@ -12,6 +12,7 @@ type ConsultationFormProps = {
   title?: string
   description?: string
   phoneNumber?: string
+  whatsappUrl?: string
   whatsappLabel?: string
   whatsappIconSrc?: string
   className?: string
@@ -23,6 +24,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
   title = 'ثبت درخواست مشاوره با ورسای',
   description,
   phoneNumber = '۰۲۱۲۸۴۲۱۶۹۰',
+  whatsappUrl = 'https://wa.me/982128421690',
   whatsappLabel = 'ارتباط در واتساپ',
   whatsappIconSrc = '/images/france-visa-page/Group.svg',
   className = ''
@@ -127,6 +129,7 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="آدرس ایمیل خود را وارد کنید."
+                    className="w-full p-3 bg-white bg-opacity-90 border border-[#CBCBCB] rounded-2xl text-right text-sm font-medium text-[#9D9E9F] focus:outline-none focus:ring-2 focus:ring-[#316086]"
                     required
                     disabled={loading}
                   />
@@ -162,14 +165,15 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                 <Phone className="w-6 h-6 text-[#F2C3BE]" />
                 <span className="text-xl font-medium text-white">{phoneNumber}</span>
               </div>
-              <Button
-                variant="secondary"
-                size="sm"
-                className="w-auto flex-shrink-0 bg-white text-[#D74A3C] border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex justify-center items-center gap-2 font-bold font-['IRANYekanX'] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 px-4 py-2 text-sm rounded-[20px] min-h-[36px] w-auto flex-shrink-0 bg-white text-[#D74A3C] border border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
               >
                 {whatsappLabel}
                 <img className="w-6 h-6 ml-2" src={whatsappIconSrc} alt="WhatsApp" />
-              </Button>
+              </a>
             </div>
 
             {/* Desktop: original stacked layout */}
@@ -179,14 +183,15 @@ const ConsultationForm: React.FC<ConsultationFormProps> = ({
                   <Phone className="w-6 h-6 text-[#F2C3BE]" />
                   <span className="text-xl font-medium text-white">{phoneNumber}</span>
                 </div>
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="w-full bg-white text-[#D74A3C] border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full justify-center items-center gap-2 font-bold font-['IRANYekanX'] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 px-4 py-2 text-sm rounded-[20px] min-h-[36px] bg-white text-[#D74A3C] border border-[#D74A3C] hover:bg-[#D74A3C] hover:text-white"
                 >
                   {whatsappLabel}
                   <img className="w-6 h-6 ml-2" src={whatsappIconSrc} alt="WhatsApp" />
-                </Button>
+                </a>
               </div>
             </div>
           </div>

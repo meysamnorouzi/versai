@@ -1,7 +1,6 @@
 import React from 'react'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import { FAQItem } from '@/src/types'
 import ConsultationForm from '@/src/components/ui/ConsultationForm'
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
@@ -208,7 +207,6 @@ const PRFrancePage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

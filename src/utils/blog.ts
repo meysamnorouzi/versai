@@ -12,6 +12,7 @@ export interface BlogCardArticle {
   image: string
   category: string
   date: string
+  href?: string
 }
 
 export const mapBlogToCard = (blog: VersaiBlogArticle): BlogCardArticle => ({
@@ -43,3 +44,26 @@ export const mapPostToCard = (post: WordPressPost): BlogCardArticle => ({
   category: getPostCategory(post),
   date: formatDate(post.date),
 })
+
+const hashSeed = (seed: string): number => {
+  let hash = 0
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0
+  }
+  return hash || 1
+}
+
+export const pickRandomSample = <T,>(items: T[], count: number, seed: string): T[] => {
+  if (items.length <= count) return items
+
+  const shuffled = [...items]
+  let state = hashSeed(seed)
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    state = (state * 1103515245 + 12345) >>> 0
+    const j = state % (i + 1)
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+
+  return shuffled.slice(0, count)
+}

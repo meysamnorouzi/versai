@@ -10,6 +10,8 @@ interface UseWordPressArticlesOptions {
   page?: number
   categories?: number[]
   search?: string
+  orderby?: string
+  order?: string
   autoFetch?: boolean
 }
 
@@ -19,6 +21,8 @@ export const useWordPressArticles = (options: UseWordPressArticlesOptions = {}) 
     page: initialPage = 1,
     categories,
     search,
+    orderby,
+    order,
     autoFetch = true,
   } = options
 
@@ -40,6 +44,8 @@ export const useWordPressArticles = (options: UseWordPressArticlesOptions = {}) 
           page: pageToLoad,
           categories,
           search,
+          orderby,
+          order,
         })
 
         setPosts((prev) => (append ? [...prev, ...response.posts] : response.posts))
@@ -53,7 +59,7 @@ export const useWordPressArticles = (options: UseWordPressArticlesOptions = {}) 
         setLoading(false)
       }
     },
-    [perPage, categories, search]
+    [perPage, categories, search, orderby, order]
   )
 
   const loadMore = useCallback(() => {

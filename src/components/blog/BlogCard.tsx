@@ -7,6 +7,7 @@ interface Article {
   image: string
   category: string
   date: string
+  href?: string
 }
 
 interface BlogCardProps {
@@ -15,7 +16,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ article }) => {
   return (
-    <Link href={`/article/${article.id}`} className="group block">
+    <Link href={article.href ?? `/article/${article.id}`} className="group block">
       <div className="w-full h-96 relative cursor-pointer">
         {/* Card Container */}
         <div className="absolute border border-[#cbcbcb] border-solid inset-0 rounded-[16px] overflow-hidden group-hover:shadow-lg transition-shadow duration-300">

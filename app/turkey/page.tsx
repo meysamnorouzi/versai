@@ -3,7 +3,6 @@ import { ChevronDown, Phone, MessageCircle, Star } from 'lucide-react'
 import Button from '@/src/components/ui/Button'
 import FAQSection from '@/src/components/ui/FAQSection'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -204,7 +203,6 @@ const TurkeyPage: React.FC = () => {
 
       {/* Related Articles Section */}
       <RelatedArticlesSection 
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

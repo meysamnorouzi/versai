@@ -21,7 +21,7 @@ const ConsultationForm: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="bg-white rounded-2xl p-8 pt-0">
+          <div className="bg-white rounded-2xl p-8 pt-8">
             <ConsultationFormFields formSource="home" theme="light" />
           </div>
           <div className="relative flex flex-col items-center">

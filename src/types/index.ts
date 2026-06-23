@@ -174,11 +174,11 @@ export interface FAQSectionProps {
 }
 
 export interface RelatedArticlesSectionProps {
-  articles: RelatedArticle[]
   title?: string
   showViewAll?: boolean
   viewAllLink?: string
   className?: string
+  count?: number
 }
 
 // API Response Types

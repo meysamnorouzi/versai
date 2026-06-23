@@ -4,15 +4,7 @@ import Button from '../ui/Button'
 const LanguageCourseCTA: React.FC = () => {
   return (
     <div className="w-full h-48 sm:h-60 lg:h-72 relative overflow-hidden">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(https://s3-alpha-sig.figma.com/img/4a68/4d7f/c8db3ef78f5c2ca28fcf6a386f92c0f9?Expires=1760313600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=VpOgcfWuM~Ymr0QG9Oz4JBCWAZrXVAHMa2AA9uUarI2zAuXZtWhfmITXLlJQN8QPzXZAeX~CnESxmfQG8Hi3Z~KaaYXNbthEf4RLrjcdT3RwoB2QZ56tjAufj1XcKjhmh9vJBGy5dq0J-E0Tk82YgUbc~sjbh2e~aTv7wu-BFH0hQOmXkzN57LjQa-eJMdRafo3shsbOooA5uCsF6TQzRAiVpL3oxYtxkAX60AP1HEpr~KvMniW~367FijfrBLkMif15v-aLL5UJbwBsgm0471he2KIE37N4p8MuHFb6dHg05mG68dSTAllw679-y~Q2GyFSJqR38KirodP-7VYRxA__)'
-        }}
-      />
-      
-      {/* Overlay */}
+      <div className="absolute inset-0 bg-[url('/images/france-office-page/blue-bg.png')] bg-cover bg-center bg-no-repeat" />
       <div className="absolute inset-0 bg-[rgba(30,57,80,0.78)]" />
       
       {/* Content */}

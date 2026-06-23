@@ -6,7 +6,6 @@ import LanguageCourseSection from '@/src/components/home/LanguageCourseSection'
 import CTABanner from '@/src/components/home/CTABanner'
 import ConsultationForm from '@/src/components/home/ConsultationForm'
 import RelatedArticlesSection from '@/src/components/ui/RelatedArticlesSection'
-import { DEFAULT_RELATED_ARTICLES } from '@/src/config/relatedArticles'
 import FAQSection from '@/src/components/ui/FAQSection'
 import { PAGE_SEO } from '@/src/config/seo'
 import type { Metadata } from 'next'
@@ -63,7 +62,6 @@ const HomePage: React.FC = () => {
       <CTABanner />
       <ConsultationForm />
       <RelatedArticlesSection 
-        articles={DEFAULT_RELATED_ARTICLES}
         title="مقالات مرتبط"
         showViewAll={true}
         viewAllLink="/articles"

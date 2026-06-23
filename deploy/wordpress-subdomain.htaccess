@@ -1,15 +1,23 @@
 # WordPress on subdomain admin.versai.fr
-# Upload to the document root of admin.versai.fr (e.g. public_html/admin/.htaccess
-# when the subdomain points to that folder)
+# Upload to the document root of admin.versai.fr (e.g. public_html for that subdomain)
 #
-# URLs: https://admin.versai.fr/wp-admin  (NOT /admin/wp-admin)
+# Behaviour:
+#   https://admin.versai.fr/           → 301 redirect to https://versai.fr/
+#   https://admin.versai.fr/wp-admin   → WordPress admin (unchanged)
+#   https://admin.versai.fr/wp-json/   → REST API for Next.js (unchanged)
+#   any other path                     → WordPress (unchanged)
+#
 # RewriteBase MUST be / — not /admin/
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
+
+# Homepage only — backend subdomain is not the public site
+RewriteRule ^$ https://versai.fr/ [R=301,L]
+
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -40,6 +40,8 @@ export const postsApi = {
     page?: number
     categories?: number[]
     search?: string
+    orderby?: string
+    order?: string
   }): Promise<WordPressPostsListResult> => {
     const response = await api.get('/posts', {
       params: { ...params, _embed: true },
